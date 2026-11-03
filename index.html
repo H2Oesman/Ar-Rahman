@@ -648,8 +648,18 @@
             color: var(--arabic-color);
             margin: 0 0 20px;
             direction: rtl;
-            line-height: 1.6;
         }
+        /* Bismillah scales down to fit narrow (phone) screens */
+        .container { container-type: inline-size; }
+        .bismillah {
+            font-size: min(46px, calc((100vw - 110px) / 11.8));
+            font-size: min(46px, calc(100cqw / 11.8));
+        }
+        /* Phones: start the page below the floating buttons so they don't cover the Bismillah */
+        @media (max-width: 640px) { .container { padding-top: 165px !important; } }
+        @media print { .container { padding-top: 0 !important; } }
+        /* Phones: keep the Bismillah between the floating scroll arrows */
+        @media (max-width: 640px) { .bismillah { font-size: min(46px, calc((100vw - 150px) / 11.8)) !important; } }
     </style>
 </head>
 <body>
@@ -665,7 +675,7 @@
 
     <div class="container">
 
-        <div class="bismillah" lang="ar" aria-label="Bismillāhir-Raḥmānir-Raḥīm">﷽</div>
+        <div class="bismillah">﷽</div>
 
         <!-- ============================================================ -->
         <!-- ENGLISH VERSION -->
