@@ -1145,7 +1145,7 @@
         </div>
         <!-- END INDONESIAN -->
 
-        <footer>© 1448 AH / 2026 AD — With kind permission of Sh. Mohamad Joban — Audio: Hisnul Muslim (hisnmuslim.com) &amp; Mishary Alafasy (quranicaudio.com) — Use <strong>?Indonesian</strong>, <strong>?Prep</strong>, <strong>?Departure</strong>, <strong>?Duas</strong>, or <strong>?Madinah</strong> to scroll to sections.</footer>
+        <footer>© 1448 AH / 2026 AD — With kind permission of Sh. Mohamad Joban — Audio: Hisnul Muslim (hisnmuslim.com) &amp; Mishary Alafasy (quranicaudio.com) — Use <strong>?Prep</strong>, <strong>?Departure</strong>, <strong>?Duas</strong>, or <strong>?Madinah</strong> to scroll to sections.</footer>
     </div>
 
     <!-- Font Awesome -->
@@ -1165,17 +1165,8 @@
             const translitElements = document.querySelectorAll('.transliteration');
 
             const urlParams = new URLSearchParams(window.location.search);
-            // Always opens in English; ?Indonesian (or #Indonesian) opens in Bahasa Indonesia
-            let defaultLang = 'english';
-            // ?Indonesian / ?English (or #Indonesian / #English), any letter case
-            const langFromUrl = () => {
-                const keys = [...new URLSearchParams(window.location.search).keys()].map(k => k.toLowerCase());
-                const hash = window.location.hash.replace('#', '').toLowerCase();
-                if (keys.includes('indonesian') || hash === 'indonesian') return 'indonesian';
-                if (keys.includes('english') || hash === 'english') return 'english';
-                return null;
-            };
-            if (langFromUrl()) defaultLang = langFromUrl();
+            // Starts in English; after that, the language last chosen with the toggle is remembered
+            let defaultLang = store.get('language') === 'indonesian' ? 'indonesian' : 'english';
             let defaultTranslit = store.get('transliteration');
             if (defaultTranslit === null) defaultTranslit = 'true';
             if (urlParams.has('Transliteration')) defaultTranslit = 'true';
@@ -1429,24 +1420,11 @@
             setDarkMode(defaultDark);
             updateCountdown();
 
-            // Keep the address in step with the chosen language, so a reload or a
-            // copied link opens in the language that was picked last.
-            function syncLangInUrl(lang) {
-                try {
-                    const params = new URLSearchParams(window.location.search);
-                    [...params.keys()].forEach(k => { if (/^(english|indonesian)$/i.test(k)) params.delete(k); });
-                    const qs = params.toString().replace(/=(&|$)/g, '$1');
-                    const hash = lang === 'indonesian' ? '#Indonesian' : '';
-                    history.replaceState(null, '', window.location.pathname + (qs ? '?' + qs : '') + hash);
-                } catch (e) {}
-            }
-
             langToggle.addEventListener('click', () => {
                 document.querySelectorAll('.audio-player audio').forEach(o => o.pause());
                 const lang = isEnglish() ? 'indonesian' : 'english';
                 setLanguage(lang);
                 updateAudioLabels();
-                syncLangInUrl(lang);
             });
             translitToggle.addEventListener('click', () => {
                 const currently = translitElements[0]?.style.display === 'block';
@@ -1461,10 +1439,6 @@
             document.getElementById('doubleDownScroll')?.addEventListener('click', () => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }));
 
             enhanceAudioPlayers();
-            window.addEventListener('hashchange', () => {
-                const l = langFromUrl();
-                if (l && l !== (isEnglish() ? 'english' : 'indonesian')) { setLanguage(l); updateAudioLabels(); }
-            });
             handleUrlScroll();
         })();
     </script>
