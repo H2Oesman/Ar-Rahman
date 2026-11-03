@@ -1165,7 +1165,8 @@
             const translitElements = document.querySelectorAll('.transliteration');
 
             const urlParams = new URLSearchParams(window.location.search);
-            let defaultLang = store.get('language') || 'english';
+            // Always opens in English; ?Indonesian (or #Indonesian) opens in Bahasa Indonesia
+            let defaultLang = 'english';
             // ?Indonesian / ?English (or #Indonesian / #English), any letter case
             const langFromUrl = () => {
                 const keys = [...new URLSearchParams(window.location.search).keys()].map(k => k.toLowerCase());
