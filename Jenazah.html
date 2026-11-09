@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Panduan Shalat Jenazah | Lengkap (Laki-laki & Perempuan)</title>
+    <style>
+        :root {
+            --bg-color: #f5f9fc;
+            --text-color: #333;
+            --container-bg: white;
+            --arabic-color: #1a5276;
+            --section-title-color: #2980b9;
+            --dua-bg: #f8f9fa;
+            --dua-border: #e0e0e0;
+            --bonus-bg: #e8f4fc;
+            --tafsir-bg: #fffde7;
+            --tafsir-border: #ffe082;
+            --link-color: #2980b9;
+            --link-hover: #1a5276;
+            --arrow-bg: #2c3e50;
+            --arrow-text: white;
+        }
+        .dark-mode {
+            --bg-color: #1e293b;
+            --text-color: #f0f4fa;
+            --container-bg: #2d3748;
+            --arabic-color: #90caf9;
+            --section-title-color: #7bc9ff;
+            --dua-bg: #1e2a3e;
+            --dua-border: #4b5563;
+            --bonus-bg: #1e3a5f;
+            --tafsir-bg: #1e2a3e;
+            --tafsir-border: #4b5563;
+            --link-color: #7bc9ff;
+            --link-hover: #b3e2ff;
+            --arrow-bg: #1e293b;
+            --arrow-text: #eef2ff;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 20px;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: all 0.3s ease;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--container-bg);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .arabic {
+            font-size: 36px;
+            text-align: right;
+            direction: rtl;
+            margin: 15px 0 10px 0;
+            color: var(--arabic-color);
+            font-family: 'Uthmanic Script', 'Traditional Arabic', 'Scheherazade New', serif;
+            line-height: 1.6;
+        }
+        .transliteration {
+            font-style: italic;
+            color: #7f8c8d;
+            font-size: 18px;
+            text-align: left;
+            margin: -5px 0 15px;
+            display: none;
+        }
+        .dark-mode .transliteration { color: #cbd5e1; }
+        .name-title {
+            font-size: 32px;
+            color: var(--text-color);
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .section { margin: 35px 0; padding: 0 10px; }
+        .section-title {
+            font-size: 26px;
+            color: var(--section-title-color);
+            margin-bottom: 20px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+        }
+        .dua {
+            background-color: var(--dua-bg);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 1px solid var(--dua-border);
+        }
+        .dua-title {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #16a085;
+            margin-bottom: 10px;
+        }
+        .dark-mode .dua-title { color: #66d9a7; }
+        .back-to-top {
+            display: block;
+            text-align: center;
+            margin: 30px 0;
+            color: var(--link-color);
+            font-weight: bold;
+        }
+        .language-toggle, .transliteration-toggle, .dark-mode-toggle {
+            position: fixed;
+            right: 20px;
+            background: #2c3e50;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 40px;
+            cursor: pointer;
+            z-index: 1100;
+            font-weight: bold;
+            font-size: 14px;
+            border: none;
+            font-family: inherit;
+        }
+        .language-toggle { top: 20px; background: #2c7da0; }
+        .transliteration-toggle { top: 80px; background: #27ae60; }
+        .dark-mode-toggle { top: 140px; background: #8e44ad; }
+        .scroll-arrow, .scroll-arrow-double {
+            position: fixed;
+            background: var(--arrow-bg);
+            color: var(--arrow-text);
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            font-size: 22px;
+        }
+        .scroll-arrow.up { left: 20px; top: 200px; }
+        .scroll-arrow.down { left: 20px; bottom: 90px; }
+        .scroll-arrow-double.up-double { right: 20px; top: 200px; }
+        .scroll-arrow-double.down-double { right: 20px; bottom: 90px; }
+        @media (max-width: 768px) {
+            .arabic { font-size: 28px; }
+            .container { padding: 20px; }
+            .scroll-arrow, .scroll-arrow-double { width: 38px; height: 38px; font-size: 18px; }
+        }
+        .meaning-box {
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            background-color: var(--tafsir-bg);
+            border-left: 4px solid #3498db;
+        }
+        .hidden { display: none; }
+        footer { text-align: center; margin-top: 40px; padding: 20px; color: #7f8c8d; font-size: 14px; }
+
+        .menu-links {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .top-home-link {
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .main-menu {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Tambahan khusus halaman Jenazah */
+        .jump-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0 10px;
+        }
+        .jump-nav a {
+            background: var(--bonus-bg);
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 40px;
+            border: 1px solid var(--dua-border);
+            font-size: 15px;
+        }
+        .jump-nav a:hover { color: var(--link-hover); }
+        .step-badge {
+            display: inline-block;
+            background: #3498db;
+            color: #fff;
+            font-size: 13px;
+            font-weight: bold;
+            padding: 2px 12px;
+            border-radius: 20px;
+            margin-bottom: 8px;
+        }
+        .niat-label { font-weight: bold; margin-top: 15px; }
+        .same-note { font-style: italic; }
+        .same-note a { color: var(--link-color); }
+        .video-wrap { position: relative; width: 100%; max-width: 720px; margin: 15px auto; aspect-ratio: 16 / 9; border-radius: 10px; overflow: hidden; background: #000; box-shadow: 0 4px 14px rgba(0,0,0,0.15); }
+        .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+        .video-caption { text-align: center; }
+        .video-caption a { color: var(--link-color); font-weight: bold; text-decoration: none; }
+        .video-btns { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 10px 0 15px; }
+        .video-btn { border: none; cursor: pointer; font: inherit; font-weight: bold; font-size: 15px; padding: 9px 18px; border-radius: 40px; background: #c4302b; color: #fff; box-shadow: 0 3px 10px rgba(0,0,0,0.15); }
+        .video-btn.alt { background: transparent; color: var(--link-color); border: 1.5px solid var(--link-color); box-shadow: none; }
+        .video-btn:hover { filter: brightness(1.08); }
+        .mini-player { position: fixed; right: 76px; bottom: 20px; width: 340px; max-width: calc(100vw - 24px); background: var(--container-bg); border: 1px solid var(--dua-border); border-radius: 12px; box-shadow: 0 8px 28px rgba(0,0,0,0.3); z-index: 1200; overflow: hidden; }
+        .mini-player.hidden { display: none; }
+        .mini-bar { display: flex; align-items: center; gap: 6px; padding: 6px 8px 6px 12px; background: #2c3e50; color: #fff; font-size: 13px; font-weight: bold; cursor: default; }
+        .mini-bar .mini-title { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .mini-bar button { border: none; background: rgba(255,255,255,0.12); color: #fff; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; }
+        .mini-bar button:hover { background: rgba(255,255,255,0.25); }
+        .mini-body { position: relative; aspect-ratio: 16 / 9; background: #000; }
+        .mini-body iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+        .mini-player.minimized { width: 230px; }
+        .mini-player.minimized .mini-body { height: 0; aspect-ratio: auto; overflow: hidden; }
+        @media (max-width: 640px) { .mini-player { left: 12px; right: 12px; bottom: 12px; width: auto; } .mini-player.minimized { left: auto; width: 210px; } }
+        .dua-subtitle { font-weight: bold; color: var(--section-title-color); margin: 22px 0 6px; padding-top: 10px; border-top: 1px dashed var(--dua-border); }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style id="ux-enhance-v1">
+.audio-player { margin-bottom: 15px; }
+.audio-player audio { width: 100%; max-width: 400px; border-radius: 30px; }
+.audio-label { font-size: 15px; }
+/* ---- Single round play / pause button ---- */
+.ux-play-wrap { display: flex; justify-content: center; margin: 12px 0 6px; }
+.ux-play-btn { position: relative; width: 60px; height: 60px; border-radius: 50%; border: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; background: var(--link-color, #1e5f8e); color: #fff; box-shadow: 0 4px 14px rgba(30, 95, 142, 0.28); transition: transform 0.2s ease, box-shadow 0.2s ease; padding: 0; margin: 0; }
+.dark-mode .ux-play-btn { color: var(--container-bg, #1e293b); }
+.ux-play-btn:hover { transform: scale(1.08); box-shadow: 0 6px 18px rgba(30, 95, 142, 0.38); }
+.ux-play-btn:focus-visible { outline: 2px solid var(--link-color, #1e5f8e); outline-offset: 4px; }
+.ux-play-btn svg { display: block; }
+.ux-play-btn .ux-ic-play { margin-left: 3px; }
+.ux-play-btn .ux-ic-pause { display: none; }
+.ux-play-btn.playing .ux-ic-play { display: none; }
+.ux-play-btn.playing .ux-ic-pause { display: block; }
+.ux-play-btn.playing::after { content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 2px solid var(--link-color, #1e5f8e); animation: ux-play-pulse 1.6s ease-out infinite; }
+@keyframes ux-play-pulse { from { opacity: 0.7; transform: scale(0.92); } to { opacity: 0; transform: scale(1.25); } }
+audio.ux-hidden-audio, .audio-player .audio-controls, .audio-controls:has(.speed-select) { display: none !important; }
+
+/* ---- Animated directional arrows ---- */
+.scroll-arrow, .scroll-arrow-double { display: flex; align-items: center; justify-content: center; }
+.ux-arrow-ic { display: block; }
+.scroll-arrow.ux-up .ux-arrow-ic, .scroll-arrow-double.ux-up .ux-arrow-ic { animation: ux-nudge-up 1.8s ease-in-out infinite; }
+.scroll-arrow.ux-down .ux-arrow-ic, .scroll-arrow-double.ux-down .ux-arrow-ic { animation: ux-nudge-down 1.8s ease-in-out infinite; }
+.scroll-arrow:hover .ux-arrow-ic, .scroll-arrow-double:hover .ux-arrow-ic { animation-duration: 0.9s; }
+@keyframes ux-nudge-up { 0%, 100% { transform: translateY(2px); } 50% { transform: translateY(-4px); } }
+@keyframes ux-nudge-down { 0%, 100% { transform: translateY(-2px); } 50% { transform: translateY(4px); } }
+@media (max-width: 640px) {
+  .scroll-arrow-double { left: auto !important; right: 12px !important; }
+  .scroll-arrow-double.up-double { top: 170px; }
+  .scroll-arrow-double.down-double { bottom: 70px; }
+  .scroll-arrow.up { left: 12px; top: 170px; }
+  .scroll-arrow.down { left: 12px; bottom: 70px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ux-arrow-ic, .ux-play-btn.playing::after { animation: none !important; }
+}
+
+/* ---- Save as PDF ---- */
+.ux-pdf-btn { cursor: pointer; }
+@media print {
+  @page { margin: 14mm; }
+  .language-toggle, .transliteration-toggle, .dark-mode-toggle, .scroll-arrow, .scroll-arrow-double,
+  .ux-pdf-btn, .ux-play-wrap, audio, .audio-player, .audio-controls, .top-home-link, .jump-nav, .back-to-top, .video-section, .mini-player { display: none !important; }
+  body { background: #fff !important; }
+  .container { box-shadow: none !important; }
+  .dua, .meaning-box { break-inside: avoid; }
+  .section-title { break-after: avoid; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+
+<div id="scrollUp" class="scroll-arrow up ux-up"><svg class="ux-arrow-ic" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 15l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="scrollDown" class="scroll-arrow down ux-down"><svg class="ux-arrow-ic" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="doubleUpScroll" class="scroll-arrow-double up-double ux-up"><svg class="ux-arrow-ic" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 12l6-6 6 6M6 18l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+<div id="doubleDownScroll" class="scroll-arrow-double down-double ux-down"><svg class="ux-arrow-ic" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l6 6 6-6M6 12l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+<div class="container" id="top">
+    <div class="language-toggle" id="languageToggle"><i class="fas fa-globe"></i> 🇬🇧 English</div>
+    <div class="transliteration-toggle" id="transliterationToggle"><i class="fas fa-language"></i> Tampilkan Transliterasi</div>
+    <div class="dark-mode-toggle" id="darkModeToggle"><i class="fas fa-moon"></i> Mode Gelap</div>
+
+    <!-- ===================== INDONESIAN VERSION ===================== -->
+    <div id="indonesian-content">
+        <div class="menu-links">
+            <a href="index.html" class="top-home-link"><i class="fas fa-home"></i> &larr; Menu Utama</a>
+            <a href="#" class="top-home-link ux-pdf-btn" role="button"><i class="fas fa-file-pdf"></i> Simpan sebagai PDF</a>
+        </div>
+        <h1 class="name-title">🕌 Panduan Shalat Jenazah</h1>
+        <div class="name-source"><strong>Referensi:</strong> Al-Qur'an dan Sunnah. Shalat Jenazah hukumnya fardhu kifayah: jika sebagian kaum Muslimin telah mengerjakannya, gugurlah kewajiban yang lain.</div>
+
+        <div class="meaning-box">
+            <strong>✨ Tentang Shalat Jenazah:</strong> Shalat Jenazah dikerjakan seluruhnya dalam keadaan <strong>berdiri</strong> dengan <strong>4 kali takbir</strong>. Tidak ada ruku', sujud, maupun duduk tasyahud.<br><br>
+            <strong>🔹 Keutamaan:</strong> Rasulullah ﷺ bersabda: <em>"Barangsiapa menyaksikan jenazah hingga dishalatkan, maka baginya satu qirath. Dan barangsiapa menyaksikannya hingga dimakamkan, maka baginya dua qirath."</em> Ditanyakan, "Apakah dua qirath itu?" Beliau menjawab, <em>"Seperti dua gunung yang besar."</em> (HR Bukhari & Muslim)<br><br>
+            <strong>📖 Catatan:</strong> Niat sejatinya di dalam hati. Lafaz niat di bawah ini mengikuti kebiasaan dalam mazhab Syafi'i untuk membantu menghadirkan niat.
+        </div>
+
+        <div class="jump-nav">
+            <a href="#id-male">👤 Jenazah Laki-laki</a>
+            <a href="#id-female">👤 Jenazah Perempuan</a>
+            <a href="#id-salam">🤲 Salam</a>
+            <a href="#id-video">🎥 Video</a>
+        </div>
+
+        <!-- ===== LAKI-LAKI ===== -->
+        <div class="section" id="id-male">
+            <h2 class="section-title">1. Jenazah Laki-laki</h2>
+
+            <div class="dua">
+                <span class="step-badge">Langkah 1</span>
+                <div class="dua-title">Niat (di dalam hati)</div>
+                <div class="niat-label">Sebagai Makmum:</div>
+                <div class="audio-player">
+                    <div class="audio-label">🎧 Dengarkan niat makmum (jenazah laki-laki):</div>
+                    <audio controls preload="metadata"><source src="Niat-Jenazah-L-Makmum.mp3" type="audio/mpeg">Browser Anda tidak mendukung audio.</audio>
+                </div>
+                <div class="arabic">أُصَلِّي عَلَى هَذَا الْمَيِّتِ أَرْبَعَ تَكْبِيرَاتٍ فَرْضَ كِفَايَةٍ مَأْمُومًا لِلَّهِ تَعَالَى</div>
+                <div class="transliteration">Transliterasi: Ushalli 'ala hadzal-mayyiti arba'a takbiiratin fardha kifaayatin makmuman lillaahi ta'ala.</div>
+                <p><strong>Artinya:</strong> "Aku niat shalat atas jenazah (laki-laki) ini empat takbir, fardhu kifayah, sebagai makmum, karena Allah Ta'ala."</p>
+                <div class="niat-label">Sebagai Imam:</div>
+                <div class="audio-player">
+                    <div class="audio-label">🎧 Dengarkan niat imam (jenazah laki-laki):</div>
+                    <audio controls preload="metadata"><source src="Niat-Jenazah-L-Imam.mp3" type="audio/mpeg">Browser Anda tidak mendukung audio.</audio>
+                </div>
+                <div class="arabic">أُصَلِّي عَلَى هَذَا الْمَيِّتِ أَرْبَعَ تَكْبِيرَاتٍ فَرْضَ كِفَايَةٍ إِمَامًا لِلَّهِ تَعَالَى</div>
+                <div class="transliteration">Transliterasi: Ushalli 'ala hadzal-mayyiti arba'a takbiiratin fardha kifaayatin imaaman lillaahi ta'ala.</div>
+                <p><strong>Artinya:</strong> "Aku niat shalat atas jenazah (laki-laki) ini empat takbir, fardhu kifayah, sebagai imam, karena Allah Ta'ala."</p>
+            </div>
+
+            <div class="dua" id="id-fatihah">
+                <span class="step-badge">Langkah 2 · Takbir Pertama</span>
+                <div class="dua-title">Membaca Surah Al-Fatihah</div>
+                <p>Ucapkan <em>Allahu Akbar</em>, sedekapkan tangan di dada, lalu bacalah Al-Fatihah:</p>
+                <div class="audio-player">
+                    <div class="audio-label">🎧 Dengarkan Surah Al-Fatihah (Syaikh Mishary Rashid Alafasy):</div>
+                    <audio controls preload="metadata"><source src="https://cdn.mp3quran.net/audio/mishary-alafasy/r1/001.mp3" type="audio/mpeg">Browser Anda tidak mendukung audio.</audio>
+                </div>
+                <div class="arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ﴿١﴾ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ﴿٢﴾ الرَّحْمَٰنِ الرَّحِيمِ ﴿٣﴾ مَالِكِ يَوْمِ الدِّينِ ﴿٤﴾ إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ ﴿٥﴾ اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ﴿٦﴾ صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ ﴿٧﴾</div>
+                <div class="transliteration">Transliterasi: Bismillaahir-Rahmaanir-Rahiim. Alhamdu lillaahi Rabbil-'Aalamiin. Ar-Rahmaanir-Rahiim. Maaliki Yawmid-Diin. Iyyaaka na'budu wa iyyaaka nasta'iin. Ihdinas-Siraatal-Mustaqiim. Siraatal-ladziina an'amta 'alayhim, ghayril-maghduubi 'alayhim wa lad-daalliin. Aamiin.</div>
+                <p><strong>Artinya:</strong> "Dengan nama Allah Yang Maha Pengasih lagi Maha Penyayang. Segala puji bagi Allah, Tuhan semesta alam. Yang Maha Pengasih lagi Maha Penyayang. Pemilik hari pembalasan. Hanya kepada-Mu kami menyembah dan hanya kepada-Mu kami memohon pertolongan. Tunjukilah kami jalan yang lurus, (yaitu) jalan orang-orang yang telah Engkau beri nikmat, bukan (jalan) mereka yang dimurkai dan bukan (pula jalan) mereka yang sesat." (QS Al-Fatihah: 1–7)</p>
+            </div>
+
+            <div class="dua" id="id-shalawat">
+                <span class="step-badge">Langkah 3 · Takbir Kedua</span>
+                <div class="dua-title">Membaca Shalawat Ibrahimiyah</div>
+                <p>Ucapkan <em>Allahu Akbar</em>, lalu bacalah shalawat:</p>
+                <div class="audio-player">
+                    <div class="audio-label">🎧 Dengarkan Shalawat Ibrahimiyah:</div>
+                    <audio controls preload="metadata"><source src="Shalawat-Ibrahimiyah.mp3" type="audio/mpeg">Browser Anda tidak mendukung audio.</audio>
+                </div>
+                <div class="arabic">اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ. اللَّهُمَّ بَارِكْ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا بَارَكْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ</div>
+                <div class="transliteration">Transliterasi: Allahumma salli 'ala Muhammadin wa 'ala aali Muhammad, kama sallayta 'ala Ibraahiima wa 'ala aali Ibraahiim, innaka Hamiidum-Majiid. Allahumma baarik 'ala Muhammadin wa 'ala aali Muhammad, kama baarakta 'ala Ibraahiima wa 'ala aali Ibraahiim, innaka Hamiidum-Majiid.</div>
+                <p><strong>Artinya:</strong> "Ya Allah, limpahkanlah shalawat kepada Muhammad dan keluarga Muhammad, sebagaimana Engkau telah melimpahkan shalawat kepada Ibrahim dan keluarga Ibrahim. Sesungguhnya Engkau Maha Terpuji lagi Maha Mulia. Ya Allah, limpahkanlah keberkahan kepada Muhammad dan keluarga Muhammad, sebagaimana Engkau telah melimpahkan keberkahan kepada Ibrahim dan keluarga Ibrahim. Sesungguhnya Engkau Maha Terpuji lagi Maha Mulia." (HR Bukhari & Muslim)</p>
+            </div>
+
+            <div class="dua">
+                <span class="step-badge">Langkah 4 · Takbir Ketiga</span>
+                <div class="dua-title">Doa untuk Jenazah Laki-laki</div>
+                <p>Ucapkan <em>Allahu Akbar</em>, lalu berdoa untuk mayit:</p>
+                <div class="dua-subtitle">Versi Lengkap</div>
+                <div class="audio-player">
+                    <div class="audio-label">🎧 Dengarkan doa lengkap (Hisnul Muslim no. 156):</div>
+                    <audio controls preload="metadata"><source src="https://cdn.backend-myislam.org/hisnul-muslim/156.mp3" type="audio/mpeg">Browser Anda tidak mendukung audio.</audio>
+                </div>
+                <div class="arabic">اللَّهُمَّ اغْفِرْ لَهُ وَارْحَمْهُ، وَعَافِهِ وَاعْفُ عَنْهُ، وَأَكْرِمْ نُزُلَهُ، وَوَسِّعْ مُدْخَلَهُ، وَاغْسِلْهُ بِالْمَاءِ وَالثَّلْجِ وَالْبَرَدِ، وَنَقِّهِ مِنَ الْخَطَايَا كَمَا نَقَّيْتَ الثَّوْبَ الْأَبْيَضَ مِنَ الدَّنَسِ، وَأَبْدِلْهُ دَارًا خَيْرًا مِنْ دَارِهِ، وَأَهْلًا خَيْرًا مِنْ أَهْلِهِ، وَزَوْجًا خَيْرًا مِنْ زَوْجِهِ، وَأَدْخِلْهُ الْجَنَّةَ، وَأَعِذْهُ مِنْ عَذَابِ الْقَبْرِ [وَعَذَابِ النَّارِ]</div>
+                <div class="transliteration">Transliterasi: Allahummaghfir lahu warhamhu, wa 'aafihi wa'fu 'anhu, wa akrim nuzulahu, wa wassi' mudkhalahu, waghsilhu bil-maa'i wats-tsalji wal-barad, wa naqqihi minal-khathaayaa kamaa naqqaytats-tsawbal abyadha minad-danas, wa abdilhu daaran khayran min daarihi, wa ahlan khayran min ahlihi, wa zawjan khayran min zawjihi, wa adkhilhul-jannah, wa a'idzhu min 'adzaabil-qabri [wa 'adzaabin-naar].</div>
+                <p><strong>Artinya:</strong> "Ya Allah, ampunilah dia, rahmatilah dia, selamatkanlah dia, maafkanlah dia, muliakanlah tempat tinggalnya, lapangkanlah tempat masuknya, mandikanlah dia dengan air, salju, dan embun, bersihkanlah dia dari kesalahan-kesalahan sebagaimana Engkau membersihkan pakaian putih dari kotoran, gantikanlah untuknya rumah yang lebih baik dari rumahnya, keluarga yang lebih baik dari keluarganya, dan pasangan yang lebih baik dari pasangannya, masukkanlah dia ke surga, dan lindungilah dia dari azab kubur [dan azab neraka]." (HR Muslim no. 963; Hisnul Muslim no. 156)</p>
+                <div class="dua-subtitle">Versi Singkat (alternatif)</div>
+                <div class="arabic">اللَّهُمَّ اغْفِرْ لَهُ وَارْحَمْهُ وَعَافِهِ وَاعْفُ عَنْهُ</div>
+                <div class="transliteration">Transliterasi: Allahummaghfirlahu warhamhu wa 'aafihi wa'fu 'anhu.</div>
+                <p><strong>Artinya:</strong> "Ya Allah, ampunilah dia, rahmatilah dia, selamatkanlah dia, dan maafkanlah dia." (HR Muslim — bagian awal dari doa lengkap di atas; cukup bila waktu terbatas)</p>
+            </div>
+
+            <div class="dua">
+                <span class="step-badge">Langkah 5 · Takbir Keempat</span>
+                <div class="dua-title">Doa Penutup</div>
+                <p>Ucapkan <em>Allahu Akbar</em>, lalu bacalah:</p>
+                <div class="audio-player">
+                    <div class="audio-label">🎧 Dengarkan doa penutup (laki-laki):</div>
+                    <audio controls preload="metadata"><source src="Doa-Penutup-L.mp3" type="audio/mpeg">Browser Anda tidak mendukung audio.</audio>
+                </div>
+                <div class="arabic">اللَّهُمَّ لاَ تَحْرِمْنَا أَجْرَهُ وَلاَ تَفْتِنَّا بَعْدَهُ وَاغْفِرْ لَنَا وَلَهُ</div>
+                <div class="transliteration">Transliterasi: Allahumma laa tahrimnaa ajrahu wa laa taftinnaa ba'dahu waghfir lanaa wa lahu.</div>
+                <p><strong>Artinya:</strong> "Ya Allah, janganlah Engkau halangi kami dari pahalanya, janganlah Engkau timpakan fitnah kepada kami sepeninggalnya, dan ampunilah kami dan dia." (Diriwayatkan dari Abu Hurairah dalam HR Abu Dawud & Ibnu Majah; tambahan <em>"waghfir lanaa wa lahu"</em> umum diamalkan)</p>
+            </div>
+            <p style="text-align:center;"><em>Lanjutkan dengan <a href="#id-salam" style="color: var(--link-color);">Salam</a>.</em></p>
+        </div>
+
+        <!-- ===== PEREMPUAN ===== -->
+        <div class="section" id="id-female">
+            <h2 class="section-title">2. Jenazah Perempuan</h2>
+
+            <div class="dua">
+                <span class="step-badge">Langkah 1</span>
+                <div class="dua-title">Niat (di dalam hati)</div>
+                <div class="niat-label">Sebagai Makmum:</div>
+                <div class="audio-player">
+                    <div class="audio-label">🎧 Dengarkan niat makmum (jenazah perempuan):</div>
+                    <audio controls preload="metadata"><source src="Niat-Jenazah-P-Makmum.mp3" type="audio/mpeg">Browser Anda tidak mendukung audio.</audio>
+                </div>
+                <div class="arabic">أُصَلِّي عَلَى هَذِهِ الْمَيِّتَةِ أَرْبَعَ تَكْبِيرَاتٍ فَرْضَ كِفَايَةٍ مَأْمُومًا لِلَّهِ تَعَالَى</div>
+                <div class="transliteration">Transliterasi: Ushalli 'ala hadzihil-mayyitati arba'a takbiiratin fardha kifaayatin makmuman lillaahi ta'ala.</div>
+                <p><strong>Artinya:</strong> "Aku niat shalat atas jenazah (perempuan) ini empat takbir, fardhu kifayah, sebagai makmum, karena Allah Ta'ala."</p>
+                <div class="niat-label">Sebagai Imam:</div>
+                <div class="audio-player">
+                    <div class="audio-label">🎧 Dengarkan niat imam (jenazah perempuan):</div>
+                    <audio controls preload="metadata"><source src="Niat-Jenazah-P-Imam.mp3" type="audio/mpeg">Browser Anda tidak mendukung audio.</audio>
+                </div>
+                <div class="arabic">أُصَلِّي عَلَى هَذِهِ الْمَيِّتَةِ أَرْبَعَ تَكْبِيرَاتٍ فَرْضَ كِفَايَةٍ إِمَامًا لِلَّهِ تَعَالَى</div>
+                <div class="transliteration">Transliterasi: Ushalli 'ala hadzihil-mayyitati arba'a takbiiratin fardha kifaayatin imaaman lillaahi ta'ala.</div>
+                <p><strong>Artinya:</strong> "Aku niat shalat atas jenazah (perempuan) ini empat takbir, fardhu kifayah, sebagai imam, karena Allah Ta'ala."</p>
+            </div>
+
+            <div class="dua">
+                <span class="step-badge">Langkah 2 · Takbir Pertama</span>
+                <div class="dua-title">Membaca Surah Al-Fatihah</div>
+                <p class="same-note">Sama seperti jenazah laki-laki — <a href="#id-fatihah">lihat bacaan Al-Fatihah</a>.</p>
+            </div>
+
+            <div class="dua">
+                <span class="step-badge">Langkah 3 · Takbir Kedua</span>
+                <div class="dua-title">Membaca Shalawat Ibrahimiyah</div>
+                <p class="same-note">Sama seperti jenazah laki-laki — <a href="#id-shalawat">lihat bacaan Shalawat</a>.</p>
+            </div>
+
+            <div class="dua">
+                <span class="step-badge">Langkah 4 · Takbir Ketiga</span>
+                <div class="dua-title">Doa untuk Jenazah Perempuan</div>
+                <p>Ucapkan <em>Allahu Akbar</em>, lalu berdoa untuk mayit:</p>
+                <div class="dua-subtitle">Versi Lengkap</div>
+                <p class="same-note">Catatan: rekaman audio menggunakan lafaz untuk laki-laki (<em>lahu</em>); untuk jenazah perempuan bacalah dengan <em>lahaa</em> seperti teks di bawah.</p>
+                <div class="audio-player">
+                    <div class="audio-label">🎧 Dengarkan doa lengkap (Hisnul Muslim no. 156):</div>
+                    <audio controls preload="metadata"><source src="https://cdn.backend-myislam.org/hisnul-muslim/156.mp3" type="audio/mpeg">Browser Anda tidak mendukung audio.</audio>
+                </div>
+                <div class="arabic">اللَّهُمَّ اغْفِرْ لَهَا وَارْحَمْهَا، وَعَافِهَا وَاعْفُ عَنْهَا، وَأَكْرِمْ نُزُلَهَا، وَوَسِّعْ مُدْخَلَهَا، وَاغْسِلْهَا بِالْمَاءِ وَالثَّلْجِ وَالْبَرَدِ، وَنَقِّهَا مِنَ الْخَطَايَا كَمَا نَقَّيْتَ الثَّوْبَ الْأَبْيَضَ مِنَ الدَّنَسِ، وَأَبْدِلْهَا دَارًا خَيْرًا مِنْ دَارِهَا، وَأَهْلًا خَيْرًا مِنْ أَهْلِهَا، وَزَوْجًا خَيْرًا مِنْ زَوْجِهَا، وَأَدْخِلْهَا الْجَنَّةَ، وَأَعِذْهَا مِنْ عَذَابِ الْقَبْرِ [وَعَذَابِ النَّارِ]</div>
+                <div class="transliteration">Transliterasi: Allahummaghfir lahaa warhamhaa, wa 'aafihaa wa'fu 'anhaa, wa akrim nuzulahaa, wa wassi' mudkhalahaa, waghsilhaa bil-maa'i wats-tsalji wal-barad, wa naqqihaa minal-khathaayaa kamaa naqqaytats-tsawbal abyadha minad-danas, wa abdilhaa daaran khayran min daarihaa, wa ahlan khayran min ahlihaa, wa zawjan khayran min zawjihaa, wa adkhilhal-jannah, wa a'idzhaa min 'adzaabil-qabri [wa 'adzaabin-naar].</div>
+                <p><strong>Artinya:</strong> "Ya Allah, ampunilah dia, rahmatilah dia, selamatkanlah dia, maafkanlah dia, muliakanlah tempat tinggalnya, lapangkanlah tempat masuknya, mandikanlah dia dengan air, salju, dan embun, bersihkanlah dia dari kesalahan-kesalahan sebagaimana Engkau membersihkan pakaian putih dari kotoran, gantikanlah untuknya rumah yang lebih baik dari rumahnya, keluarga yang lebih baik dari keluarganya, dan pasangan yang lebih baik dari pasangannya, masukkanlah dia ke surga, dan lindungilah dia dari azab kubur [dan azab neraka]." (HR Muslim no. 963; Hisnul Muslim no. 156)</p>
+                <div class="dua-subtitle">Versi Singkat (alternatif)</div>
+                <div class="arabic">اللَّهُمَّ اغْفِرْ لَهَا وَارْحَمْهَا وَعَافِهَا وَاعْفُ عَنْهَا</div>
+                <div class="transliteration">Transliterasi: Allahummaghfirlahaa warhamhaa wa 'aafihaa wa'fu 'anhaa.</div>
+                <p><strong>Artinya:</strong> "Ya Allah, ampunilah dia, rahmatilah dia, selamatkanlah dia, dan maafkanlah dia." (HR Muslim — bagian awal dari doa lengkap di atas, dengan dhamir perempuan)</p>
+            </div>
+
+            <div class="dua">
+                <span class="step-badge">Langkah 5 · Takbir Keempat</span>
+                <div class="dua-title">Doa Penutup</div>
+                <p>Ucapkan <em>Allahu Akbar</em>, lalu bacalah:</p>
+                <div class="audio-player">
+                    <div class="audio-label">🎧 Dengarkan doa penutup (perempuan):</div>
+                    <audio controls preload="metadata"><source src="Doa-Penutup-P.mp3" type="audio/mpeg">Browser Anda tidak mendukung audio.</audio>
+                </div>
+                <div class="arabic">اللَّهُمَّ لاَ تَحْرِمْنَا أَجْرَهَا وَلاَ تَفْتِنَّا بَعْدَهَا وَاغْفِرْ لَنَا وَلَهَا</div>
+                <div class="transliteration">Transliterasi: Allahumma laa tahrimnaa ajrahaa wa laa taftinnaa ba'dahaa waghfir lanaa wa lahaa.</div>
+                <p><strong>Artinya:</strong> "Ya Allah, janganlah Engkau halangi kami dari pahalanya, janganlah Engkau timpakan fitnah kepada kami sepeninggalnya, dan ampunilah kami dan dia."</p>
+            </div>
+        </div>
+
+        <!-- ===== SALAM ===== -->
+        <div class="section" id="id-salam">
+            <h2 class="section-title">3. Penutup (Salam)</h2>
+            <div class="dua">
+                <span class="step-badge">Langkah 6</span>
+                <div class="dua-title">Salam</div>
+                <p>Palingkan wajah ke kanan, lalu ke kiri, sambil mengucapkan:</p>
+                <div class="audio-player">
+                    <div class="audio-label">🎧 Dengarkan salam:</div>
+                    <audio controls preload="metadata"><source src="Salam.mp3" type="audio/mpeg">Browser Anda tidak mendukung audio.</audio>
+                </div>
+                <div class="arabic">السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</div>
+                <div class="transliteration">Transliterasi: As-salaamu 'alaykum wa rahmatullaahi wa barakaatuh.</div>
+                <p><strong>Artinya:</strong> "Semoga keselamatan, rahmat Allah, dan keberkahan-Nya tercurah kepada kalian."</p>
+            </div>
+        </div>
+
+        <!-- ===== CONTOH VIDEO ===== -->
+        <div class="section video-section" id="id-video">
+            <h2 class="section-title">4. Contoh Video</h2>
+            <div class="dua">
+                <div class="dua-title">🎥 Peragaan Shalat Jenazah</div>
+                <p>Video di YouTube berikut memperagakan tata cara shalat jenazah dari awal hingga salam (dalam bahasa Inggris).</p>
+                <p class="video-caption" style="font-size:1.1rem;"><em>"How to Pray the Janazah Prayer in Islam"</em> — Ibn Abid · <a href="https://www.youtube.com/watch?v=Q-U513RY2vI" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> Buka di YouTube</a></p>
+                <div class="video-btns">
+                    <button type="button" class="video-btn js-mini-open"><i class="fas fa-play"></i> Putar di mini-player</button>
+                    <button type="button" class="video-btn alt js-popup-open"><i class="far fa-window-restore"></i> Buka di jendela kecil</button>
+                </div>
+                <p class="same-note">Catatan: rincian kecil (misalnya posisi tangan atau jumlah salam) bisa berbeda antar mazhab. Jika ragu, ikuti cara yang diajarkan imam setempat.</p>
+            </div>
+        </div>
+
+        <div class="back-to-top"><a href="#top" style="color: var(--link-color); text-decoration: none;">Kembali ke Atas ↑</a></div>
+        <div class="main-menu">
+            <a href="index.html" class="top-home-link"><i class="fas fa-home"></i> &larr; Menu Utama</a>
+        </div>
+    </div>
+
+    <!-- ===================== ENGLISH VERSION ===================== -->
+    <div id="english-content" class="hidden">
+        <div class="menu-links">
+            <a href="index.html" class="top-home-link"><i class="fas fa-home"></i> &larr; Main Menu</a>
+            <a href="#" class="top-home-link ux-pdf-btn" role="button"><i class="fas fa-file-pdf"></i> Save as PDF</a>
+        </div>
+        <h1 class="name-title">🕌 Funeral Prayer (Salat al-Janazah) – Complete Guide</h1>
+        <div class="name-source"><strong>Sources:</strong> Qur'an and Sunnah. The funeral prayer is a communal obligation (fard kifayah): when some Muslims perform it, the obligation is lifted from the rest.</div>
+
+        <div class="meaning-box">
+            <strong>✨ About the Funeral Prayer:</strong> Salat al-Janazah is performed entirely while <strong>standing</strong> and consists of <strong>4 takbirs</strong>. There is no bowing (ruku'), prostration (sujud), or sitting for tashahhud.<br><br>
+            <strong>🔹 Virtue:</strong> The Prophet ﷺ said: <em>"Whoever attends a funeral until the prayer is offered will have one qirat, and whoever attends until the burial will have two qirats."</em> It was asked, "What are two qirats?" He said, <em>"Like two huge mountains."</em> (Bukhari & Muslim)<br><br>
+            <strong>📖 Note:</strong> The intention is in the heart. The verbal wording below follows the common practice of the Shafi'i school, as an aid to making the intention present.
+        </div>
+
+        <div class="jump-nav">
+            <a href="#en-male">👤 Deceased Male</a>
+            <a href="#en-female">👤 Deceased Female</a>
+            <a href="#en-salam">🤲 Taslim</a>
+            <a href="#en-video">🎥 Video</a>
+        </div>
+
+        <!-- ===== MALE ===== -->
+        <div class="section" id="en-male">
+            <h2 class="section-title">1. Deceased Male</h2>
+
+            <div class="dua">
+                <span class="step-badge">Step 1</span>
+                <div class="dua-title">Intention (Niyyah) – in the heart</div>
+                <div class="niat-label">As Follower (Ma'mum):</div>
+                <div class="audio-player">
+                    <div class="audio-label">🎧 Listen to the intention as follower (male):</div>
+                    <audio controls preload="metadata"><source src="Niat-Jenazah-L-Makmum.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
+                </div>
+                <div class="arabic">أُصَلِّي عَلَى هَذَا الْمَيِّتِ أَرْبَعَ تَكْبِيرَاتٍ فَرْضَ كِفَايَةٍ مَأْمُومًا لِلَّهِ تَعَالَى</div>
+                <div class="transliteration">Transliteration: Uṣallī ‘alā hādhal-mayyiti arba‘a takbīrātin farḍa kifāyatin ma’mūman lillāhi ta‘ālā.</div>
+                <p><strong>Meaning:</strong> "I intend to pray over this deceased (male) with four takbirs, as a communal obligation, as a follower, for the sake of Allah the Exalted."</p>
+                <div class="niat-label">As Leader (Imam):</div>
+                <div class="audio-player">
+                    <div class="audio-label">🎧 Listen to the intention as imam (male):</div>
+                    <audio controls preload="metadata"><source src="Niat-Jenazah-L-Imam.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
+                </div>
+                <div class="arabic">أُصَلِّي عَلَى هَذَا الْمَيِّتِ أَرْبَعَ تَكْبِيرَاتٍ فَرْضَ كِفَايَةٍ إِمَامًا لِلَّهِ تَعَالَى</div>
+                <div class="transliteration">Transliteration: Uṣallī ‘alā hādhal-mayyiti arba‘a takbīrātin farḍa kifāyatin imāman lillāhi ta‘ālā.</div>
+                <p><strong>Meaning:</strong> "I intend to pray over this deceased (male) with four takbirs, as a communal obligation, as imam, for the sake of Allah the Exalted."</p>
+            </div>
+
+            <div class="dua" id="en-fatihah">
+                <span class="step-badge">Step 2 · First Takbir</span>
+                <div class="dua-title">Recite Surah Al-Fatihah</div>
+                <p>Say <em>Allahu Akbar</em>, place your hands on your chest, and recite Al-Fatihah:</p>
+                <div class="audio-player">
+                    <div class="audio-label">🎧 Listen to Surah Al-Fatihah (Sheikh Mishary Rashid Alafasy):</div>
+                    <audio controls preload="metadata"><source src="https://cdn.mp3quran.net/audio/mishary-alafasy/r1/001.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
+                </div>
+                <div class="arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ﴿١﴾ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ﴿٢﴾ الرَّحْمَٰنِ الرَّحِيمِ ﴿٣﴾ مَالِكِ يَوْمِ الدِّينِ ﴿٤﴾ إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ ﴿٥﴾ اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ﴿٦﴾ صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ ﴿٧﴾</div>
+                <div class="transliteration">Transliteration: Bismillāhir-Raḥmānir-Raḥīm. Al-ḥamdu lillāhi Rabbil-‘ālamīn. Ar-Raḥmānir-Raḥīm. Māliki yawmid-dīn. Iyyāka na‘budu wa iyyāka nasta‘īn. Ihdinaṣ-ṣirāṭal-mustaqīm. Ṣirāṭal-ladhīna an‘amta ‘alayhim, ghayril-maghḍūbi ‘alayhim wa laḍ-ḍāllīn. Āmīn.</div>
+                <p><strong>Meaning:</strong> "In the name of Allah, the Most Gracious, the Most Merciful. All praise is for Allah, Lord of all worlds. The Most Gracious, the Most Merciful. Master of the Day of Judgment. You alone we worship and You alone we ask for help. Guide us to the straight path, the path of those You have blessed, not of those who earned Your anger, nor of those who went astray." (Qur'an 1:1–7)</p>
+            </div>
+
+            <div class="dua" id="en-shalawat">
+                <span class="step-badge">Step 3 · Second Takbir</span>
+                <div class="dua-title">Recite Salawat Ibrahimiyyah</div>
+                <p>Say <em>Allahu Akbar</em>, then send blessings upon the Prophet ﷺ:</p>
+                <div class="audio-player">
+                    <div class="audio-label">🎧 Listen to the Salawat Ibrahimiyyah:</div>
+                    <audio controls preload="metadata"><source src="Shalawat-Ibrahimiyah.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
+                </div>
+                <div class="arabic">اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ. اللَّهُمَّ بَارِكْ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا بَارَكْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ</div>
+                <div class="transliteration">Transliteration: Allāhumma ṣalli ‘alā Muḥammadin wa ‘alā āli Muḥammad, kamā ṣallayta ‘alā Ibrāhīma wa ‘alā āli Ibrāhīm, innaka Ḥamīdun Majīd. Allāhumma bārik ‘alā Muḥammadin wa ‘alā āli Muḥammad, kamā bārakta ‘alā Ibrāhīma wa ‘alā āli Ibrāhīm, innaka Ḥamīdun Majīd.</div>
+                <p><strong>Meaning:</strong> "O Allah, send prayers upon Muhammad and the family of Muhammad, as You sent prayers upon Ibrahim and the family of Ibrahim; indeed You are Praiseworthy, Glorious. O Allah, bless Muhammad and the family of Muhammad, as You blessed Ibrahim and the family of Ibrahim; indeed You are Praiseworthy, Glorious." (Bukhari & Muslim)</p>
+            </div>
+
+            <div class="dua">
+                <span class="step-badge">Step 4 · Third Takbir</span>
+                <div class="dua-title">Du'a for the Deceased Male</div>
+                <p>Say <em>Allahu Akbar</em>, then supplicate for the deceased:</p>
+                <div class="dua-subtitle">Full Version</div>
+                <div class="audio-player">
+                    <div class="audio-label">🎧 Listen to the full du'a (Hisn al-Muslim no. 156):</div>
+                    <audio controls preload="metadata"><source src="https://cdn.backend-myislam.org/hisnul-muslim/156.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
+                </div>
+                <div class="arabic">اللَّهُمَّ اغْفِرْ لَهُ وَارْحَمْهُ، وَعَافِهِ وَاعْفُ عَنْهُ، وَأَكْرِمْ نُزُلَهُ، وَوَسِّعْ مُدْخَلَهُ، وَاغْسِلْهُ بِالْمَاءِ وَالثَّلْجِ وَالْبَرَدِ، وَنَقِّهِ مِنَ الْخَطَايَا كَمَا نَقَّيْتَ الثَّوْبَ الْأَبْيَضَ مِنَ الدَّنَسِ، وَأَبْدِلْهُ دَارًا خَيْرًا مِنْ دَارِهِ، وَأَهْلًا خَيْرًا مِنْ أَهْلِهِ، وَزَوْجًا خَيْرًا مِنْ زَوْجِهِ، وَأَدْخِلْهُ الْجَنَّةَ، وَأَعِذْهُ مِنْ عَذَابِ الْقَبْرِ [وَعَذَابِ النَّارِ]</div>
+                <div class="transliteration">Transliteration: Allāhumma-ghfir lahū war-ḥamhu, wa ‘āfihī wa‘fu ‘anhu, wa akrim nuzulahū, wa wassi‘ mudkhalahū, wa-ghsilhu bil-mā’i wath-thalji wal-barad, wa naqqihī minal-khaṭāyā kamā naqqaytath-thawbal-abyaḍa minad-danas, wa abdilhu dāran khayran min dārihī, wa ahlan khayran min ahlihī, wa zawjan khayran min zawjihī, wa adkhilhul-jannah, wa a‘idhhu min ‘adhābil-qabri [wa ‘adhābin-nār].</div>
+                <p><strong>Meaning:</strong> "O Allah, forgive him and have mercy on him, keep him safe and pardon him, honour his reception and widen his entrance, wash him with water, snow and hail, cleanse him of sins as a white garment is cleansed of dirt, give him a home better than his home, a family better than his family and a spouse better than his spouse, admit him into Paradise and protect him from the punishment of the grave [and the punishment of the Fire]." (Muslim 963; Hisn al-Muslim 156)</p>
+                <div class="dua-subtitle">Short Version (alternative)</div>
+                <div class="arabic">اللَّهُمَّ اغْفِرْ لَهُ وَارْحَمْهُ وَعَافِهِ وَاعْفُ عَنْهُ</div>
+                <div class="transliteration">Transliteration: Allāhumma-ghfir lahū war-ḥamhu wa ‘āfihī wa‘fu ‘anhu.</div>
+                <p><strong>Meaning:</strong> "O Allah, forgive him, have mercy on him, keep him safe, and pardon him." (Muslim — the opening of the full du'a above; sufficient when time is short)</p>
+            </div>
+
+            <div class="dua">
+                <span class="step-badge">Step 5 · Fourth Takbir</span>
+                <div class="dua-title">Concluding Du'a</div>
+                <p>Say <em>Allahu Akbar</em>, then recite:</p>
+                <div class="audio-player">
+                    <div class="audio-label">🎧 Listen to the concluding du'a (male):</div>
+                    <audio controls preload="metadata"><source src="Doa-Penutup-L.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
+                </div>
+                <div class="arabic">اللَّهُمَّ لاَ تَحْرِمْنَا أَجْرَهُ وَلاَ تَفْتِنَّا بَعْدَهُ وَاغْفِرْ لَنَا وَلَهُ</div>
+                <div class="transliteration">Transliteration: Allāhumma lā taḥrimnā ajrahū wa lā taftinnā ba‘dahū wa-ghfir lanā wa lahū.</div>
+                <p><strong>Meaning:</strong> "O Allah, do not deprive us of his reward, do not put us to trial after him, and forgive us and him." (Narrated from Abu Hurairah in Abu Dawud & Ibn Majah; the addition <em>"wa-ghfir lanā wa lahū"</em> is widely practised)</p>
+            </div>
+            <p style="text-align:center;"><em>Continue to the <a href="#en-salam" style="color: var(--link-color);">Taslim</a>.</em></p>
+        </div>
+
+        <!-- ===== FEMALE ===== -->
+        <div class="section" id="en-female">
+            <h2 class="section-title">2. Deceased Female</h2>
+
+            <div class="dua">
+                <span class="step-badge">Step 1</span>
+                <div class="dua-title">Intention (Niyyah) – in the heart</div>
+                <div class="niat-label">As Follower (Ma'mum):</div>
+                <div class="audio-player">
+                    <div class="audio-label">🎧 Listen to the intention as follower (female):</div>
+                    <audio controls preload="metadata"><source src="Niat-Jenazah-P-Makmum.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
+                </div>
+                <div class="arabic">أُصَلِّي عَلَى هَذِهِ الْمَيِّتَةِ أَرْبَعَ تَكْبِيرَاتٍ فَرْضَ كِفَايَةٍ مَأْمُومًا لِلَّهِ تَعَالَى</div>
+                <div class="transliteration">Transliteration: Uṣallī ‘alā hādhihil-mayyitati arba‘a takbīrātin farḍa kifāyatin ma’mūman lillāhi ta‘ālā.</div>
+                <p><strong>Meaning:</strong> "I intend to pray over this deceased (female) with four takbirs, as a communal obligation, as a follower, for the sake of Allah the Exalted."</p>
+                <div class="niat-label">As Leader (Imam):</div>
+                <div class="audio-player">
+                    <div class="audio-label">🎧 Listen to the intention as imam (female):</div>
+                    <audio controls preload="metadata"><source src="Niat-Jenazah-P-Imam.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
+                </div>
+                <div class="arabic">أُصَلِّي عَلَى هَذِهِ الْمَيِّتَةِ أَرْبَعَ تَكْبِيرَاتٍ فَرْضَ كِفَايَةٍ إِمَامًا لِلَّهِ تَعَالَى</div>
+                <div class="transliteration">Transliteration: Uṣallī ‘alā hādhihil-mayyitati arba‘a takbīrātin farḍa kifāyatin imāman lillāhi ta‘ālā.</div>
+                <p><strong>Meaning:</strong> "I intend to pray over this deceased (female) with four takbirs, as a communal obligation, as imam, for the sake of Allah the Exalted."</p>
+            </div>
+
+            <div class="dua">
+                <span class="step-badge">Step 2 · First Takbir</span>
+                <div class="dua-title">Recite Surah Al-Fatihah</div>
+                <p class="same-note">Same as for a deceased male — <a href="#en-fatihah">see Al-Fatihah</a>.</p>
+            </div>
+
+            <div class="dua">
+                <span class="step-badge">Step 3 · Second Takbir</span>
+                <div class="dua-title">Recite Salawat Ibrahimiyyah</div>
+                <p class="same-note">Same as for a deceased male — <a href="#en-shalawat">see Salawat</a>.</p>
+            </div>
+
+            <div class="dua">
+                <span class="step-badge">Step 4 · Third Takbir</span>
+                <div class="dua-title">Du'a for the Deceased Female</div>
+                <p>Say <em>Allahu Akbar</em>, then supplicate for the deceased:</p>
+                <div class="dua-subtitle">Full Version</div>
+                <p class="same-note">Note: the recording uses the masculine wording (<em>lahū</em>); for a deceased woman recite with <em>lahā</em> as written below.</p>
+                <div class="audio-player">
+                    <div class="audio-label">🎧 Listen to the full du'a (Hisn al-Muslim no. 156):</div>
+                    <audio controls preload="metadata"><source src="https://cdn.backend-myislam.org/hisnul-muslim/156.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
+                </div>
+                <div class="arabic">اللَّهُمَّ اغْفِرْ لَهَا وَارْحَمْهَا، وَعَافِهَا وَاعْفُ عَنْهَا، وَأَكْرِمْ نُزُلَهَا، وَوَسِّعْ مُدْخَلَهَا، وَاغْسِلْهَا بِالْمَاءِ وَالثَّلْجِ وَالْبَرَدِ، وَنَقِّهَا مِنَ الْخَطَايَا كَمَا نَقَّيْتَ الثَّوْبَ الْأَبْيَضَ مِنَ الدَّنَسِ، وَأَبْدِلْهَا دَارًا خَيْرًا مِنْ دَارِهَا، وَأَهْلًا خَيْرًا مِنْ أَهْلِهَا، وَزَوْجًا خَيْرًا مِنْ زَوْجِهَا، وَأَدْخِلْهَا الْجَنَّةَ، وَأَعِذْهَا مِنْ عَذَابِ الْقَبْرِ [وَعَذَابِ النَّارِ]</div>
+                <div class="transliteration">Transliteration: Allāhumma-ghfir lahā war-ḥamhā, wa ‘āfihā wa‘fu ‘anhā, wa akrim nuzulahā, wa wassi‘ mudkhalahā, wa-ghsilhā bil-mā’i wath-thalji wal-barad, wa naqqihā minal-khaṭāyā kamā naqqaytath-thawbal-abyaḍa minad-danas, wa abdilhā dāran khayran min dārihā, wa ahlan khayran min ahlihā, wa zawjan khayran min zawjihā, wa adkhilhal-jannah, wa a‘idhhā min ‘adhābil-qabri [wa ‘adhābin-nār].</div>
+                <p><strong>Meaning:</strong> "O Allah, forgive her and have mercy on her, keep her safe and pardon her, honour her reception and widen her entrance, wash her with water, snow and hail, cleanse her of sins as a white garment is cleansed of dirt, give her a home better than her home, a family better than her family and a spouse better than her spouse, admit her into Paradise and protect her from the punishment of the grave [and the punishment of the Fire]." (Muslim 963; Hisn al-Muslim 156)</p>
+                <div class="dua-subtitle">Short Version (alternative)</div>
+                <div class="arabic">اللَّهُمَّ اغْفِرْ لَهَا وَارْحَمْهَا وَعَافِهَا وَاعْفُ عَنْهَا</div>
+                <div class="transliteration">Transliteration: Allāhumma-ghfir lahā war-ḥamhā wa ‘āfihā wa‘fu ‘anhā.</div>
+                <p><strong>Meaning:</strong> "O Allah, forgive her, have mercy on her, keep her safe, and pardon her." (Muslim — the opening of the full du'a above, with feminine pronouns)</p>
+            </div>
+
+            <div class="dua">
+                <span class="step-badge">Step 5 · Fourth Takbir</span>
+                <div class="dua-title">Concluding Du'a</div>
+                <p>Say <em>Allahu Akbar</em>, then recite:</p>
+                <div class="audio-player">
+                    <div class="audio-label">🎧 Listen to the concluding du'a (female):</div>
+                    <audio controls preload="metadata"><source src="Doa-Penutup-P.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
+                </div>
+                <div class="arabic">اللَّهُمَّ لاَ تَحْرِمْنَا أَجْرَهَا وَلاَ تَفْتِنَّا بَعْدَهَا وَاغْفِرْ لَنَا وَلَهَا</div>
+                <div class="transliteration">Transliteration: Allāhumma lā taḥrimnā ajrahā wa lā taftinnā ba‘dahā wa-ghfir lanā wa lahā.</div>
+                <p><strong>Meaning:</strong> "O Allah, do not deprive us of her reward, do not put us to trial after her, and forgive us and her."</p>
+            </div>
+        </div>
+
+        <!-- ===== TASLIM ===== -->
+        <div class="section" id="en-salam">
+            <h2 class="section-title">3. Closing (Taslim)</h2>
+            <div class="dua">
+                <span class="step-badge">Step 6</span>
+                <div class="dua-title">Taslim</div>
+                <p>Turn your head to the right, then to the left, saying:</p>
+                <div class="audio-player">
+                    <div class="audio-label">🎧 Listen to the taslim:</div>
+                    <audio controls preload="metadata"><source src="Salam.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>
+                </div>
+                <div class="arabic">السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ</div>
+                <div class="transliteration">Transliteration: As-salāmu ‘alaykum wa raḥmatullāhi wa barakātuh.</div>
+                <p><strong>Meaning:</strong> "Peace be upon you, and the mercy of Allah and His blessings."</p>
+            </div>
+        </div>
+
+        <!-- ===== VIDEO EXAMPLE ===== -->
+        <div class="section video-section" id="en-video">
+            <h2 class="section-title">4. Video Example</h2>
+            <div class="dua">
+                <div class="dua-title">🎥 Janazah Prayer Demonstration</div>
+                <p>The YouTube video below demonstrates the funeral prayer from the opening takbir to the taslim.</p>
+                <p class="video-caption" style="font-size:1.1rem;"><em>"How to Pray the Janazah Prayer in Islam"</em> — Ibn Abid · <a href="https://www.youtube.com/watch?v=Q-U513RY2vI" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> Open on YouTube</a></p>
+                <div class="video-btns">
+                    <button type="button" class="video-btn js-mini-open"><i class="fas fa-play"></i> Play in mini-player</button>
+                    <button type="button" class="video-btn alt js-popup-open"><i class="far fa-window-restore"></i> Open in small window</button>
+                </div>
+                <p class="same-note">Note: small details (such as hand position or the number of taslims) can differ between schools of fiqh. If unsure, follow what your local imam teaches.</p>
+            </div>
+        </div>
+
+        <div class="back-to-top"><a href="#top" style="color: var(--link-color); text-decoration: none;">Back to Top ↑</a></div>
+        <div class="main-menu">
+            <a href="index.html" class="top-home-link"><i class="fas fa-home"></i> &larr; Main Menu</a>
+        </div>
+    </div>
+
+    <footer><p>&copy; (2026 AD) 1448 AH - Panduan Shalat Jenazah. Semoga Allah merahmati saudara-saudara kita yang telah mendahului. | May Allah have mercy on those who have gone before us.</p></footer>
+</div>
+
+<script>
+    (function() {
+        const englishDiv = document.getElementById('english-content');
+        const indonesianDiv = document.getElementById('indonesian-content');
+        const langToggle = document.getElementById('languageToggle');
+        const translitToggle = document.getElementById('transliterationToggle');
+        const darkToggle = document.getElementById('darkModeToggle');
+        const translitElements = document.querySelectorAll('.transliteration');
+        let currentLang = localStorage.getItem('language') || 'indonesian';
+
+        function updateUITexts() {
+            const isEnglish = (currentLang === 'english');
+            const translitVisible = translitElements[0]?.style.display !== 'none';
+            const isDark = document.body.classList.contains('dark-mode');
+            if (isEnglish) {
+                translitToggle.innerHTML = translitVisible ? '<i class="fas fa-language"></i> Hide Transliteration' : '<i class="fas fa-language"></i> Show Transliteration';
+                darkToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i> Light Mode' : '<i class="fas fa-moon"></i> Dark Mode';
+            } else {
+                translitToggle.innerHTML = translitVisible ? '<i class="fas fa-language"></i> Sembunyikan Transliterasi' : '<i class="fas fa-language"></i> Tampilkan Transliterasi';
+                darkToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i> Mode Terang' : '<i class="fas fa-moon"></i> Mode Gelap';
+            }
+        }
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            if (lang === 'english') {
+                englishDiv.classList.remove('hidden');
+                indonesianDiv.classList.add('hidden');
+                langToggle.innerHTML = '<i class="fas fa-globe"></i> 🇮🇩 Bahasa Indonesia';
+            } else {
+                englishDiv.classList.add('hidden');
+                indonesianDiv.classList.remove('hidden');
+                langToggle.innerHTML = '<i class="fas fa-globe"></i> 🇬🇧 English';
+            }
+            localStorage.setItem('language', lang);
+            updateUITexts();
+        }
+        setLanguage(currentLang);
+        langToggle.addEventListener('click', () => {
+            const newLang = englishDiv.classList.contains('hidden') ? 'english' : 'indonesian';
+            setLanguage(newLang);
+        });
+
+        let translitVisible = localStorage.getItem('transliteration') !== 'false';
+        function setTransliteration(show) {
+            translitElements.forEach(el => el.style.display = show ? 'block' : 'none');
+            localStorage.setItem('transliteration', show);
+            updateUITexts();
+        }
+        setTransliteration(translitVisible);
+        translitToggle.addEventListener('click', () => {
+            setTransliteration(translitElements[0]?.style.display === 'none');
+        });
+
+        let darkActive = localStorage.getItem('darkMode') === 'true';
+        if (darkActive) document.body.classList.add('dark-mode');
+        function setDarkMode() {
+            const active = document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', active);
+            updateUITexts();
+        }
+        darkToggle.addEventListener('click', setDarkMode);
+        updateUITexts();
+
+        document.getElementById('scrollUp')?.addEventListener('click', () => window.scrollBy({ top: -window.innerHeight, behavior: 'smooth' }));
+        document.getElementById('scrollDown')?.addEventListener('click', () => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' }));
+        document.getElementById('doubleUpScroll')?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        document.getElementById('doubleDownScroll')?.addEventListener('click', () => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }));
+    })();
+</script>
+
+<script id="ux-enhance-v1-js">
+(function () {
+  var PLAY = '<svg class="ux-ic-play" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>';
+  var PAUSE = '<svg class="ux-ic-pause" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z" fill="currentColor"/></svg>';
+  var ARROWS = {"su": "<svg class=\"ux-arrow-ic\" viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" aria-hidden=\"true\"><path d=\"M6 15l6-6 6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>", "sd": "<svg class=\"ux-arrow-ic\" viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" aria-hidden=\"true\"><path d=\"M6 9l6 6 6-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>", "du": "<svg class=\"ux-arrow-ic\" viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" aria-hidden=\"true\"><path d=\"M6 12l6-6 6 6M6 18l6-6 6 6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>", "dd": "<svg class=\"ux-arrow-ic\" viewBox=\"0 0 24 24\" width=\"22\" height=\"22\" aria-hidden=\"true\"><path d=\"M6 6l6 6 6-6M6 12l6 6 6-6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>"};
+  function isEn() {
+    var id = document.getElementById('indonesian-content');
+    return id ? id.classList.contains('hidden') || getComputedStyle(id).display === 'none' : true;
+  }
+  function allAudio() { return document.querySelectorAll('audio'); }
+  function labels() {
+    document.querySelectorAll('.ux-pdf-dyn .ux-pdf-label').forEach(function (l) { l.textContent = isEn() ? 'Save as PDF' : 'Simpan sebagai PDF'; });
+    document.querySelectorAll('.ux-play-btn').forEach(function (b) {
+      var p = b.classList.contains('playing');
+      var t = p ? (isEn() ? 'Pause recitation' : 'Jeda bacaan') : (isEn() ? 'Play recitation' : 'Putar bacaan');
+      b.setAttribute('aria-label', t); b.title = t;
+    });
+  }
+  function enhanceAudio() {
+    allAudio().forEach(function (audio) {
+      if (audio.dataset.uxEnhanced) return;
+      audio.dataset.uxEnhanced = '1';
+      audio.removeAttribute('controls');
+      audio.classList.add('ux-hidden-audio');
+      if (!audio.getAttribute('preload')) audio.setAttribute('preload', 'none');
+      var wrap = document.createElement('div');
+      wrap.className = 'ux-play-wrap';
+      var btn = document.createElement('button');
+      btn.type = 'button'; btn.className = 'ux-play-btn'; btn.innerHTML = PLAY + PAUSE;
+      btn.addEventListener('click', function (e) {
+        e.preventDefault(); e.stopPropagation();
+        if (audio.paused) { var pr = audio.play(); if (pr && pr.catch) pr.catch(function () {}); } else audio.pause();
+      });
+      audio.addEventListener('play', function () {
+        allAudio().forEach(function (o) { if (o !== audio && !o.paused) o.pause(); });
+        btn.classList.add('playing'); labels();
+      });
+      audio.addEventListener('pause', function () { btn.classList.remove('playing'); labels(); });
+      audio.addEventListener('ended', function () { btn.classList.remove('playing'); labels(); });
+      wrap.appendChild(btn);
+      audio.parentNode.insertBefore(wrap, audio);
+    });
+    labels();
+  }
+  function addMissingArrows() {
+    var specs = [];
+    if (!document.querySelector('.scroll-arrow')) specs.push(['scroll-arrow', 'up', ARROWS.su, function () { window.scrollBy({ top: -window.innerHeight, behavior: 'smooth' }); }],
+                                                            ['scroll-arrow', 'down', ARROWS.sd, function () { window.scrollBy({ top: window.innerHeight, behavior: 'smooth' }); }]);
+    if (!document.querySelector('.scroll-arrow-double')) specs.push(['scroll-arrow-double', 'up', ARROWS.du, function () { window.scrollTo({ top: 0, behavior: 'smooth' }); }],
+                                                                   ['scroll-arrow-double', 'down', ARROWS.dd, function () { window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' }); }]);
+    specs.forEach(function (s) {
+      var d = document.createElement('div');
+      d.className = s[0] + ' ux-added-arrow ux-' + s[1];
+      d.title = s[0] === 'scroll-arrow' ? (s[1] === 'up' ? 'Scroll up' : 'Scroll down') : (s[1] === 'up' ? 'Go to top' : 'Go to bottom');
+      d.innerHTML = s[2];
+      d.addEventListener('click', s[3]);
+      document.body.appendChild(d);
+    });
+  }
+  // Save as PDF via the browser print dialog (printed in light mode)
+  var wasDark = false;
+  window.addEventListener('beforeprint', function () {
+    wasDark = document.body.classList.contains('dark-mode');
+    document.body.classList.remove('dark-mode');
+  });
+  window.addEventListener('afterprint', function () { if (wasDark) document.body.classList.add('dark-mode'); });
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('.ux-pdf-btn');
+    if (b) { e.preventDefault(); allAudio().forEach(function (o) { o.pause(); }); window.print(); }
+  });
+  var lt = document.getElementById('languageToggle');
+  if (lt) lt.addEventListener('click', function () { allAudio().forEach(function (o) { o.pause(); }); setTimeout(labels, 0); });
+  function init() { enhanceAudio(); addMissingArrows(); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
+  window.addEventListener('load', enhanceAudio);
+})();
+</script>
+
+<style id="ux-audio-seek-v1">
+.ux-seek { display: flex; align-items: center; justify-content: center; gap: 8px; max-width: 460px; margin: 4px auto 12px; padding: 0 6px; font-size: 12.5px; color: var(--text-color, #334155); }
+.ux-seek .ux-time { min-width: 38px; text-align: center; white-space: nowrap; font-variant-numeric: tabular-nums; opacity: 0.85; }
+.ux-seek input[type=range] { flex: 1 1 auto; min-width: 80px; height: 22px; margin: 0; cursor: pointer; accent-color: var(--link-color, #1e5f8e); background: transparent; }
+.ux-seek .ux-skip { flex: 0 0 auto; width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid var(--link-color, #1e5f8e); background: transparent; color: var(--link-color, #1e5f8e); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; padding: 0; transition: background 0.2s ease, transform 0.2s ease; }
+.ux-seek .ux-skip:hover { background: rgba(30, 95, 142, 0.10); transform: scale(1.06); }
+.ux-seek .ux-skip:focus-visible, .ux-seek input[type=range]:focus-visible { outline: 2px solid var(--link-color, #1e5f8e); outline-offset: 2px; }
+.ux-seek .ux-skip svg { display: block; }
+@media (max-width: 480px) { .ux-seek { gap: 6px; font-size: 11.5px; } .ux-seek .ux-time { min-width: 32px; } .ux-seek .ux-skip { width: 30px; height: 30px; } }
+@media print { .ux-seek { display: none !important; } }
+</style>
+<script id="ux-audio-seek-v1-js">
+(function () {
+  var BACK = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 5V2L7 6l5 4V7a6 6 0 1 1-6 6H4a8 8 0 1 0 8-8z" fill="currentColor"/><text x="12" y="16.2" text-anchor="middle" font-size="6.5" font-family="sans-serif" font-weight="700" fill="currentColor">10</text></svg>';
+  var FWD = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 5V2l5 4-5 4V7a6 6 0 1 0 6 6h2a8 8 0 1 1-8-8z" fill="currentColor"/><text x="12" y="16.2" text-anchor="middle" font-size="6.5" font-family="sans-serif" font-weight="700" fill="currentColor">10</text></svg>';
+  function fmt(t) {
+    if (!isFinite(t) || t < 0) t = 0;
+    var h = Math.floor(t / 3600), m = Math.floor((t % 3600) / 60), s = Math.floor(t % 60);
+    return (h ? h + ':' + (m < 10 ? '0' : '') : '') + m + ':' + (s < 10 ? '0' : '') + s;
+  }
+  function isEnEl(el) { return !!(el.closest && el.closest('#english-content')); }
+  function build(wrap, audio) {
+    if (wrap.dataset.uxSeek) return;
+    wrap.dataset.uxSeek = '1';
+    var en = isEnEl(wrap);
+    var row = document.createElement('div'); row.className = 'ux-seek';
+    var back = document.createElement('button'); back.type = 'button'; back.className = 'ux-skip'; back.innerHTML = BACK;
+    var fwd = document.createElement('button'); fwd.type = 'button'; fwd.className = 'ux-skip'; fwd.innerHTML = FWD;
+    back.title = en ? 'Back 10 seconds' : 'Mundur 10 detik'; back.setAttribute('aria-label', back.title);
+    fwd.title = en ? 'Forward 10 seconds' : 'Maju 10 detik'; fwd.setAttribute('aria-label', fwd.title);
+    var cur = document.createElement('span'); cur.className = 'ux-time'; cur.textContent = '0:00';
+    var dur = document.createElement('span'); dur.className = 'ux-time'; dur.textContent = '0:00';
+    var bar = document.createElement('input'); bar.type = 'range'; bar.min = 0; bar.max = 1000; bar.step = 1; bar.value = 0;
+    bar.setAttribute('aria-label', en ? 'Seek recitation' : 'Geser posisi bacaan');
+    row.appendChild(back); row.appendChild(cur); row.appendChild(bar); row.appendChild(dur); row.appendChild(fwd);
+    wrap.parentNode.insertBefore(row, wrap.nextSibling);
+    var dragging = false, pending = null;
+    function ready() { return isFinite(audio.duration) && audio.duration > 0; }
+    function ensureLoaded() {
+      if (!ready() && audio.readyState === 0) { audio.preload = 'metadata'; try { audio.load(); } catch (e) {} }
+    }
+    function paint() {
+      if (ready()) {
+        dur.textContent = fmt(audio.duration);
+        if (!dragging) bar.value = Math.round(audio.currentTime / audio.duration * 1000);
+        cur.textContent = fmt(dragging ? bar.value / 1000 * audio.duration : audio.currentTime);
+      }
+      var pct = (bar.value / 10) + '%';
+      bar.style.background = 'linear-gradient(to right, var(--link-color, #1e5f8e) ' + pct + ', rgba(127,127,127,0.25) ' + pct + ')';
+      bar.style.borderRadius = '4px'; bar.style.height = '6px';
+    }
+    function seekTo(frac) {
+      if (ready()) { audio.currentTime = Math.max(0, Math.min(audio.duration - 0.25, frac * audio.duration)); paint(); }
+      else { pending = { frac: frac }; ensureLoaded(); }
+    }
+    function skip(sec) {
+      if (ready()) { audio.currentTime = Math.max(0, Math.min(audio.duration - 0.25, audio.currentTime + sec)); paint(); }
+      else { pending = { delta: sec }; ensureLoaded(); }
+    }
+    audio.addEventListener('loadedmetadata', function () {
+      if (pending) {
+        if (pending.frac != null) audio.currentTime = pending.frac * audio.duration;
+        else audio.currentTime = Math.max(0, audio.currentTime + pending.delta);
+        pending = null;
+      }
+      paint();
+    });
+    audio.addEventListener('timeupdate', paint);
+    audio.addEventListener('durationchange', paint);
+    audio.addEventListener('seeked', paint);
+    audio.addEventListener('ended', function () { bar.value = 1000; paint(); });
+    bar.addEventListener('pointerdown', function () { dragging = true; ensureLoaded(); });
+    bar.addEventListener('input', function () { dragging = true; paint(); if (ready()) cur.textContent = fmt(bar.value / 1000 * audio.duration); });
+    bar.addEventListener('change', function () { dragging = false; seekTo(bar.value / 1000); });
+    bar.addEventListener('keydown', function () { ensureLoaded(); });
+    back.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); skip(-10); });
+    fwd.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); skip(10); });
+    paint();
+  }
+  function init() {
+    document.querySelectorAll('.ux-play-wrap').forEach(function (wrap) {
+      var a = wrap.nextElementSibling;
+      while (a && a.tagName !== 'AUDIO') a = a.nextElementSibling;
+      if (!a) { var p = wrap.parentNode; a = p && p.querySelector('audio'); }
+      if (a) build(wrap, a);
+    });
+  }
+  function run() { init(); setTimeout(init, 300); setTimeout(init, 1200); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run); else run();
+  window.addEventListener('load', init);
+})();
+</script>
+
+<script id="ux-audio-missing-v1">
+// Hide a player whose audio file cannot be loaded (e.g. recording not added yet)
+(function () {
+  function hide(audio) {
+    var box = audio.closest('.audio-player'); if (box) box.style.display = 'none';
+  }
+  document.querySelectorAll('audio').forEach(function (a) {
+    var srcs = a.querySelectorAll('source');
+    var last = srcs[srcs.length - 1];
+    if (last) last.addEventListener('error', function () { hide(a); });
+    a.addEventListener('error', function () { hide(a); });
+    if (a.networkState === 3) hide(a);
+  });
+})();
+</script>
+
+<!-- Floating mini-player (keeps playing when minimized) -->
+<div class="mini-player hidden" id="miniPlayer" role="region" aria-label="Video">
+    <div class="mini-bar">
+        <span class="mini-title"><i class="fab fa-youtube"></i> <span id="miniTitle">Shalat Jenazah</span></span>
+        <button type="button" id="miniToggle"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></button>
+        <button type="button" id="miniClose"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></button>
+    </div>
+    <div class="mini-body" id="miniBody"></div>
+</div>
+
+<script id="video-mini-v1">
+(function () {
+  var VID = 'Q-U513RY2vI';
+  var EMBED = 'https://www.youtube.com/embed/' + VID + '?si=taWt1XfqtPs6YbM1&autoplay=1&playsinline=1';
+  var WATCH = 'https://www.youtube.com/watch?v=' + VID;
+  var box = document.getElementById('miniPlayer'), body = document.getElementById('miniBody');
+  var tog = document.getElementById('miniToggle'), cls = document.getElementById('miniClose'), ttl = document.getElementById('miniTitle');
+  function isEn() { var id = document.getElementById('indonesian-content'); return id && id.classList.contains('hidden'); }
+  function labels() {
+    var en = isEn(), min = box.classList.contains('minimized');
+    ttl.textContent = en ? 'Janazah Prayer – Video' : 'Video Shalat Jenazah';
+    var t = min ? (en ? 'Expand' : 'Perbesar') : (en ? 'Minimize (keeps playing)' : 'Perkecil (tetap diputar)');
+    tog.title = t; tog.setAttribute('aria-label', t);
+    tog.innerHTML = min ? '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>' : '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>';
+    cls.title = en ? 'Close' : 'Tutup'; cls.setAttribute('aria-label', cls.title);
+  }
+  function openMini() {
+    if (!body.querySelector('iframe')) {
+      body.innerHTML = '<iframe width="560" height="315" src="' + EMBED + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+    }
+    document.querySelectorAll('audio').forEach(function (a) { a.pause(); });
+    box.classList.remove('hidden', 'minimized'); labels();
+  }
+  function openPopup() {
+    document.querySelectorAll('audio').forEach(function (a) { a.pause(); });
+    var w = 520, hgt = 340, l = Math.max(0, (screen.availWidth || 1200) - w - 30), t = Math.max(0, (screen.availHeight || 800) - hgt - 60);
+    var win = window.open(WATCH, 'jenazahVideo', 'popup=yes,width=' + w + ',height=' + hgt + ',left=' + l + ',top=' + t);
+    if (!win) window.open(WATCH, '_blank', 'noopener');
+  }
+  tog.addEventListener('click', function () { box.classList.toggle('minimized'); labels(); });
+  cls.addEventListener('click', function () { body.innerHTML = ''; box.classList.add('hidden'); box.classList.remove('minimized'); });
+  document.querySelectorAll('.js-mini-open').forEach(function (b) { b.addEventListener('click', openMini); });
+  document.querySelectorAll('.js-popup-open').forEach(function (b) { b.addEventListener('click', openPopup); });
+  var lt = document.getElementById('languageToggle'); if (lt) lt.addEventListener('click', function () { setTimeout(labels, 0); });
+  labels();
+})();
+</script>
+</body>
+</html>
