@@ -964,7 +964,7 @@
                 </div>
                 <div class="theme-card" id="c9">
                     <span class="theme-title">9. Trip files: Arrahman Umrah Nov 2026</span>
-                        Trip documents and files are kept in a shared Google Drive folder. <a href="https://drive.google.com/drive/folders/1e9ttXyNR137wmiFElnmOnk4i1L_KYlSR?usp=drive_link" target="_blank" rel="noopener">Open the Arrahman Umrah Nov 2026 folder</a>.
+                        Trip documents and files are kept in a shared Google Drive folder. <a data-pdf-viewer data-viewer-title="Arrahman Umrah Nov 2026 (folder)" href="https://drive.google.com/drive/folders/1e9ttXyNR137wmiFElnmOnk4i1L_KYlSR?usp=drive_link">Open the Arrahman Umrah Nov 2026 folder</a>.
                 </div>
             </div>
 
@@ -1208,7 +1208,7 @@
                 </div>
                 <div class="theme-card" id="c9-id">
                     <span class="theme-title">9. Berkas perjalanan: Arrahman Umrah Nov 2026</span>
-                        Dokumen dan berkas perjalanan disimpan di folder Google Drive bersama. <a href="https://drive.google.com/drive/folders/1e9ttXyNR137wmiFElnmOnk4i1L_KYlSR?usp=drive_link" target="_blank" rel="noopener">Buka folder Arrahman Umrah Nov 2026</a>.
+                        Dokumen dan berkas perjalanan disimpan di folder Google Drive bersama. <a data-pdf-viewer data-viewer-title="Arrahman Umrah Nov 2026 (folder)" href="https://drive.google.com/drive/folders/1e9ttXyNR137wmiFElnmOnk4i1L_KYlSR?usp=drive_link">Buka folder Arrahman Umrah Nov 2026</a>.
                 </div>
             </div>
 
@@ -1639,8 +1639,11 @@
                     restore: '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 15l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>'
                 };
                 const previewUrl = href => {
-                    const m = href.match(/\/file\/d\/([^/]+)/);
-                    return m ? `https://drive.google.com/file/d/${m[1]}/preview` : href;
+                    const m = href.match(/\/file\/d\/([^/?]+)/);
+                    if (m) return `https://drive.google.com/file/d/${m[1]}/preview`;
+                    const f = href.match(/\/drive\/folders\/([^/?]+)/);
+                    if (f) return `https://drive.google.com/embeddedfolderview?id=${f[1]}#grid`;
+                    return href;
                 };
                 function labels() {
                     const en = isEnglish();
@@ -1657,7 +1660,7 @@
                     if (!frame || frame.dataset.src !== src) {
                         body.innerHTML = `<iframe src="${src}" data-src="${src}" title="${link.textContent.trim()}" allow="autoplay" allowfullscreen></iframe>`;
                     }
-                    ttl.textContent = link.textContent.trim() + ' (PDF)';
+                    ttl.textContent = link.dataset.viewerTitle || (link.textContent.trim() + ' (PDF)');
                     box.classList.remove('hidden', 'minimized');
                     labels();
                 }
