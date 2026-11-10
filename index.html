@@ -796,6 +796,13 @@
         .cd-label { font-size: 0.58rem; }
         .cd-value { font-size: 0.8rem; line-height: 1.25; }
         .cd-sub { font-size: 0.64rem; line-height: 1.25; }
+        /* Blinking up/down scroll arrows */
+        @keyframes arrow-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        .scroll-arrow, .scroll-arrow-double { animation: arrow-blink 1.4s ease-in-out infinite; }
+        .scroll-arrow-double { animation-delay: 0.7s; }
+        .scroll-arrow:hover, .scroll-arrow-double:hover, .scroll-arrow:focus-visible, .scroll-arrow-double:focus-visible { animation: none; opacity: 1; }
+        @media (prefers-reduced-motion: reduce) { .scroll-arrow, .scroll-arrow-double { animation: none; } }
+        @media print { .scroll-arrow, .scroll-arrow-double { display: none !important; } }
     </style>
 </head>
 <body>
