@@ -660,6 +660,27 @@
         @media print { .container { padding-top: 0 !important; } }
         /* Phones: keep the Bismillah between the floating scroll arrows */
         @media (max-width: 640px) { .bismillah { font-size: min(46px, calc((100vw - 150px) / 11.8)) !important; } }
+        /* PDF mini viewer, styled like the video mini-player on the Jenazah page */
+        .pdf-player { position: fixed; right: 76px; bottom: 20px; width: 420px; max-width: calc(100vw - 24px); background: var(--container-bg); border: 1px solid var(--verse-border); border-radius: 12px; box-shadow: 0 8px 28px rgba(0,0,0,0.3); z-index: 1200; overflow: hidden; display: flex; flex-direction: column; }
+        .pdf-player.hidden { display: none; }
+        .pdf-bar { display: flex; align-items: center; gap: 6px; padding: 6px 8px 6px 12px; background: #2c3e50; color: #fff; font-size: 13px; font-weight: bold; }
+        .pdf-bar .pdf-title { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .pdf-bar button { border: none; background: rgba(255,255,255,0.12); color: #fff; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .pdf-bar button:hover { background: rgba(255,255,255,0.25); }
+        .pdf-bar button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+        .pdf-body { position: relative; height: min(70vh, 560px); background: #525659; }
+        .pdf-body iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+        .pdf-player.large { left: 5vw; right: 5vw; top: 5vh; bottom: 5vh; width: auto; max-width: none; }
+        .pdf-player.large .pdf-body { height: auto; flex: 1; }
+        .pdf-player.minimized { width: 240px; }
+        .pdf-player.minimized .pdf-body { height: 0; }
+        @media (max-width: 640px) {
+            .pdf-player { left: 12px; right: 12px; bottom: 12px; width: auto; }
+            .pdf-body { height: 65vh; }
+            .pdf-player.minimized { left: auto; width: 220px; }
+            .pdf-player.large { left: 0; right: 0; top: 0; bottom: 0; border-radius: 0; }
+        }
+        @media print { .pdf-player { display: none !important; } }
     </style>
 </head>
 <body>
@@ -673,6 +694,17 @@
     <div id="doubleUpScroll" class="scroll-arrow-double up-double"><i class="fas fa-angles-up"></i></div>
     <div id="doubleDownScroll" class="scroll-arrow-double down-double"><i class="fas fa-angles-down"></i></div>
 
+
+    <!-- PDF mini viewer (opens training PDFs in a small window on the page) -->
+    <div class="pdf-player hidden" id="pdfPlayer" role="dialog" aria-label="PDF">
+        <div class="pdf-bar">
+            <span class="pdf-title" id="pdfTitle">Umrah Training</span>
+            <button type="button" id="pdfSize" title="Enlarge" aria-label="Enlarge"></button>
+            <button type="button" id="pdfMin" title="Minimize" aria-label="Minimize"></button>
+            <button type="button" id="pdfClose" title="Close" aria-label="Close"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></button>
+        </div>
+        <div class="pdf-body" id="pdfBody"></div>
+    </div>
     <div class="container">
 
         <div class="bismillah">﷽</div>
@@ -684,7 +716,7 @@
             <div style="margin-bottom:20px;">
                 <a href="index.html" class="top-home-link"><i class="fas fa-arrow-left"></i> Main Menu</a>
                 <a href="#" class="top-home-link pdf-btn" role="button"><i class="fas fa-file-pdf"></i> Save as PDF</a>
-                <a href="https://drive.google.com/file/d/10Sfl3lc-ovJ5T1gvjswBiRtQTVVHx22r/view?usp=drive_link" class="top-home-link" target="_blank" rel="noopener"><i class="fas fa-book-open"></i> Umrah Training</a>
+                <a data-pdf-viewer href="https://drive.google.com/file/d/10Sfl3lc-ovJ5T1gvjswBiRtQTVVHx22r/view?usp=drive_link" class="top-home-link"><i class="fas fa-book-open"></i> Umrah Training</a>
             </div>
             <h1 class="surah-title">Arrahman Umrah</h1>
 
@@ -766,7 +798,7 @@
                 </div>
                 <div class="theme-card" id="c7">
                     <span class="theme-title">7. Manasik Umrah (Zoom meeting)</span>
-                        Arrahman Tours invites you to join our Manasik Umrah, the Umrah preparation class, on Zoom.<br><strong>Sunday, 8 November 2026, at 2:00 PM Seattle time (PST)</strong><br><a href="https://us02web.zoom.us/j/88055398825?pwd=bVBVVEowbGw5ZUFKQ0huUXVBSzQ2QT09" target="_blank" rel="noopener">Join the Zoom meeting</a><br>📄 <a href="https://drive.google.com/file/d/10Sfl3lc-ovJ5T1gvjswBiRtQTVVHx22r/view?usp=drive_link" target="_blank" rel="noopener"><strong>Umrah Training</strong></a> (PDF)
+                        Arrahman Tours invites you to join our Manasik Umrah, the Umrah preparation class, on Zoom.<br><strong>Sunday, 8 November 2026, at 2:00 PM Seattle time (PST)</strong><br><a href="https://us02web.zoom.us/j/88055398825?pwd=bVBVVEowbGw5ZUFKQ0huUXVBSzQ2QT09" target="_blank" rel="noopener">Join the Zoom meeting</a><br>📄 <a data-pdf-viewer href="https://drive.google.com/file/d/10Sfl3lc-ovJ5T1gvjswBiRtQTVVHx22r/view?usp=drive_link"><strong>Umrah Training</strong></a> (PDF)
                 </div>
                 <div class="theme-card" id="c8">
                     <span class="theme-title">8. Get an eSIM for Saudi Arabia</span>
@@ -948,7 +980,7 @@
             <div style="margin-bottom:20px;">
                 <a href="index.html" class="top-home-link"><i class="fas fa-arrow-left"></i> Menu Utama</a>
                 <a href="#" class="top-home-link pdf-btn" role="button"><i class="fas fa-file-pdf"></i> Simpan sebagai PDF</a>
-                <a href="https://drive.google.com/file/d/1aQ6_JO7GO8A2rBfYxMsV6tLHZIESAd9l/view?usp=sharing" class="top-home-link" target="_blank" rel="noopener"><i class="fas fa-book-open"></i> Manasik Umrah</a>
+                <a data-pdf-viewer href="https://drive.google.com/file/d/1aQ6_JO7GO8A2rBfYxMsV6tLHZIESAd9l/view?usp=sharing" class="top-home-link"><i class="fas fa-book-open"></i> Manasik Umrah</a>
             </div>
             <h1 class="surah-title">Arrahman Umrah</h1>
 
@@ -1030,7 +1062,7 @@
                 </div>
                 <div class="theme-card" id="c7-id">
                     <span class="theme-title">7. Manasik Umrah (Zoom)</span>
-                        Arrahman Tours mengundangmu untuk mengikuti Manasik Umrah melalui Zoom.<br><strong>Minggu, 8 November 2026, pukul 14.00 waktu Seattle (PST)</strong><br><a href="https://us02web.zoom.us/j/88055398825?pwd=bVBVVEowbGw5ZUFKQ0huUXVBSzQ2QT09" target="_blank" rel="noopener">Gabung ke Zoom</a><br>📄 <a href="https://drive.google.com/file/d/1aQ6_JO7GO8A2rBfYxMsV6tLHZIESAd9l/view?usp=sharing" target="_blank" rel="noopener"><strong>Manasik Umrah</strong></a> (PDF)
+                        Arrahman Tours mengundangmu untuk mengikuti Manasik Umrah melalui Zoom.<br><strong>Minggu, 8 November 2026, pukul 14.00 waktu Seattle (PST)</strong><br><a href="https://us02web.zoom.us/j/88055398825?pwd=bVBVVEowbGw5ZUFKQ0huUXVBSzQ2QT09" target="_blank" rel="noopener">Gabung ke Zoom</a><br>📄 <a data-pdf-viewer href="https://drive.google.com/file/d/1aQ6_JO7GO8A2rBfYxMsV6tLHZIESAd9l/view?usp=sharing"><strong>Manasik Umrah</strong></a> (PDF)
                 </div>
                 <div class="theme-card" id="c8-id">
                     <span class="theme-title">8. Siapkan eSIM untuk Arab Saudi</span>
@@ -1461,6 +1493,55 @@
             }
             setupTocLinks();
             ['en', 'id'].forEach(s => { setupTocPulldown(s); buildTocDatalist(s); setupTocSearch(s); });
+
+            /* ---------- PDF mini viewer (opens on the page, not in a new tab) ---------- */
+            (function () {
+                const box = document.getElementById('pdfPlayer');
+                if (!box) return;
+                const body = document.getElementById('pdfBody');
+                const ttl = document.getElementById('pdfTitle');
+                const sizeBtn = document.getElementById('pdfSize');
+                const minBtn = document.getElementById('pdfMin');
+                const closeBtn = document.getElementById('pdfClose');
+                const ICON = {
+                    grow: '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M14 4h6v6M10 20H4v-6M20 4l-7 7M4 20l7-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+                    shrink: '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M4 14h6v6M20 10h-6V4M14 10l7-7M10 14l-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+                    min: '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>',
+                    restore: '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 15l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+                };
+                const previewUrl = href => {
+                    const m = href.match(/\/file\/d\/([^/]+)/);
+                    return m ? `https://drive.google.com/file/d/${m[1]}/preview` : href;
+                };
+                function labels() {
+                    const en = isEnglish();
+                    const large = box.classList.contains('large'), min = box.classList.contains('minimized');
+                    const t1 = large ? (en ? 'Smaller window' : 'Jendela kecil') : (en ? 'Enlarge' : 'Perbesar');
+                    sizeBtn.innerHTML = large ? ICON.shrink : ICON.grow; sizeBtn.title = t1; sizeBtn.setAttribute('aria-label', t1);
+                    const t2 = min ? (en ? 'Show' : 'Tampilkan') : (en ? 'Minimize' : 'Perkecil');
+                    minBtn.innerHTML = min ? ICON.restore : ICON.min; minBtn.title = t2; minBtn.setAttribute('aria-label', t2);
+                    const t3 = en ? 'Close' : 'Tutup'; closeBtn.title = t3; closeBtn.setAttribute('aria-label', t3);
+                }
+                function open(link) {
+                    const src = previewUrl(link.href);
+                    const frame = body.querySelector('iframe');
+                    if (!frame || frame.dataset.src !== src) {
+                        body.innerHTML = `<iframe src="${src}" data-src="${src}" title="${link.textContent.trim()}" allow="autoplay" allowfullscreen></iframe>`;
+                    }
+                    ttl.textContent = link.textContent.trim() + ' (PDF)';
+                    box.classList.remove('hidden', 'minimized');
+                    labels();
+                }
+                document.querySelectorAll('a[data-pdf-viewer]').forEach(link => {
+                    link.addEventListener('click', e => { e.preventDefault(); open(link); });
+                });
+                sizeBtn.addEventListener('click', () => { box.classList.remove('minimized'); box.classList.toggle('large'); labels(); });
+                minBtn.addEventListener('click', () => { box.classList.remove('large'); box.classList.toggle('minimized'); labels(); });
+                closeBtn.addEventListener('click', () => { body.innerHTML = ''; box.classList.add('hidden'); box.classList.remove('minimized', 'large'); });
+                document.addEventListener('keydown', e => { if (e.key === 'Escape' && !box.classList.contains('hidden')) closeBtn.click(); });
+                langToggle.addEventListener('click', () => setTimeout(labels, 0));
+                labels();
+            })();
 
             function handleUrlScroll() {
                 const map = { Prep: 'prep-section', Departure: 'departure-section', Duas: 'duas-section', Madinah: 'madinah-section' };
