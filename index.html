@@ -803,6 +803,11 @@
         .scroll-arrow:hover, .scroll-arrow-double:hover, .scroll-arrow:focus-visible, .scroll-arrow-double:focus-visible { animation: none; opacity: 1; }
         @media (prefers-reduced-motion: reduce) { .scroll-arrow, .scroll-arrow-double { animation: none; } }
         @media print { .scroll-arrow, .scroll-arrow-double { display: none !important; } }
+        /* Further reading link near the end of the page */
+        .end-links { margin: 30px 0 10px; padding-top: 16px; border-top: 1px solid var(--verse-border); text-align: center; }
+        .end-links-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0.7; margin-bottom: 8px; }
+        .end-links .top-home-link { font-size: 0.85rem; padding: 5px 14px; }
+        @media print { .end-links { display: none !important; } }
     </style>
 </head>
 <body>
@@ -1106,6 +1111,10 @@
                     </div>
                 </div>
             </div>
+            <div class="end-links">
+                <div class="end-links-title">Further reading</div>
+                <a data-pdf-viewer data-viewer-title="Perfecting the Journey – Sh. Husain Abdul Sattar (PDF)" href="https://static1.squarespace.com/static/66b28c82a51dd10876ff5fa4/t/66d0798104598f24b8643e81/1724938628803/Sacred+Learning+Hajj+PDF+2024-Sh.+Husain.pdf" class="top-home-link"><i class="fas fa-book"></i> Hajj &amp; Umrah Guide</a>
+            </div>
             <div class="surah-pagination"><a href="index.html" class="pagination-next"><i class="fas fa-home"></i> Back to Main Menu</a></div>
         </div>
         <!-- END ENGLISH -->
@@ -1349,6 +1358,10 @@
                         <div class="sched-row"><span class="itin-time">Setelah Zuhur</span><span>Berangkat ke Makkah</span></div>
                     </div>
                 </div>
+            </div>
+            <div class="end-links">
+                <div class="end-links-title">Bacaan lebih lanjut</div>
+                <a data-pdf-viewer data-viewer-title="Perfecting the Journey – Sh. Husain Abdul Sattar (PDF)" href="https://static1.squarespace.com/static/66b28c82a51dd10876ff5fa4/t/66d0798104598f24b8643e81/1724938628803/Sacred+Learning+Hajj+PDF+2024-Sh.+Husain.pdf" class="top-home-link"><i class="fas fa-book"></i> Panduan Haji &amp; Umrah</a>
             </div>
             <div class="surah-pagination"><a href="index.html" class="pagination-next"><i class="fas fa-home"></i> Kembali ke Menu Utama</a></div>
         </div>
@@ -1643,6 +1656,8 @@
                     if (m) return `https://drive.google.com/file/d/${m[1]}/preview`;
                     const f = href.match(/\/drive\/folders\/([^/?]+)/);
                     if (f) return `https://drive.google.com/embeddedfolderview?id=${f[1]}#grid`;
+                    // other PDFs (sites that refuse to be framed): show them through Google's document viewer
+                    if (/\.pdf($|[?#])/i.test(href)) return 'https://docs.google.com/viewer?embedded=true&url=' + encodeURIComponent(href);
                     return href;
                 };
                 function labels() {
