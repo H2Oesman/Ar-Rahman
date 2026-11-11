@@ -813,6 +813,28 @@
         .end-title-link { text-transform: none; letter-spacing: 0; font-size: 0.95rem; }
         /* Top buttons smaller again, except the donation button */
         .top-home-link:not(.donate-link) { font-size: 0.62rem; padding: 1px 7px; margin-right: 2px; }
+        /* Scroll arrows: gentle up/down motion instead of blinking */
+        .scroll-arrow, .scroll-arrow-double { animation: none !important; opacity: 1; }
+        @keyframes arrow-bob-up { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+        @keyframes arrow-bob-down { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+        .scroll-arrow.up > *, .scroll-arrow-double.up-double > * { animation: arrow-bob-up 1.4s ease-in-out infinite; }
+        .scroll-arrow.down > *, .scroll-arrow-double.down-double > * { animation: arrow-bob-down 1.4s ease-in-out infinite; }
+        .scroll-arrow-double > * { animation-delay: 0.35s !important; }
+        .scroll-arrow:hover > *, .scroll-arrow-double:hover > * { animation-duration: 0.7s; }
+        @media (prefers-reduced-motion: reduce) { .scroll-arrow > *, .scroll-arrow-double > * { animation: none !important; } }
+        /* Pop-up windows slightly smaller */
+        .pdf-player { width: 380px; }
+        .pdf-body { height: min(62vh, 500px); }
+        .pdf-player.minimized { width: 220px; }
+        .leg-player { width: 430px; max-height: min(85vh, 720px); }
+        .don-player { width: 340px; max-height: min(64vh, 560px); }
+        @media (max-width: 640px) {
+            .pdf-player, .leg-player, .don-player { left: 16px; right: 16px; bottom: 14px; width: auto; }
+            .pdf-body { height: 56vh; }
+            .leg-player { max-height: 78vh; }
+            .don-player { max-height: 70vh; }
+            .pdf-player.minimized { left: auto; width: 200px; }
+        }
     </style>
 </head>
 <body>
