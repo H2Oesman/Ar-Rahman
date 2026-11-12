@@ -1555,7 +1555,17 @@
             function tripMoment(key, time, tz) {
                 const dt = tripDay(key); if (!dt) return null;
                 const [h, mi] = (time || '00:00').split(':').map(Number);
-                return new Date(dt.getTime() + (h * 60 + mi) * 60000 - Number(tz || 0) * 3600000);
+                const local = dt.getTime() + (h * 60 + mi) * 60000;   // wall-clock time, written as UTC
+                let off = Number(tz || 0);
+                // data-tz is the STANDARD offset. US & Canada (UTC-10 … -3) move clocks 1 hour forward
+                // from the 2nd Sunday of March to the 1st Sunday of November (2:00 AM local).
+                if (off <= -3 && off >= -10 && isNorthAmericaDST(local)) off += 1;
+                return new Date(local - off * 3600000);
+            }
+            function isNorthAmericaDST(local) {
+                const y = new Date(local).getUTCFullYear();
+                const nthSunday = (m, n) => { const first = new Date(Date.UTC(y, m, 1)).getUTCDay(); return 1 + ((7 - first) % 7) + 7 * (n - 1); };
+                return local >= Date.UTC(y, 2, nthSunday(2, 2), 2) && local < Date.UTC(y, 10, nthSunday(10, 1), 2);
             }
             function renderTripDates(root) {
                 (root || document).querySelectorAll('[data-d][data-f]').forEach(el => {
