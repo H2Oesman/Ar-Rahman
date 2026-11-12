@@ -859,7 +859,15 @@
         .alt-fn { color: var(--badge-text); }
         .alt-note { font-size: 0.8rem; font-style: italic; opacity: 0.75; }
         /* ---- index page: trip list ---- */
-        .trip-list { list-style: none; padding: 0; margin: calc(10px + 3.6em) 0 0; }  /* +2 blank lines below the header */
+        .trip-list { list-style: none; padding: 0; margin: 10px 0 0; }
+        /* "Click a trip" instruction (animated) */
+        .trip-hint { text-align: center; margin: -6px 0 14px; font-size: 1rem; font-weight: 600; color: var(--section-title-color); animation: hintGlow 2.4s ease-in-out infinite; }
+        .trip-hint .hint-hand { display: inline-block; font-size: 1.35rem; margin-right: 6px; animation: hintTap 1.2s ease-in-out infinite; }
+        @keyframes hintTap { 0%, 100% { transform: translateY(-3px); } 50% { transform: translateY(5px); } }
+        @keyframes hintGlow { 0%, 100% { opacity: 0.65; } 50% { opacity: 1; } }
+        .trip-list li:first-child a { animation: cardNudge 2.4s ease-in-out 3; }
+        @keyframes cardNudge { 0%, 100% { box-shadow: 0 0 0 0 rgba(30,95,142,0); } 50% { box-shadow: 0 0 0 4px rgba(30,95,142,0.25); } }
+        @media (prefers-reduced-motion: reduce) { .trip-hint, .trip-hint .hint-hand, .trip-list li:first-child a { animation: none; } .trip-hint { opacity: 1; } }
         .trip-list li { margin: 0 0 calc(14px + 3.6em); }  /* +2 blank lines between items */
         .trip-list li:last-child { margin-bottom: 14px; }
         .trip-list a { display: flex; align-items: center; gap: 14px; padding: 16px 20px; border: 1px solid var(--verse-border); border-radius: 16px; background: var(--verse-bg); font-size: 1.1rem; font-weight: 600; transition: all 0.2s ease; }
@@ -910,6 +918,7 @@
             </div>
             <h1 class="surah-title">Arrahman Umrah</h1>
 
+            <p class="trip-hint"><span class="hint-hand" aria-hidden="true">👇</span>Tap or click a trip below to open its guide</p>
             <ul class="trip-list">
                 <li><a href="Arrahman_Umrah.html" data-dates="trip_dates.js" data-fallback="2026-11-23,2026-12-03"><span class="trip-icon">🕋</span><span>Arrahman Umrah 23 November 2026<span class="trip-cd"><i class="fas fa-hourglass-half"></i> <span class="cd-value">…</span> <span class="cd-sub"></span></span></span><i class="fas fa-chevron-right"></i></a></li>
                 <li><a class="trip-bg" href="Arrahman_Umrah.html?Dates=trip_2027.js" data-dates="trip_2027.js" data-fallback="2027-03-18,2027-03-28"><span class="trip-icon">🕋</span><span>Arrahman Umrah 18 March 2027<span class="trip-note">(Subject to Change)</span><span class="trip-cd"><i class="fas fa-hourglass-half"></i> <span class="cd-value">…</span> <span class="cd-sub"></span></span></span><i class="fas fa-chevron-right"></i></a></li>
