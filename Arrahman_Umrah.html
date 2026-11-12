@@ -858,6 +858,9 @@
         .alt-row { display: grid; grid-template-columns: 4.2rem minmax(0, 1fr); gap: 6px; }
         .alt-fn { color: var(--badge-text); }
         .alt-note { font-size: 0.8rem; font-style: italic; opacity: 0.75; }
+        .version-label { margin: 14px 0 4px; font-weight: bold; font-size: 0.9rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--section-title-color); border-top: 1px dashed var(--verse-border); padding-top: 10px; }
+        .version-label:first-of-type { border-top: 0; padding-top: 0; margin-top: 4px; }
+        .version-tag { text-transform: none; letter-spacing: 0; font-weight: normal; font-size: 0.8rem; background: var(--badge-bg); color: var(--badge-text); border-radius: 30px; padding: 1px 8px; margin-left: 6px; white-space: nowrap; }
     </style>
 </head>
 <body>
@@ -926,7 +929,7 @@
         <!-- ============================================================ -->
         <div id="english-content">
             <div style="margin-bottom:20px;">
-                <a href="index.html" class="top-home-link"><i class="fas fa-arrow-left"></i> Back to Main Menu</a>
+                <a href="index.html" class="top-home-link" style="display:none" hidden><i class="fas fa-arrow-left"></i> Main Menu</a>
                 <a href="#" class="top-home-link pdf-btn" role="button"><i class="fas fa-file-pdf"></i> PDF</a>
                 <a data-link="training" data-pdf-viewer href="https://drive.google.com/file/d/10Sfl3lc-ovJ5T1gvjswBiRtQTVVHx22r/view?usp=drive_link" class="top-home-link has-badge" data-viewer-title="Umrah Training (PDF)" aria-label="Umrah Training"><span class="btn-badge" aria-hidden="true">📘 Training</span><i class="fas fa-book-open"></i> Umrah</a>
                 <a data-pdf-viewer data-viewer-title="Hajj &amp; Umrah Du‘ās" href="Hajj_Umrah_Duas.html" class="top-home-link has-badge" aria-label="Umrah Du‘ās"><span class="btn-badge" aria-hidden="true">🤲 Du‘ās</span><i class="fas fa-book"></i> Umrah</a>
@@ -1115,13 +1118,24 @@
                 <div class="dhikr-card" id="c20">
                     <div class="dua-number">Step 5 | Du‘ā’ for traveling</div>
                     <div class="repetition-note" style="margin-bottom:10px;">Recite this before setting off in the car.</div>
+                    <div class="version-label">Short version</div>
                     <div class="arabic">ٱللَّهُ أَكْبَرُ، ٱللَّهُ أَكْبَرُ، ٱللَّهُ أَكْبَرُ</div>
                     <div class="arabic-quran">سُبْحَـٰنَ ٱلَّذِى سَخَّرَ لَنَا هَـٰذَا وَمَا كُنَّا لَهُۥ مُقْرِنِينَ ﴿١٣﴾ وَإِنَّآ إِلَىٰ رَبِّنَا لَمُنقَلِبُونَ ﴿١٤﴾</div>
                     <div class="transliteration">Allāhu akbar, Allāhu akbar, Allāhu akbar. Subḥānalladhī sakhkhara lanā hādhā wa mā kunnā lahū muqrinīn, wa innā ilā Rabbinā lamunqalibūn.</div>
                     <div class="translation">Allah is the Greatest (×3). How perfect He is, the One who has placed this (transport) at our service, and we ourselves would not have been capable of that. And to our Lord is our final return.</div>
                     <div class="reference">Az-Zukhruf 43:13–14; Ṣaḥīḥ Muslim 1342</div>
+                    <div class="version-label">Complete version <span class="version-tag">🎧 this is what the audio recites</span></div>
+                    <div class="arabic">ٱللَّهُ أَكْبَرُ، ٱللَّهُ أَكْبَرُ، ٱللَّهُ أَكْبَرُ</div>
+                    <div class="arabic-quran">سُبْحَـٰنَ ٱلَّذِى سَخَّرَ لَنَا هَـٰذَا وَمَا كُنَّا لَهُۥ مُقْرِنِينَ ﴿١٣﴾ وَإِنَّآ إِلَىٰ رَبِّنَا لَمُنقَلِبُونَ ﴿١٤﴾</div>
+                    <div class="arabic">ٱللَّهُمَّ إِنَّا نَسْأَلُكَ فِى سَفَرِنَا هَـٰذَا ٱلْبِرَّ وَٱلتَّقْوَىٰ، وَمِنَ ٱلْعَمَلِ مَا تَرْضَىٰ، ٱللَّهُمَّ هَوِّنْ عَلَيْنَا سَفَرَنَا هَـٰذَا وَٱطْوِ عَنَّا بُعْدَهُ، ٱللَّهُمَّ أَنْتَ ٱلصَّاحِبُ فِى ٱلسَّفَرِ، وَٱلْخَلِيفَةُ فِى ٱلْأَهْلِ، ٱللَّهُمَّ إِنِّىٓ أَعُوذُ بِكَ مِنْ وَعْثَآءِ ٱلسَّفَرِ، وَكَآبَةِ ٱلْمَنْظَرِ، وَسُوٓءِ ٱلْمُنْقَلَبِ فِى ٱلْمَالِ وَٱلْأَهْلِ</div>
+                    <div class="transliteration">Allāhu akbar, Allāhu akbar, Allāhu akbar. Subḥānalladhī sakhkhara lanā hādhā wa mā kunnā lahū muqrinīn, wa innā ilā Rabbinā lamunqalibūn. Allāhumma innā nas’aluka fī safarinā hādhal-birra wat-taqwā, wa minal-‘amali mā tarḍā. Allāhumma hawwin ‘alaynā safaranā hādhā waṭwi ‘annā bu‘dah. Allāhumma Antaṣ-ṣāḥibu fis-safar, wal-khalīfatu fil-ahl. Allāhumma innī a‘ūdhu bika min wa‘thā’is-safar, wa ka’ābatil-manẓar, wa sū’il-munqalabi fil-māli wal-ahl.</div>
+                    <div class="translation">Allah is the Greatest (×3). How perfect He is, the One who has placed this (transport) at our service, and we ourselves would not have been capable of that. And to our Lord is our final return. O Allah, we ask You on this journey of ours for righteousness and piety, and for deeds that please You. O Allah, make this journey easy for us and shorten its distance for us. O Allah, You are the Companion on the journey and the One who looks after the family. O Allah, I seek refuge in You from the hardships of travel, from distressing sights, and from an evil turn of events with property and family on return.</div>
+                    <div class="repetition-note">On the way home, say the same du‘ā’ and add:</div>
+                    <div class="arabic">آيِبُونَ، تَآئِبُونَ، عَابِدُونَ، لِرَبِّنَا حَامِدُونَ</div>
+                    <div class="transliteration">Āyibūna, tā’ibūna, ‘ābidūna, li-Rabbinā ḥāmidūn.</div>
+                    <div class="translation">We return, repentant, worshipping, and praising our Lord.</div>
+                    <div class="reference">Ṣaḥīḥ Muslim 1342; Ḥiṣn al-Muslim 207</div>
                     <div class="audio-player"><audio controls preload="none" src="https://www.hisnmuslim.com/audio/ar/207.mp3" type="audio/mpeg"></audio></div>
-                    <div class="audio-note">The recording continues with the full travel du‘ā’ from Ṣaḥīḥ Muslim 1342 (Allāhumma innā nas’aluka fī safarinā hādhā…).</div>
                 </div>
             </div>
 
@@ -1174,7 +1188,7 @@
         <!-- ============================================================ -->
         <div id="indonesian-content" class="hidden">
             <div style="margin-bottom:20px;">
-                <a href="index.html" class="top-home-link"><i class="fas fa-arrow-left"></i> Kembali ke Menu Utama</a>
+                <a href="index.html" class="top-home-link" style="display:none" hidden><i class="fas fa-arrow-left"></i> Menu Utama</a>
                 <a href="#" class="top-home-link pdf-btn" role="button"><i class="fas fa-file-pdf"></i> PDF</a>
                 <a data-link="training" data-pdf-viewer href="https://drive.google.com/file/d/1aQ6_JO7GO8A2rBfYxMsV6tLHZIESAd9l/view?usp=sharing" class="top-home-link has-badge" data-viewer-title="Manasik Umrah (PDF)" aria-label="Manasik Umrah"><span class="btn-badge" aria-hidden="true">📘 Manasik</span><i class="fas fa-book-open"></i> Umrah</a>
                 <a data-pdf-viewer data-viewer-title="Hajj &amp; Umrah Du‘ās" href="Hajj_Umrah_Duas.html" class="top-home-link has-badge" aria-label="Doa² Umrah"><span class="btn-badge" aria-hidden="true">🤲 Doa²</span><i class="fas fa-book"></i> Umrah</a>
@@ -1363,13 +1377,24 @@
                 <div class="dhikr-card" id="c20-id">
                     <div class="dua-number">Langkah 5 | Doa safar (perjalanan)</div>
                     <div class="repetition-note" style="margin-bottom:10px;">Dibaca sebelum berangkat dengan kendaraan.</div>
+                    <div class="version-label">Versi singkat</div>
                     <div class="arabic">ٱللَّهُ أَكْبَرُ، ٱللَّهُ أَكْبَرُ، ٱللَّهُ أَكْبَرُ</div>
                     <div class="arabic-quran">سُبْحَـٰنَ ٱلَّذِى سَخَّرَ لَنَا هَـٰذَا وَمَا كُنَّا لَهُۥ مُقْرِنِينَ ﴿١٣﴾ وَإِنَّآ إِلَىٰ رَبِّنَا لَمُنقَلِبُونَ ﴿١٤﴾</div>
                     <div class="transliteration">Allahu akbar, Allahu akbar, Allahu akbar. Subhanalladzi sakhkhara lana hadza wa ma kunna lahu muqrinin, wa inna ila rabbina lamunqalibun.</div>
                     <div class="translation">Allah Mahabesar (3x). Mahasuci (Allah) yang telah menundukkan semua ini bagi kami, padahal kami sebelumnya tidak mampu menguasainya, dan sesungguhnya kami akan kembali kepada Tuhan kami.</div>
                     <div class="reference">QS. Az-Zukhruf [43]: 13–14; HR. Muslim 1342</div>
+                    <div class="version-label">Versi lengkap <span class="version-tag">🎧 inilah yang dibacakan dalam rekaman</span></div>
+                    <div class="arabic">ٱللَّهُ أَكْبَرُ، ٱللَّهُ أَكْبَرُ، ٱللَّهُ أَكْبَرُ</div>
+                    <div class="arabic-quran">سُبْحَـٰنَ ٱلَّذِى سَخَّرَ لَنَا هَـٰذَا وَمَا كُنَّا لَهُۥ مُقْرِنِينَ ﴿١٣﴾ وَإِنَّآ إِلَىٰ رَبِّنَا لَمُنقَلِبُونَ ﴿١٤﴾</div>
+                    <div class="arabic">ٱللَّهُمَّ إِنَّا نَسْأَلُكَ فِى سَفَرِنَا هَـٰذَا ٱلْبِرَّ وَٱلتَّقْوَىٰ، وَمِنَ ٱلْعَمَلِ مَا تَرْضَىٰ، ٱللَّهُمَّ هَوِّنْ عَلَيْنَا سَفَرَنَا هَـٰذَا وَٱطْوِ عَنَّا بُعْدَهُ، ٱللَّهُمَّ أَنْتَ ٱلصَّاحِبُ فِى ٱلسَّفَرِ، وَٱلْخَلِيفَةُ فِى ٱلْأَهْلِ، ٱللَّهُمَّ إِنِّىٓ أَعُوذُ بِكَ مِنْ وَعْثَآءِ ٱلسَّفَرِ، وَكَآبَةِ ٱلْمَنْظَرِ، وَسُوٓءِ ٱلْمُنْقَلَبِ فِى ٱلْمَالِ وَٱلْأَهْلِ</div>
+                    <div class="transliteration">Allahu akbar, Allahu akbar, Allahu akbar. Subhanalladzi sakhkhara lana hadza wa ma kunna lahu muqrinin, wa inna ila rabbina lamunqalibun. Allahumma inna nas-aluka fi safarina hadzal birra wat taqwa, wa minal 'amali ma tardha. Allahumma hawwin 'alaina safarana hadza wathwi 'anna bu'dah. Allahumma antash shahibu fis safar, wal khalifatu fil ahl. Allahumma inni a'udzu bika min wa'tsa-is safar, wa ka-abatil manzhar, wa su-il munqalabi fil mali wal ahl.</div>
+                    <div class="translation">Allah Mahabesar (3x). Mahasuci (Allah) yang telah menundukkan semua ini bagi kami, padahal kami sebelumnya tidak mampu menguasainya, dan sesungguhnya kami akan kembali kepada Tuhan kami. Ya Allah, kami memohon kepada-Mu dalam perjalanan kami ini kebaikan dan takwa, serta amal yang Engkau ridai. Ya Allah, mudahkanlah perjalanan kami ini dan dekatkanlah jaraknya bagi kami. Ya Allah, Engkaulah pendamping dalam perjalanan dan pengganti yang menjaga keluarga. Ya Allah, aku berlindung kepada-Mu dari kesulitan perjalanan, dari pemandangan yang menyedihkan, dan dari keadaan buruk saat kembali pada harta dan keluarga.</div>
+                    <div class="repetition-note">Saat pulang, baca doa yang sama lalu tambahkan:</div>
+                    <div class="arabic">آيِبُونَ، تَآئِبُونَ، عَابِدُونَ، لِرَبِّنَا حَامِدُونَ</div>
+                    <div class="transliteration">Ayibuna, ta-ibuna, 'abiduna, lirabbina hamidun.</div>
+                    <div class="translation">Kami kembali, bertobat, beribadah, dan memuji Tuhan kami.</div>
+                    <div class="reference">HR. Muslim 1342; Hisnul Muslim 207</div>
                     <div class="audio-player"><audio controls preload="none" src="https://www.hisnmuslim.com/audio/ar/207.mp3" type="audio/mpeg"></audio></div>
-                    <div class="audio-note">Rekaman ini dilanjutkan dengan doa safar lengkap (HR. Muslim 1342) (Allahumma inna nasaluka fi safarina hadza…).</div>
                 </div>
             </div>
 
@@ -1422,54 +1447,38 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="trip_dates.js"></script>
     <script>
         /* ?Dates=<file> loads another dates file from the same folder (or a sub-folder), e.g.
            ?Dates=trip_2027  or  ?Dates=trip_2027.js  or  ?Dates=dates/trip_2027
            It applies only to that visit (not remembered); without ?Dates, trip_dates.js is used.
-           Any date the file leaves out is taken from trip_dates.js (or the built-in dates).
-           The ?Dates file is loaded BEFORE trip_dates.js, so it works whether the files say
-           window.TRIP = {...}  or  const / let / var TRIP = {...}. */
-        (function () {
-            try { localStorage.removeItem('datesFile'); } catch (e) {}   // clear a choice saved by an older version
-            let f = null, given = false;
-            new URLSearchParams(location.search).forEach(function (v, k) { if (k.trim().toLowerCase() === 'dates') { f = v.trim(); given = true; } });
-            if (given && f && !/^(default|trip_dates(\.js)?)$/i.test(f)) {
-                if (!/\.js$/i.test(f)) f += '.js';
-                if (!/^[\w-]+(\/[\w-]+)*\.[\w.-]*js$/i.test(f) && !/^[\w.-]+\.js$/i.test(f) || f.includes('..')) {
-                    window.__datesMsg = 'Dates file name not allowed: ' + f;
-                } else {
-                    window.__datesFile = f;
-                    window.__datesFail = function () { window.__datesMsg = 'Dates file not found: ' + f + ' (showing the default dates)'; };
-                    window.__grabDates = function () {
-                        let t = window.TRIP;
-                        try { if (!t && typeof TRIP !== 'undefined') t = TRIP; } catch (e) {}
-                        window.__datesTrip = t;
-                        try { window.TRIP = undefined; } catch (e) {}
-                    };
-                    document.write('<script src="' + f + '?v=' + Date.now() + '" onerror="__datesFail()"><\/script>');
-                    document.write('<script>__grabDates()<\/script>');
-                }
-            }
-            document.write('<script src="trip_dates.js"><\/script>');
-        })();
-    </script>
-    <script>
+           Any date the file leaves out is taken from trip_dates.js (or the built-in dates). */
         (function () {
             const BUILT_IN = { departure: '2026-11-23', returnFlight: '2026-12-03', zoomMeeting: '2026-11-08',
                                whatsappStart: '2026-11-13', scheduleChecked: '2026-11-10', hijriYear: 1448,
                                hotelMadinah: 'Millennium Al Aqeeq', hotelMakkah: 'Al Safwah Royale Orchid' };
-            let base = window.TRIP;
-            try { if (!base && typeof TRIP !== 'undefined' && TRIP !== window.__datesTrip) base = TRIP; } catch (e) {}
-            if (!base) console.warn('trip_dates.js not found or not readable next to this page (using built-in dates)');
-            window.TRIP_DEFAULT = Object.assign({}, BUILT_IN, base || {});
+            if (!window.TRIP) console.warn('trip_dates.js not found next to this page (using built-in dates)');
+            window.TRIP_DEFAULT = Object.assign({}, BUILT_IN, window.TRIP || {});
+            try { localStorage.removeItem('datesFile'); } catch (e) {}   // clear a choice saved by an older version
+            let f = null, given = false;
+            new URLSearchParams(location.search).forEach(function (v, k) { if (k.trim().toLowerCase() === 'dates') { f = v.trim(); given = true; } });
+            if (!given || !f || /^(default|trip_dates(\.js)?)$/i.test(f)) return;
+            if (!/\.js$/i.test(f)) f += '.js';
+            if (!/^[\w-]+(\/[\w-]+)*\.[\w.-]*js$/i.test(f) && !/^[\w.-]+\.js$/i.test(f) || f.includes('..')) {
+                window.__datesMsg = 'Dates file name not allowed: ' + f; return;
+            }
             window.TRIP = undefined;
+            window.__datesFile = f;
+            window.__datesFail = function () { window.__datesMsg = 'Dates file not found: ' + f + ' (showing the default dates)'; };
+            document.write('<script src="' + f + '?v=' + Date.now() + '" onerror="__datesFail()"><\/script>');
         })();
     </script>
     <script>
         /* Merge the ?Dates file (if any) over the defaults.
            Accepts  window.TRIP = {...},  TRIP = {...},  var/let/const TRIP = {...} */
         (function () {
-            let t = window.__datesTrip;
+            let t = window.TRIP;
+            try { if (!t && typeof TRIP !== 'undefined') t = TRIP; } catch (e) {}
             /* The file loaded but did not run (typing error)? Try again after replacing
                curly quotes ‘ ’ “ ” and long dashes – — that word processors put in. */
             if (window.__datesFile && !window.__datesMsg && !t) {
@@ -1555,17 +1564,7 @@
             function tripMoment(key, time, tz) {
                 const dt = tripDay(key); if (!dt) return null;
                 const [h, mi] = (time || '00:00').split(':').map(Number);
-                const local = dt.getTime() + (h * 60 + mi) * 60000;   // wall-clock time, written as UTC
-                let off = Number(tz || 0);
-                // data-tz is the STANDARD offset. US & Canada (UTC-10 … -3) move clocks 1 hour forward
-                // from the 2nd Sunday of March to the 1st Sunday of November (2:00 AM local).
-                if (off <= -3 && off >= -10 && isNorthAmericaDST(local)) off += 1;
-                return new Date(local - off * 3600000);
-            }
-            function isNorthAmericaDST(local) {
-                const y = new Date(local).getUTCFullYear();
-                const nthSunday = (m, n) => { const first = new Date(Date.UTC(y, m, 1)).getUTCDay(); return 1 + ((7 - first) % 7) + 7 * (n - 1); };
-                return local >= Date.UTC(y, 2, nthSunday(2, 2), 2) && local < Date.UTC(y, 10, nthSunday(10, 1), 2);
+                return new Date(dt.getTime() + (h * 60 + mi) * 60000 - Number(tz || 0) * 3600000);
             }
             function renderTripDates(root) {
                 (root || document).querySelectorAll('[data-d][data-f]').forEach(el => {
@@ -2064,4 +2063,3 @@
     </script>
 </body>
 </html>
-
