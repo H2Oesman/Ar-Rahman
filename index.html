@@ -1426,8 +1426,7 @@
     <script>
         /* ?Dates=<file> loads another dates file from the same folder (or a sub-folder), e.g.
            ?Dates=trip_2027  or  ?Dates=trip_2027.js  or  ?Dates=dates/trip_2027
-           The choice is remembered (localStorage) for later visits;
-           ?Dates=default goes back to trip_dates.js.
+           It applies only to that visit (not remembered); without ?Dates, trip_dates.js is used.
            Any date the file leaves out is taken from trip_dates.js (or the built-in dates). */
         (function () {
             const BUILT_IN = { departure: '2026-11-23', returnFlight: '2026-12-03', zoomMeeting: '2026-11-08',
@@ -1435,22 +1434,17 @@
                                hotelMadinah: 'Millennium Al Aqeeq', hotelMakkah: 'Al Safwah Royale Orchid' };
             if (!window.TRIP) console.warn('trip_dates.js not found next to this page (using built-in dates)');
             window.TRIP_DEFAULT = Object.assign({}, BUILT_IN, window.TRIP || {});
-            const KEY = 'datesFile';
-            const get = () => { try { return localStorage.getItem(KEY); } catch (e) { return null; } };
-            const set = v => { try { v ? localStorage.setItem(KEY, v) : localStorage.removeItem(KEY); } catch (e) {} };
+            try { localStorage.removeItem('datesFile'); } catch (e) {}   // clear a choice saved by an older version
             let f = null, given = false;
             new URLSearchParams(location.search).forEach(function (v, k) { if (k.trim().toLowerCase() === 'dates') { f = v.trim(); given = true; } });
-            if (given && (!f || /^(default|trip_dates(\.js)?)$/i.test(f))) { set(null); return; }
-            if (!given) f = get();
-            if (!f) return;
+            if (!given || !f || /^(default|trip_dates(\.js)?)$/i.test(f)) return;
             if (!/\.js$/i.test(f)) f += '.js';
             if (!/^[\w-]+(\/[\w-]+)*\.[\w.-]*js$/i.test(f) && !/^[\w.-]+\.js$/i.test(f) || f.includes('..')) {
-                window.__datesMsg = 'Dates file name not allowed: ' + f; set(null); return;
+                window.__datesMsg = 'Dates file name not allowed: ' + f; return;
             }
-            set(f);
             window.TRIP = undefined;
             window.__datesFile = f;
-            window.__datesFail = function () { window.__datesMsg = 'Dates file not found: ' + f + ' (showing the default dates)'; set(null); };
+            window.__datesFail = function () { window.__datesMsg = 'Dates file not found: ' + f + ' (showing the default dates)'; };
             document.write('<script src="' + f + '?v=' + Date.now() + '" onerror="__datesFail()"><\/script>');
         })();
     </script>
