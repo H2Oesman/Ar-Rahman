@@ -2,11 +2,11 @@
    Keep this file in the same folder as Arrahman_Umrah.html.
    Dates: 'YYYY-MM-DD'.  Links: full https:// addresses. */
 window.TRIP = {
-    departure:       '2027-03-18’, // group leaves North America (Seattle TK 204)
-    returnFlight:    '2027-03-28’, // TK 115 Jeddah → Istanbul
-    zoomMeeting:     '2027–03-01’,
-    whatsappStart:   '2027-03-02’,
-    scheduleChecked: '2027-03-15’,
+    departure:       '2027-03-18', // group leaves North America (Seattle TK 204)
+    returnFlight:    '2027-03-28', // TK 115 Jeddah → Istanbul
+    zoomMeeting:     '2027-03-01',
+    whatsappStart:   '2027-03-02',
+    scheduleChecked: '2027-03-15',
     hijriYear:       1448,
 
     // Umrah Training (English) and Manasik Umrah (Bahasa Indonesia) PDFs
