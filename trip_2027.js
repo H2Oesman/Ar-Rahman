@@ -9,7 +9,11 @@ window.TRIP = {
     scheduleChecked: '2027-03-15',
     hijriYear:       1448,
 
+    // Hotels
+    hotelMadinah: 'Millennium Al Aqeeq',
+    hotelMakkah:  'Al Safwah Royale Orchid',
+
     // Umrah Training (English) and Manasik Umrah (Bahasa Indonesia) PDFs
     training:   'https://drive.google.com/file/d/10Sfl3lc-ovJ5T1gvjswBiRtQTVVHx22r/view?usp=drive_link',
     trainingID: 'https://drive.google.com/file/d/1aQ6_JO7GO8A2rBfYxMsV6tLHZIESAd9l/view?usp=sharing'
-};
+}
