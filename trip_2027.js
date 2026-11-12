@@ -16,4 +16,7 @@ window.TRIP = {
     // Umrah Training (English) and Manasik Umrah (Bahasa Indonesia) PDFs
     training:   'https://drive.google.com/file/d/10Sfl3lc-ovJ5T1gvjswBiRtQTVVHx22r/view?usp=drive_link',
     trainingID: 'https://drive.google.com/file/d/1aQ6_JO7GO8A2rBfYxMsV6tLHZIESAd9l/view?usp=sharing'
-}
+
+    // Donation link (top Donate button and the appeal pop-up)
+    donate:     'https://secure.humanconcern.org/site/Donation2?df_id=13807&13807.donation=form1&mfc_pref=T&set.custom.Sources=EMKT&set.custom.Campaign=Pal-ER'
+};
