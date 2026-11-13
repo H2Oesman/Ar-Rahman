@@ -3,11 +3,18 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>Hajj &amp; Umrah Du‘ās</title>
+    <title>My Umrah Essentials</title>
 
-    <meta property="og:title" content="🕋 Hajj &amp; Umrah Du'ās" />
-    <meta property="og:description" content="Du'ās and dhikr for every step of Umrah, Hajj and the visit to Madinah, from Perfecting the Journey by Sh. Husain Abdul Sattar. English &amp; Bahasa Indonesia." />
+    <meta name="description" content="My Umrah Essentials: du'ās and dhikr for every step of Umrah, Hajj and the visit to Madinah. English &amp; Bahasa Indonesia." />
+    <meta name="application-name" content="My Umrah Essentials" />
+    <meta name="apple-mobile-web-app-title" content="My Umrah Essentials" />
+    <meta property="og:title" content="🕋 My Umrah Essentials" />
+    <meta property="og:description" content="Du'ās and dhikr for every step of Umrah, Hajj and the visit to Madinah. English &amp; Bahasa Indonesia." />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="My Umrah Essentials" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="My Umrah Essentials" />
+    <meta name="twitter:description" content="Du'ās and dhikr for every step of Umrah, Hajj and the visit to Madinah. English &amp; Bahasa Indonesia." />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet" />
     <style>
@@ -802,6 +809,18 @@
         .page-ref { font-size: 0.8rem; opacity: 0.7; }
         .theme-card p { margin: 6px 0 0; }
         .dhikr-card p { margin: 6px 0 0; }
+        /* Top buttons: same size and shape as the floating toggles, on the left, each level with a toggle (they scroll with the page) */
+        .top-actions { position: absolute; top: 12px; left: 14px; display: flex; flex-direction: column; align-items: flex-start; gap: 2px; margin: 0; z-index: 5; }
+        .top-btn { display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px; font-size: 11px; font-weight: bold; line-height: 1.6; color: var(--link-color); background: transparent; border: 1px solid var(--link-color); border-radius: 30px; text-decoration: none; height: 26px; box-sizing: border-box; }
+        .top-btn:hover, .top-btn:focus-visible { background: var(--link-color); color: #fff; text-decoration: none; }
+        .top-btn:focus-visible { outline: 2px solid var(--link-color); outline-offset: 2px; }
+        @media (max-width: 640px) {
+            .top-actions { left: 10px; gap: 3px; }
+            .top-btn { font-size: 10.5px; padding: 3px 8px; height: 25px; }
+        }
+        @media print { .top-actions { display: none !important; } }
+        .closing-dua { text-align: center; font-style: italic; margin: 30px auto 0; max-width: 760px; padding: 16px 20px; border-radius: 16px; background: var(--bonus-bg); line-height: 1.8; }
+        .closing-dua .ar-word { font-family: 'AmiriQuran', 'Scheherazade New', serif; font-style: normal; font-size: 1.25em; color: var(--arabic-color); }
         /* Animated scroll arrows: the chevrons glide in the direction they point (replaces blinking) */
         .scroll-arrow, .scroll-arrow-double { animation: none !important; opacity: 1; overflow: hidden; }
         .scroll-arrow i, .scroll-arrow-double i { display: inline-block; animation-duration: 3s; animation-timing-function: ease-in-out; animation-iteration-count: infinite; }
@@ -839,10 +858,10 @@
         <div class="bismillah">﷽</div>
         <!-- ENGLISH VERSION -->
         <div id="english-content">
-            <div style="margin-bottom:20px;">
-                <a href="index.html" class="top-home-link"><i class="fas fa-arrow-left"></i> Main Menu</a>
-                <a href="#" class="top-home-link pdf-btn" role="button"><i class="fas fa-file-pdf"></i> Save as PDF</a>
-                <a data-pdf-viewer data-viewer-title="Perfecting the Journey – Sh. Husain Abdul Sattar (PDF)" href="https://static1.squarespace.com/static/66b28c82a51dd10876ff5fa4/t/66d0798104598f24b8643e81/1724938628803/Sacred+Learning+Hajj+PDF+2024-Sh.+Husain.pdf" class="top-home-link"><i class="fas fa-book-open"></i> Read the guide (PDF)</a>
+            <div class="top-actions">
+                <a href="index.html" class="top-btn top-main"><i class="fas fa-arrow-left"></i> Main Menu</a>
+                <a href="#" class="top-btn top-save pdf-btn" role="button"><i class="fas fa-file-pdf"></i> Save as PDF</a>
+                <a data-pdf-viewer data-viewer-title="Perfecting the Journey – Sh. Husain Abdul Sattar (PDF)" href="https://static1.squarespace.com/static/66b28c82a51dd10876ff5fa4/t/66d0798104598f24b8643e81/1724938628803/Sacred+Learning+Hajj+PDF+2024-Sh.+Husain.pdf" class="top-btn top-guide"><i class="fas fa-book-open"></i> Read the guide (PDF)</a>
             </div>
             <h1 class="surah-title">Hajj &amp; Umrah Du‘ās</h1>
             <nav class="toc-box" id="toc-en" aria-label="Table of Contents">
@@ -1199,14 +1218,15 @@
                 <a data-pdf-viewer data-viewer-title="Perfecting the Journey – Sh. Husain Abdul Sattar (PDF)" href="https://static1.squarespace.com/static/66b28c82a51dd10876ff5fa4/t/66d0798104598f24b8643e81/1724938628803/Sacred+Learning+Hajj+PDF+2024-Sh.+Husain.pdf" class="top-home-link"><i class="fas fa-book-open"></i> Perfecting the Journey – Sh. Husain Abdul Sattar</a>
             </div>
             <div class="surah-pagination"><a href="index.html" class="pagination-next"><i class="fas fa-home"></i> Back to Main Menu</a></div>
+            <div class="closing-dua">We humbly ask Allah to accept this effort from us, forgive any human shortcomings or errors within these pages, and make it a source of ease for every pilgrim (ḥājj, <span class="ar-word" lang="ar" dir="rtl">حَاجّ</span>, for Hajj; mu‘tamir, <span class="ar-word" lang="ar" dir="rtl">مُعْتَمِر</span>, for Umrah). Feedback and advice are always welcomed as we strive to improve.</div>
         </div>
         <!-- END ENGLISH -->
         <!-- INDONESIAN VERSION -->
         <div id="indonesian-content" class="hidden">
-            <div style="margin-bottom:20px;">
-                <a href="index.html" class="top-home-link"><i class="fas fa-arrow-left"></i> Menu Utama</a>
-                <a href="#" class="top-home-link pdf-btn" role="button"><i class="fas fa-file-pdf"></i> Simpan sebagai PDF</a>
-                <a data-pdf-viewer data-viewer-title="Perfecting the Journey – Sh. Husain Abdul Sattar (PDF)" href="https://static1.squarespace.com/static/66b28c82a51dd10876ff5fa4/t/66d0798104598f24b8643e81/1724938628803/Sacred+Learning+Hajj+PDF+2024-Sh.+Husain.pdf" class="top-home-link"><i class="fas fa-book-open"></i> Baca panduan (PDF)</a>
+            <div class="top-actions">
+                <a href="index.html" class="top-btn top-main"><i class="fas fa-arrow-left"></i> Menu Utama</a>
+                <a href="#" class="top-btn top-save pdf-btn" role="button"><i class="fas fa-file-pdf"></i> Simpan sebagai PDF</a>
+                <a data-pdf-viewer data-viewer-title="Perfecting the Journey – Sh. Husain Abdul Sattar (PDF)" href="https://static1.squarespace.com/static/66b28c82a51dd10876ff5fa4/t/66d0798104598f24b8643e81/1724938628803/Sacred+Learning+Hajj+PDF+2024-Sh.+Husain.pdf" class="top-btn top-guide"><i class="fas fa-book-open"></i> Baca panduan (PDF)</a>
             </div>
             <h1 class="surah-title">Doa Haji &amp; Umrah</h1>
             <nav class="toc-box" id="toc-id" aria-label="Daftar Isi">
@@ -1563,10 +1583,11 @@
                 <a data-pdf-viewer data-viewer-title="Perfecting the Journey – Sh. Husain Abdul Sattar (PDF)" href="https://static1.squarespace.com/static/66b28c82a51dd10876ff5fa4/t/66d0798104598f24b8643e81/1724938628803/Sacred+Learning+Hajj+PDF+2024-Sh.+Husain.pdf" class="top-home-link"><i class="fas fa-book-open"></i> Perfecting the Journey – Sh. Husain Abdul Sattar</a>
             </div>
             <div class="surah-pagination"><a href="index.html" class="pagination-next"><i class="fas fa-home"></i> Kembali ke Menu Utama</a></div>
+            <div class="closing-dua">Dengan rendah hati kami memohon kepada Allah agar menerima usaha ini dari kami, mengampuni segala kekurangan dan kesalahan manusiawi di halaman-halaman ini, serta menjadikannya sumber kemudahan bagi setiap jemaah (ḥājj, <span class="ar-word" lang="ar" dir="rtl">حَاجّ</span>, untuk haji; mu‘tamir, <span class="ar-word" lang="ar" dir="rtl">مُعْتَمِر</span>, untuk umrah). Masukan dan nasihat selalu kami sambut dengan senang hati seiring upaya kami untuk terus memperbaiki diri.</div>
         </div>
         <!-- END INDONESIAN -->
 
-        <footer>Source: <em>Perfecting the Journey</em> by Sh. Husain Abdul Sattar, Sacred Learning (sacredlearning.org) — Audio: Ḥiṣn al-Muslim (hisnmuslim.com) &amp; Mishary Alafasy (quranicaudio.com, everyayah.com) — Use <strong>?Ihram</strong>, <strong>?Tawaf</strong>, <strong>?Saee</strong>, <strong>?Hajj</strong>, or <strong>?Madinah</strong> to jump to a section</footer>
+        <footer>Source: <em>Perfecting the Journey</em> by Sh. Husain Abdul Sattar, Sacred Learning (sacredlearning.org) — Audio: Ḥiṣn al-Muslim (hisnmuslim.com) &amp; Mishary Alafasy (quranicaudio.com, everyayah.com)</footer>
     </div>
 
     <!-- Font Awesome -->
@@ -1697,7 +1718,7 @@
             window.addEventListener('beforeprint', () => {
                 wasDark = document.body.classList.contains('dark-mode');
                 document.body.classList.remove('dark-mode');
-                document.title = 'Hajj & Umrah Du‘ās';
+                document.title = 'My Umrah Essentials';
             });
             window.addEventListener('afterprint', () => {
                 if (wasDark) document.body.classList.add('dark-mode');
