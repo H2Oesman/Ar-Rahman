@@ -892,10 +892,11 @@
         body.about-lock { overflow: hidden; }
         @media (max-width: 640px) { .about-win { padding: 52px 18px 34px; } .about-box { padding: 20px 18px; font-size: 0.92rem; letter-spacing: 0.03em; } .about-wave { width: 150px; height: 100px; } }
         @media (prefers-reduced-motion: reduce) { .about-overlay, .about-win { transition: none; } }
-        /* ---- index page: centre the 3 top buttons ---- */
-        .top-links { margin-bottom: 20px; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-end; column-gap: 26px; row-gap: 4px; }
+        /* ---- index page: top buttons spread edge to edge (left / middle / right) ---- */
+        .top-links { margin-bottom: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; column-gap: 14px; row-gap: 4px; }
         .top-links .top-home-link { margin-left: 0; margin-right: 0; }
-        @media (max-width: 640px) { .top-links { column-gap: 14px; } }
+        /* On narrow phones the Donate button drops to its own line: keep it centred there */
+        @media (max-width: 640px) { .top-links .donate-link { margin-left: auto; margin-right: auto; } }
         /* ---- index page: trip list ---- */
         .trip-list { list-style: none; padding: 0; margin: 10px 0 0; }
         /* "Click a trip" instruction (animated) */
