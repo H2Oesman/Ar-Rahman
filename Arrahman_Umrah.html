@@ -4,22 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>My Umrah Essentials</title>
+    <meta name="description" content="My Umrah Essentials: Etiquettes of Traveling, Flight Itinerary, Nusuk, Ṣalāh and Du'ās, Rawdah." />
+    <meta name="application-name" content="My Umrah Essentials" />
+    <meta name="apple-mobile-web-app-title" content="My Umrah Essentials" />
 
-    <!-- WhatsApp & Instagram Link Preview Meta Tags (Open Graph) -->
-    <!-- Replace https://yourdomain.com with the real page address, and og:image / twitter:image
-         with the full address of the preview picture (e.g. https://yourdomain.com/Arrahman_Umrah_preview.png) -->
+    <!-- WhatsApp, Facebook & Instagram link preview (Open Graph) -->
     <meta property="og:title" content="🕋 My Umrah Essentials" />
-    <meta property="og:description" content="My Umrah Essentials: Etiquettes of Traveling Flight Itinerary, Nusuk, Ṣalāh and Du'ās, Rawdah." />
-    <meta property="og:image" content="https://yourdomain.com" />
-    <meta property="og:url" content="https://h2oesman.github.io/Ar-Rahman/" />
+    <meta property="og:description" content="My Umrah Essentials: Etiquettes of Traveling, Flight Itinerary, Nusuk, Ṣalāh and Du'ās, Rawdah." />
+    <meta property="og:url" content="https://h2oesman.github.io/Ar-Rahman/Arrahman_Umrah.html" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="My Umrah Essentials" />
+    <!-- To show a preview picture, add the full address of an image, e.g.
+         <meta property="og:image" content="https://h2oesman.github.io/Ar-Rahman/preview.png" />
+         <meta name="twitter:image" content="https://h2oesman.github.io/Ar-Rahman/preview.png"> -->
 
-    <!-- Twitter Card tags for extra compatibility -->
-    <meta name="twitter:card" content="summary_large_image">
+    <!-- Twitter / X card -->
+    <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="🕋 My Umrah Essentials">
-    <meta name="twitter:description" content="My Umrah Essentials: Etiquettes of Traveling Flight Itinerary, Nusuk, Ṣalāh and Du'ās, Rawdah.">
-    <meta name="twitter:image" content="https://yourdomain.com">
+    <meta name="twitter:description" content="My Umrah Essentials: Etiquettes of Traveling, Flight Itinerary, Nusuk, Ṣalāh and Du'ās, Rawdah.">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet" />
     <style>
@@ -877,6 +879,12 @@
         @media (max-width: 480px) { .top-btn-row .pill-red { font-size: 9.5px; white-space: nowrap; gap: 4px; } }
         @media (max-width: 360px) { .top-btn-row .pill-red { font-size: 8.5px; } }
         @media (max-width: 420px) { .version-tag { white-space: normal; display: inline-block; margin-left: 0; margin-top: 2px; } }
+        /* Closing du‘ā’ above the footer */
+        .closing-dua { margin: 10px auto 24px; max-width: 760px; text-align: center; font-style: italic; color: var(--translation-color); background: var(--footnote-bg); border-radius: 16px; padding: 16px 22px; line-height: 1.7; }
+        .closing-dua p { margin: 0 0 8px; }
+        .closing-dua p:last-child { margin-bottom: 0; font-size: 0.92em; opacity: 0.85; }
+        .closing-dua .ar-word { font-family: 'Scheherazade New', 'Noto Naskh Arabic', 'Traditional Arabic', serif; font-style: normal; font-size: 1.35em; color: var(--arabic-color); unicode-bidi: isolate; }
+        @media print { .closing-dua { background: none; } }
     </style>
 </head>
 <body>
@@ -1204,6 +1212,10 @@
                 </div>
             </div>
             <div class="surah-pagination"><a href="index.html" class="pagination-next"><i class="fas fa-home"></i> Back to Main Menu</a></div>
+            <div class="closing-dua">
+                <p>We humbly ask Allah to accept this effort from us, forgive any human shortcomings or errors within these pages, and make it a source of ease for every pilgrim (<span class="ar-word" lang="ar" dir="rtl">مُعْتَمِر</span>, <em>muʿtamir</em>).</p>
+                <p>Feedback and advice are always welcomed as we strive to improve.</p>
+            </div>
         </div>
         <!-- END ENGLISH -->
 
@@ -1471,10 +1483,14 @@
                 </div>
             </div>
             <div class="surah-pagination"><a href="index.html" class="pagination-next"><i class="fas fa-home"></i> Kembali ke Menu Utama</a></div>
+            <div class="closing-dua">
+                <p>Dengan rendah hati kami memohon kepada Allah agar menerima usaha ini dari kami, mengampuni segala kekurangan dan kesalahan manusiawi di dalam halaman-halaman ini, serta menjadikannya sumber kemudahan bagi setiap jemaah (<span class="ar-word" lang="ar" dir="rtl">مُعْتَمِر</span>, <em>muʿtamir</em>).</p>
+                <p>Masukan dan saran selalu kami sambut dengan senang hati demi perbaikan yang berkelanjutan.</p>
+            </div>
         </div>
         <!-- END INDONESIAN -->
 
-        <footer>© <span data-hijri>1448</span> AH / <span data-d="departure" data-f="year">2026</span> AD — With kind permission of Sh. Mohamad Joban — Audio: Hisnul Muslim (hisnmuslim.com) &amp; Mishary Alafasy (quranicaudio.com) — Use <strong>?Prep</strong>, <strong>?Departure</strong>, <strong>?Duas</strong>, or <strong>?Madinah</strong> to scroll to sections.</footer>
+        <footer>© <span data-hijri>1448</span> AH / <span data-d="departure" data-f="year">2026</span> AD — With kind permission of Sh. Mohamad Joban — Audio: Hisnul Muslim (hisnmuslim.com) &amp; Mishary Alafasy (quranicaudio.com)</footer>
     </div>
 
     <!-- Font Awesome -->
