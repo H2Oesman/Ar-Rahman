@@ -864,7 +864,10 @@
         .tasheel-fig { margin: 12px auto 0; max-width: 360px; text-align: center; }
         .tasheel-fig img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--verse-border); display: block; }
         .tasheel-fig figcaption { font-size: 0.8rem; opacity: 0.7; margin-top: 4px; font-style: italic; }
-        .top-btn-row { text-align: center; }
+        .top-btn-row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; column-gap: 6px; }
+        .top-btn-row .top-home-link { margin-left: 0; margin-right: 0; }
+        .top-btn-row .top-home-link.has-badge:not(.donate-link) { margin-right: 14px; }
+        @media (max-width: 560px) { .top-btn-row .donate-link { flex: 1 1 100%; justify-content: center; } }
     </style>
 </head>
 <body>
