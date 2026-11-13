@@ -3,11 +3,11 @@
    Dates: 'YYYY-MM-DD'.  Links: full https:// addresses.
    Every line inside { } except the last one must end with a comma. */
 window.TRIP = {
-    departure:       '2027-03-18', // group leaves North America (Seattle TK 204)
-    returnFlight:    '2027-03-28', // TK 115 Jeddah → Istanbul
-    zoomMeeting:     '2027-03-01',
-    whatsappStart:   '2027-03-02',
-    scheduleChecked: '2027-03-15',
+    departure:       '2026-11-23', // group leaves North America (Seattle TK 204)
+    returnFlight:    '2026-12-03', // TK 115 Jeddah → Istanbul
+    zoomMeeting:     '2026-11-08',
+    whatsappStart:   '2026-11-13',
+    scheduleChecked: '2026-11-10',
     hijriYear:       1448,
 
     // Hotels
