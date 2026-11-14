@@ -2092,8 +2092,15 @@
                     if (!vis) return;
                     const cur = parseFloat(vis.style.marginRight) || 0;
                     const d = ref.getBoundingClientRect().right - vis.getBoundingClientRect().right;
-                    if (Math.abs(d) < 0.5) return;
-                    rows.forEach(r => { r.style.marginRight = (cur - d) + 'px'; });
+                    if (Math.abs(d) >= 0.5) rows.forEach(r => { r.style.marginRight = (cur - d) + 'px'; });
+                    // Knowledge pill: left edge lines up with the round arrows on the left
+                    const arrow = document.getElementById('scrollUp');
+                    const kw = vis.querySelector('.know-wrap');
+                    if (arrow && kw && getComputedStyle(arrow).display !== 'none') {
+                        const kcur = parseFloat(kw.style.marginLeft) || 0;
+                        const kd = arrow.getBoundingClientRect().left - kw.getBoundingClientRect().left;
+                        if (Math.abs(kd) >= 0.5) rows.forEach(r => { const w = r.querySelector('.know-wrap'); if (w) w.style.marginLeft = (kcur + kd) + 'px'; });
+                    }
                 }
                 align(); setTimeout(align, 300); setTimeout(align, 1500);
                 window.addEventListener('resize', align);
