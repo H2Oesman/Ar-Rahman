@@ -840,6 +840,10 @@
         .jump-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; padding: 3px 12px; border-radius: 30px; border: 1px solid var(--link-color); margin-top: 8px; }
         .jump-link:hover { background: var(--link-color); color: #fff; text-decoration: none; }
         .end-links .top-home-link { margin: 3px; }
+        .version-label { margin: 14px 0 4px; font-weight: bold; font-size: 0.9rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--section-title-color); border-top: 1px dashed var(--verse-border); padding-top: 10px; }
+        .version-label:first-of-type { border-top: 0; padding-top: 0; margin-top: 4px; }
+        .version-tag { text-transform: none; letter-spacing: 0; font-weight: normal; font-size: 0.8rem; background: var(--badge-bg); color: var(--badge-text); border-radius: 30px; padding: 1px 8px; margin-left: 6px; white-space: nowrap; }
+        @media (max-width: 420px) { .version-tag { white-space: normal; display: inline-block; margin-left: 0; margin-top: 2px; } }
         .ayah-end { font-family: 'AmiriQuran', 'Scheherazade New', serif; color: var(--section-title-color); white-space: nowrap; font-feature-settings: normal; padding: 0 2px; }
         </style>
 </head>
@@ -871,7 +875,7 @@
             <div class="top-actions">
                 <a href="index.html" class="top-btn top-main"><i class="fas fa-arrow-left"></i> Main Menu</a>
                 <a href="#" class="top-btn top-save pdf-btn" role="button"><i class="fas fa-file-pdf"></i> Save as PDF</a>
-                <a data-pdf-viewer data-viewer-title="Book of Du‘a – Arrahman Umrah (PDF)" href="Book_of_Dua.pdf" class="top-btn top-guide"><i class="fas fa-book-open"></i> Read the guide (PDF)</a>
+                <a data-pdf-viewer data-viewer-title="Book of Du‘a (PDF)" href="Book_of_Dua.pdf" class="top-btn top-guide"><i class="fas fa-book-open"></i> Read the guide (PDF)</a>
             </div>
             <h1 class="surah-title">Book of Du‘a, Sa‘i and Tawaf</h1>
             <nav class="toc-box" id="toc-en" aria-label="Table of Contents">
@@ -889,7 +893,7 @@
                         <li><a class="toc-link" href="#" data-target="c3" data-title="Farewell du‘ā’, said to the traveller"><span class="toc-label-text">Farewell du‘ā’, said to the traveller</span><span class="toc-ref">Tirmidhī 3443–3444</span></a></li>
                         <li><a class="toc-link" href="#" data-target="c4" data-title="Leaving the house"><span class="toc-label-text">Leaving the house</span><span class="toc-ref">Abū Dāwūd 5095</span></a></li>
                         <li><a class="toc-link" href="#" data-target="c5" data-title="Upon boarding any vehicle"><span class="toc-label-text">Upon boarding any vehicle</span><span class="toc-ref">43:13–14</span></a></li>
-                        <li><a class="toc-link" href="#" data-target="c6" data-title="Du‘ā’ for travel (complete)"><span class="toc-label-text">Du‘ā’ for travel (complete)</span><span class="toc-ref">Muslim 1342</span></a></li>
+                        <li><a class="toc-link" href="#" data-target="c6" data-title="Du‘ā’ for travel"><span class="toc-label-text">Du‘ā’ for travel</span><span class="toc-ref">Muslim 1342</span></a></li>
                     </ul>
                     <div class="toc-group-label">On Arrival: a New City &amp; Your Hotel</div>
                     <ul class="toc-list">
@@ -949,19 +953,19 @@
                     <div class="toc-no-results" id="toc-no-results-en">No matching entries.</div>
                 </div>
             </nav>
-            <div class="info-box"><p><i class="fas fa-kaaba"></i> Du‘ās for every step of Umrah, in the order you will need them: from leaving home and Madinah, through iḥrām, ṭawāf round by round and sa‘ī, to returning home. Drawn from the <em>Book of Du‘a</em>, <em>Do’a Tawaf</em> and <em>Sa’i</em> guides and the <em>Arrahman Umrah</em> page.</p></div>
+            <div class="info-box"><p><i class="fas fa-kaaba"></i> Du‘ās for every step of Umrah, in the order you will need them: from leaving home and Madinah, through iḥrām, ṭawāf round by round and sa‘ī, to returning home. Drawn from three guides: the <em>Book of Du‘a</em>, <em>Do’a Tawaf</em>, and the <em>Sa’i</em> guide.</p></div>
             <div class="source-note">Where a guide gives only the Arabic, the transliteration and translation have been added here. The round-by-round ṭawāf du‘ās and the du‘ā’ after sa‘ī are compiled du‘ās, not fixed by a ḥadīth; any du‘ā’ from the heart, in any language, is welcome there. References were checked against the ḥadīth collections (sunnah.com and Ḥiṣn al-Muslim); where a wording could not be traced to a source, its card says so. Qur’ān text: Uthmānī script. Audio: Ḥiṣn al-Muslim (hisnmuslim.com) and Mishary Alafasy.</div>
             <div id="prep-section" class="section scroll-target">
                 <h2 class="section-title"><i class="fas fa-suitcase-rolling"></i> Before Setting Out</h2>
                 <div class="dhikr-card" id="c1">
                     <div class="dua-number">Two rak‘āt at home before leaving</div>
                     <div class="repetition-note" style="margin-bottom:10px;">Before you set off, pray two rak‘āt at home. The Prophet ﷺ is reported to have said that no one leaves behind with his family anything better than two rak‘āt prayed with them when setting out on a journey.</div>
-                    <div class="translation">Your Arrahman guide suggests al-Kāfirūn in the first rak‘ah and al-Ikhlāṣ in the second, after al-Fātiḥah. No particular sūrahs are fixed for this prayer, so any you know is fine; these two are a good choice, as the Prophet ﷺ recited them in other two-rak‘ah prayers (the sunnah of Fajr, and after ṭawāf).</div>
+                    <div class="translation">A good choice is al-Kāfirūn in the first rak‘ah and al-Ikhlāṣ in the second, after al-Fātiḥah. No particular sūrahs are fixed for this prayer, so any you know is fine; these two suit it well, as the Prophet ﷺ recited them in other two-rak‘ah prayers (the sunnah of Fajr, and after ṭawāf).</div>
                     <div class="three-columns">
                         <div class="column-card"><strong>First rak‘ah</strong><div class="arabic">سُورَةُ ٱلْكَافِرُونَ</div><div class="transliteration">Sūrat al-Kāfirūn</div><div class="audio-player"><audio controls preload="none" src="https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/109.mp3" type="audio/mpeg"></audio></div></div>
                         <div class="column-card"><strong>Second rak‘ah</strong><div class="arabic">سُورَةُ ٱلْإِخْلَاصِ</div><div class="transliteration">Sūrat al-Ikhlāṣ</div><div class="audio-player"><audio controls preload="none" src="https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/112.mp3" type="audio/mpeg"></audio></div></div>
                     </div>
-                    <div class="reference">Ibn Abī Shaybah, from al-Muṭ‘im ibn al-Miqdām (mursal; its chain graded ḥasan by Shaykh Muḥammad ‘Awwāmah) · Arrahman Umrah</div>
+                    <div class="reference">Ibn Abī Shaybah, from al-Muṭ‘im ibn al-Miqdām (mursal; its chain graded ḥasan by Shaykh Muḥammad ‘Awwāmah)</div>
                 </div>
                 <div class="dhikr-card" id="c2">
                     <div class="dua-number">Farewell du‘ā’, said by the traveller</div>
@@ -969,7 +973,7 @@
                     <div class="arabic">أَسْتَوْدِعُكُمُ ٱللَّهَ ٱلَّذِي لَا تَضِيعُ وَدَائِعُهُ</div>
                     <div class="transliteration">Astawdi‘ukumullāhal-ladhī lā taḍī‘u wadā’i‘uh.</div>
                     <div class="translation">I entrust you to Allah, whose trusts are never lost.</div>
-                    <div class="reference">Ibn Mājah 2825; Aḥmad · Arrahman Umrah</div>
+                    <div class="reference">Ibn Mājah 2825; Aḥmad</div>
                     <div class="audio-player"><audio controls preload="none" src="https://www.hisnmuslim.com/audio/ar/211.mp3" type="audio/mpeg"></audio></div>
                 </div>
                 <div class="dhikr-card" id="c3">
@@ -978,7 +982,7 @@
                     <div class="arabic">أَسْتَوْدِعُ ٱللَّهَ دِينَكَ وَأَمَانَتَكَ وَخَوَاتِيمَ عَمَلِكَ، زَوَّدَكَ ٱللَّهُ ٱلتَّقْوَىٰ، وَغَفَرَ ذَنْبَكَ، وَيَسَّرَ لَكَ ٱلْخَيْرَ حَيْثُمَا كُنْتَ</div>
                     <div class="transliteration">Astawdi‘ullāha dīnaka wa amānataka wa khawātīma ‘amalik. Zawwadakallāhut-taqwā, wa ghafara dhanbak, wa yassara lakal-khayra ḥaythumā kunt.</div>
                     <div class="translation">I entrust to Allah your religion, your trust, and the last of your deeds. May Allah provide you with taqwā, forgive your sins, and make goodness easy for you wherever you are.</div>
-                    <div class="reference">Abū Dāwūd 2600; at-Tirmidhī 3443 (ḥasan ṣaḥīḥ), 3444 · Book of Du‘a p. 3 · Arrahman Umrah</div>
+                    <div class="reference">Abū Dāwūd 2600; at-Tirmidhī 3443 (ḥasan ṣaḥīḥ), 3444 · Book of Du‘a p. 3</div>
                     <div class="audio-player"><audio controls preload="none" src="https://www.hisnmuslim.com/audio/ar/212.mp3" data-playlist="https://www.hisnmuslim.com/audio/ar/212.mp3|https://www.hisnmuslim.com/audio/ar/213.mp3" type="audio/mpeg"></audio></div>
                 </div>
                 <div class="dhikr-card" id="c4">
@@ -986,7 +990,7 @@
                     <div class="arabic">بِسْمِ ٱللَّهِ، تَوَكَّلْتُ عَلَى ٱللَّهِ، وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِٱللَّهِ</div>
                     <div class="transliteration">Bismillāh, tawakkaltu ‘alallāh, wa lā ḥawla wa lā quwwata illā billāh.</div>
                     <div class="translation">In the name of Allah, I place my trust in Allah, and there is no might nor power except with Allah.</div>
-                    <div class="reference">Abū Dāwūd 5095; at-Tirmidhī 3426 · Book of Du‘a p. 3 · Arrahman Umrah</div>
+                    <div class="reference">Abū Dāwūd 5095; at-Tirmidhī 3426 · Book of Du‘a p. 3</div>
                     <div class="audio-player"><audio controls preload="none" src="https://www.hisnmuslim.com/audio/ar/16.mp3" type="audio/mpeg"></audio></div>
                 </div>
                 <div class="dhikr-card" id="c5">
@@ -1000,16 +1004,22 @@
                     <div class="audio-note">The recording is the two full verses.</div>
                 </div>
                 <div class="dhikr-card" id="c6">
-                    <div class="dua-number">Du‘ā’ for travel (complete)</div>
-                    <div class="repetition-note" style="margin-bottom:10px;">After your 2 rak‘āt before setting off, recite this as you set off in the car, or at any point on your way to the destination.</div>
+                    <div class="dua-number">Du‘ā’ for travel</div>
+                    <div class="repetition-note" style="margin-bottom:10px;">Recite this before setting off in the car, after your 2 rak‘āt, or at any point on your way to the destination.</div>
+                    <div class="version-label">Short version</div>
                     <div class="arabic">ٱللَّهُ أَكْبَرُ، ٱللَّهُ أَكْبَرُ، ٱللَّهُ أَكْبَرُ</div>
-                    <div class="arabic-quran">سُبْحَٰنَ ٱلَّذِى سَخَّرَ لَنَا هَٰذَا وَمَا كُنَّا لَهُۥ مُقْرِنِينَ <span class="ayah-end" aria-label="end of verse">۝١٣</span> وَإِنَّآ إِلَىٰ رَبِّنَا لَمُنقَلِبُونَ <span class="ayah-end" aria-label="end of verse">۝١٤</span></div>
-                    <div class="arabic">ٱللَّهُمَّ إِنَّا نَسْأَلُكَ فِي سَفَرِنَا هَٰذَا ٱلْبِرَّ وَٱلتَّقْوَىٰ، وَمِنَ ٱلْعَمَلِ مَا تَرْضَىٰ، ٱللَّهُمَّ هَوِّنْ عَلَيْنَا سَفَرَنَا هَٰذَا، وَٱطْوِ عَنَّا بُعْدَهُ، ٱللَّهُمَّ أَنْتَ ٱلصَّاحِبُ فِي ٱلسَّفَرِ، وَٱلْخَلِيفَةُ فِي ٱلْأَهْلِ، ٱللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ وَعْثَاءِ ٱلسَّفَرِ، وَكَآبَةِ ٱلْمَنْظَرِ، وَسُوءِ ٱلْمُنْقَلَبِ فِي ٱلْمَالِ وَٱلْأَهْلِ</div>
-                    <div class="transliteration">Allāhu akbar, Allāhu akbar, Allāhu akbar. Subḥānal-ladhī sakhkhara lanā hādhā wa mā kunnā lahū muqrinīn, wa innā ilā Rabbinā lamunqalibūn. Allāhumma innā nas’aluka fī safarinā hādhal-birra wat-taqwā, wa minal-‘amali mā tarḍā. Allāhumma hawwin ‘alaynā safaranā hādhā, waṭwi ‘annā bu‘dah. Allāhumma antaṣ-ṣāḥibu fis-safar, wal-khalīfatu fil-ahl. Allāhumma innī a‘ūdhu bika min wa‘thā’is-safar, wa ka’ābatil-manẓar, wa sū’il-munqalabi fil-māli wal-ahl.</div>
-                    <div class="translation">Allah is the Greatest (×3). Glory be to the One Who has subjected this to us, for we could never have done so by ourselves, and surely to our Lord we will all return. O Allah, we ask You in our travel for righteousness, taqwā, and good deeds that You are pleased with. O Allah, make our travel an ease, and shorten the distance for us. O Allah, You are our Companion in travel and the guardian of our family (in our absence). O Allah, I seek refuge in You from the hardships of travel, a sight of grief, and from an unfortunate occurrence in wealth and family.</div>
-                    <div class="reference">Az-Zukhruf 43:13–14; Muslim 1342 · Book of Du‘a p. 2 · Arrahman Umrah</div>
+                    <div class="arabic-quran">سُبْحَـٰنَ ٱلَّذِى سَخَّرَ لَنَا هَـٰذَا وَمَا كُنَّا لَهُۥ مُقْرِنِينَ <span class="ayah-end" aria-label="end of verse">۝١٣</span> وَإِنَّآ إِلَىٰ رَبِّنَا لَمُنقَلِبُونَ <span class="ayah-end" aria-label="end of verse">۝١٤</span></div>
+                    <div class="transliteration">Allāhu akbar, Allāhu akbar, Allāhu akbar. Subḥānalladhī sakhkhara lanā hādhā wa mā kunnā lahū muqrinīn, wa innā ilā Rabbinā lamunqalibūn.</div>
+                    <div class="translation">Allah is the Greatest (×3). How perfect He is, the One who has placed this (transport) at our service, and we ourselves would not have been capable of that. And to our Lord is our final return.</div>
+                    <div class="reference">Az-Zukhruf 43:13–14; Ṣaḥīḥ Muslim 1342</div>
+                    <div class="version-label">Complete version <span class="version-tag">🎧 this is what the audio recites</span></div>
+                    <div class="arabic">ٱللَّهُ أَكْبَرُ، ٱللَّهُ أَكْبَرُ، ٱللَّهُ أَكْبَرُ</div>
+                    <div class="arabic-quran">سُبْحَـٰنَ ٱلَّذِى سَخَّرَ لَنَا هَـٰذَا وَمَا كُنَّا لَهُۥ مُقْرِنِينَ <span class="ayah-end" aria-label="end of verse">۝١٣</span> وَإِنَّآ إِلَىٰ رَبِّنَا لَمُنقَلِبُونَ <span class="ayah-end" aria-label="end of verse">۝١٤</span></div>
+                    <div class="arabic">ٱللَّهُمَّ إِنَّا نَسْأَلُكَ فِى سَفَرِنَا هَـٰذَا ٱلْبِرَّ وَٱلتَّقْوَىٰ، وَمِنَ ٱلْعَمَلِ مَا تَرْضَىٰ، ٱللَّهُمَّ هَوِّنْ عَلَيْنَا سَفَرَنَا هَـٰذَا وَٱطْوِ عَنَّا بُعْدَهُ، ٱللَّهُمَّ أَنْتَ ٱلصَّاحِبُ فِى ٱلسَّفَرِ، وَٱلْخَلِيفَةُ فِى ٱلْأَهْلِ، ٱللَّهُمَّ إِنِّىٓ أَعُوذُ بِكَ مِنْ وَعْثَآءِ ٱلسَّفَرِ، وَكَآبَةِ ٱلْمَنْظَرِ، وَسُوٓءِ ٱلْمُنْقَلَبِ فِى ٱلْمَالِ وَٱلْأَهْلِ</div>
+                    <div class="transliteration">Allāhu akbar, Allāhu akbar, Allāhu akbar. Subḥānalladhī sakhkhara lanā hādhā wa mā kunnā lahū muqrinīn, wa innā ilā Rabbinā lamunqalibūn. Allāhumma innā nas’aluka fī safarinā hādhal-birra wat-taqwā, wa minal-‘amali mā tarḍā. Allāhumma hawwin ‘alaynā safaranā hādhā waṭwi ‘annā bu‘dah. Allāhumma Antaṣ-ṣāḥibu fis-safar, wal-khalīfatu fil-ahl. Allāhumma innī a‘ūdhu bika min wa‘thā’is-safar, wa ka’ābatil-manẓar, wa sū’il-munqalabi fil-māli wal-ahl.</div>
+                    <div class="translation">Allah is the Greatest (×3). How perfect He is, the One who has placed this (transport) at our service, and we ourselves would not have been capable of that. And to our Lord is our final return. O Allah, we ask You on this journey of ours for righteousness and piety, and for deeds that please You. O Allah, make this journey easy for us and shorten its distance for us. O Allah, You are the Companion on the journey and the One who looks after the family. O Allah, I seek refuge in You from the hardships of travel, from distressing sights, and from an evil turn of events with property and family on return.</div>
+                    <div class="reference">Ṣaḥīḥ Muslim 1342; Ḥiṣn al-Muslim 207 · Book of Du‘a p. 2</div>
                     <div class="audio-player"><audio controls preload="none" src="https://www.hisnmuslim.com/audio/ar/207.mp3" type="audio/mpeg"></audio></div>
-                    <div class="audio-note">The recording is this complete version (Ḥiṣn al-Muslim 207).</div>
                 </div>
             </div>
             <div id="arrival-section" class="section scroll-target">
@@ -1039,7 +1049,7 @@
                     <div class="arabic">مَا بَيْنَ بَيْتِي وَمِنْبَرِي رَوْضَةٌ مِنْ رِيَاضِ ٱلْجَنَّةِ</div>
                     <div class="transliteration">Mā bayna baytī wa minbarī rawḍatun min riyāḍil-jannah.</div>
                     <div class="translation">The Prophet ﷺ said: “What is between my house and my minbar is a garden from the gardens of Paradise.”</div>
-                    <div class="reference">Al-Bukhārī 1196; Muslim 1391 · Arrahman Umrah</div>
+                    <div class="reference">Al-Bukhārī 1196; Muslim 1391</div>
                 </div>
             </div>
             <div id="ihram-section" class="section scroll-target">
@@ -1344,7 +1354,7 @@
                     <div class="transliteration">Āyibūna, tā’ibūna, ‘ābidūna, li-Rabbinā ḥāmidūn.</div>
                     <div class="translation">We return, repentant, worshipping, and praising our Lord.</div>
                     <div class="repetition-note">This wording is in Muslim 1342. On the way back from Hajj or Umrah, the Prophet ﷺ would also say takbīr three times on every rise and a fuller form (al-Bukhārī 1797): <em>lā ilāha illallāhu waḥdahū lā sharīka lah, lahul-mulku wa lahul-ḥamdu wa huwa ‘alā kulli shay’in qadīr, āyibūna tā’ibūna ‘ābidūna sājidūna li-Rabbinā ḥāmidūn, ṣadaqallāhu wa‘dah, wa naṣara ‘abdah, wa hazamal-aḥzāba waḥdah</em>.</div>
-                    <div class="reference">Muslim 1342; al-Bukhārī 1797 · Book of Du‘a p. 16 · Arrahman Umrah</div>
+                    <div class="reference">Muslim 1342; al-Bukhārī 1797 · Book of Du‘a p. 16</div>
                     <div class="audio-player"><audio controls preload="none" src="https://www.hisnmuslim.com/audio/ar/207.mp3" type="audio/mpeg"></audio></div>
                     <div class="audio-note">The recording is the complete travel du‘ā’ (Ḥiṣn al-Muslim 207); say this addition after it.</div>
                     <a href="#" class="jump-link" data-jump="c6"><i class="fas fa-arrow-up"></i> Go to the du‘ā’ for travel</a>
@@ -1352,10 +1362,9 @@
             </div>
             <div class="end-links">
                 <div class="end-links-title">The guides (PDF)</div>
-                <a data-pdf-viewer data-viewer-title="Book of Du‘a – Arrahman Umrah (PDF)" href="Book_of_Dua.pdf" class="top-home-link"><i class="fas fa-book-open"></i> Book of Du‘a – Arrahman Umrah</a>
+                <a data-pdf-viewer data-viewer-title="Book of Du‘a (PDF)" href="Book_of_Dua.pdf" class="top-home-link"><i class="fas fa-book-open"></i> Book of Du‘a</a>
                 <a data-pdf-viewer data-viewer-title="Do’a Tawaf (PDF)" href="Doa_Tawaf.pdf" class="top-home-link"><i class="fas fa-book-open"></i> Do’a Tawaf</a>
                 <a data-pdf-viewer data-viewer-title="Sa’i guide (PDF)" href="Sai.pdf" class="top-home-link"><i class="fas fa-book-open"></i> Sa’i guide</a>
-                <a href="Arrahman_Umrah.html" class="top-home-link"><i class="fas fa-kaaba"></i> Arrahman Umrah</a>
             </div>
             <div class="surah-pagination"><a href="index.html" class="pagination-next"><i class="fas fa-home"></i> Back to Main Menu</a></div>
             <div class="closing-dua">We humbly ask Allah to accept this effort from us, forgive any human shortcomings or errors within these pages, and make it a source of ease for every pilgrim (ḥājj, <span class="ar-word" lang="ar" dir="rtl">حَاجّ</span>, for Hajj; mu‘tamir, <span class="ar-word" lang="ar" dir="rtl">مُعْتَمِر</span>, for Umrah). Feedback and advice are always welcomed as we strive to improve.</div>
@@ -1366,7 +1375,7 @@
             <div class="top-actions">
                 <a href="index.html" class="top-btn top-main"><i class="fas fa-arrow-left"></i> Menu Utama</a>
                 <a href="#" class="top-btn top-save pdf-btn" role="button"><i class="fas fa-file-pdf"></i> Simpan sebagai PDF</a>
-                <a data-pdf-viewer data-viewer-title="Book of Du‘a – Arrahman Umrah (PDF)" href="Book_of_Dua.pdf" class="top-btn top-guide"><i class="fas fa-book-open"></i> Baca panduan (PDF)</a>
+                <a data-pdf-viewer data-viewer-title="Book of Du‘a (PDF)" href="Book_of_Dua.pdf" class="top-btn top-guide"><i class="fas fa-book-open"></i> Baca panduan (PDF)</a>
             </div>
             <h1 class="surah-title">Buku Doa, Sai dan Tawaf</h1>
             <nav class="toc-box" id="toc-id" aria-label="Daftar Isi">
@@ -1384,7 +1393,7 @@
                         <li><a class="toc-link" href="#" data-target="c3" data-title="Doa perpisahan, dibaca untuk musafir"><span class="toc-label-text">Doa perpisahan, dibaca untuk musafir</span><span class="toc-ref">Tirmidhī 3443–3444</span></a></li>
                         <li><a class="toc-link" href="#" data-target="c4" data-title="Keluar rumah"><span class="toc-label-text">Keluar rumah</span><span class="toc-ref">Abū Dāwūd 5095</span></a></li>
                         <li><a class="toc-link" href="#" data-target="c5" data-title="Ketika menaiki kendaraan apa pun"><span class="toc-label-text">Ketika menaiki kendaraan apa pun</span><span class="toc-ref">43:13–14</span></a></li>
-                        <li><a class="toc-link" href="#" data-target="c6" data-title="Doa safar (lengkap)"><span class="toc-label-text">Doa safar (lengkap)</span><span class="toc-ref">Muslim 1342</span></a></li>
+                        <li><a class="toc-link" href="#" data-target="c6" data-title="Doa safar (perjalanan)"><span class="toc-label-text">Doa safar (perjalanan)</span><span class="toc-ref">Muslim 1342</span></a></li>
                     </ul>
                     <div class="toc-group-label">Saat Tiba: Kota Baru &amp; Hotel</div>
                     <ul class="toc-list">
@@ -1444,19 +1453,19 @@
                     <div class="toc-no-results" id="toc-no-results-id">Tidak ada entri yang cocok.</div>
                 </div>
             </nav>
-            <div class="info-box"><p><i class="fas fa-kaaba"></i> Doa untuk setiap tahap umrah, sesuai urutan saat Anda membutuhkannya: dari keluar rumah dan Madinah, ihram, tawaf per putaran dan sai, hingga kembali ke rumah. Diambil dari panduan <em>Buku Doa</em>, <em>Doa Tawaf</em>, dan <em>Sai</em>, serta halaman <em>Arrahman Umrah</em>.</p></div>
+            <div class="info-box"><p><i class="fas fa-kaaba"></i> Doa untuk setiap tahap umrah, sesuai urutan saat Anda membutuhkannya: dari keluar rumah dan Madinah, ihram, tawaf per putaran dan sai, hingga kembali ke rumah. Diambil dari tiga panduan: <em>Buku Doa</em>, <em>Doa Tawaf</em>, dan panduan <em>Sai</em>.</p></div>
             <div class="source-note">Jika panduan hanya memuat teks Arab, transliterasi dan terjemahannya ditambahkan di sini. Doa tawaf per putaran dan doa setelah sai adalah doa susunan ulama, bukan ketetapan hadis; doa apa pun dari hati, dalam bahasa apa pun, boleh dipanjatkan di sana. Rujukan telah diperiksa pada kitab-kitab hadis (sunnah.com dan Hisnul Muslim); jika suatu lafaz tidak dapat ditelusuri sumbernya, kartunya menyebutkan hal itu. Teks Al-Qur’an: rasm Utsmani. Audio: Hisnul Muslim (hisnmuslim.com) dan Misyari Alafasy.</div>
             <div id="prep-section-id" class="section scroll-target">
                 <h2 class="section-title"><i class="fas fa-suitcase-rolling"></i> Sebelum Berangkat</h2>
                 <div class="dhikr-card" id="c1-id">
                     <div class="dua-number">Salat dua rakaat di rumah sebelum berangkat</div>
                     <div class="repetition-note" style="margin-bottom:10px;">Sebelum berangkat, salatlah dua rakaat di rumah. Diriwayatkan bahwa Nabi ﷺ bersabda, tidak ada yang ditinggalkan seseorang untuk keluarganya yang lebih baik daripada dua rakaat yang ia kerjakan di tengah mereka ketika hendak bepergian.</div>
-                    <div class="translation">Panduan Arrahman menyarankan Al-Kafirun pada rakaat pertama dan Al-Ikhlas pada rakaat kedua, setelah Al-Fatihah. Tidak ada surah tertentu yang ditetapkan untuk salat ini, jadi surah apa pun yang Anda hafal boleh; kedua surah ini pilihan yang baik, karena Nabi ﷺ membacanya dalam salat dua rakaat lainnya (sunah Subuh, dan setelah tawaf).</div>
+                    <div class="translation">Pilihan yang baik adalah Al-Kafirun pada rakaat pertama dan Al-Ikhlas pada rakaat kedua, setelah Al-Fatihah. Tidak ada surah tertentu yang ditetapkan untuk salat ini, jadi surah apa pun yang Anda hafal boleh; kedua surah ini sangat sesuai, karena Nabi ﷺ membacanya dalam salat dua rakaat lainnya (sunah Subuh, dan setelah tawaf).</div>
                     <div class="three-columns">
                         <div class="column-card"><strong>Rakaat pertama</strong><div class="arabic">سُورَةُ ٱلْكَافِرُونَ</div><div class="transliteration">Sūrat al-Kāfirūn</div><div class="audio-player"><audio controls preload="none" src="https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/109.mp3" type="audio/mpeg"></audio></div></div>
                         <div class="column-card"><strong>Rakaat kedua</strong><div class="arabic">سُورَةُ ٱلْإِخْلَاصِ</div><div class="transliteration">Sūrat al-Ikhlāṣ</div><div class="audio-player"><audio controls preload="none" src="https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/112.mp3" type="audio/mpeg"></audio></div></div>
                     </div>
-                    <div class="reference">Ibnu Abi Syaibah, dari al-Muth‘im bin al-Miqdam (mursal; sanadnya dinilai hasan oleh Syekh Muhammad ‘Awwamah) · Arrahman Umrah</div>
+                    <div class="reference">Ibnu Abi Syaibah, dari al-Muth‘im bin al-Miqdam (mursal; sanadnya dinilai hasan oleh Syekh Muhammad ‘Awwamah)</div>
                 </div>
                 <div class="dhikr-card" id="c2-id">
                     <div class="dua-number">Doa perpisahan, dibaca oleh musafir</div>
@@ -1464,7 +1473,7 @@
                     <div class="arabic">أَسْتَوْدِعُكُمُ ٱللَّهَ ٱلَّذِي لَا تَضِيعُ وَدَائِعُهُ</div>
                     <div class="transliteration">Astawdi‘ukumullāhal-ladhī lā taḍī‘u wadā’i‘uh.</div>
                     <div class="translation">Aku titipkan kalian kepada Allah yang tidak akan menyia-nyiakan titipan-Nya.</div>
-                    <div class="reference">Ibnu Majah 2825; Ahmad · Arrahman Umrah</div>
+                    <div class="reference">Ibnu Majah 2825; Ahmad</div>
                     <div class="audio-player"><audio controls preload="none" src="https://www.hisnmuslim.com/audio/ar/211.mp3" type="audio/mpeg"></audio></div>
                 </div>
                 <div class="dhikr-card" id="c3-id">
@@ -1473,7 +1482,7 @@
                     <div class="arabic">أَسْتَوْدِعُ ٱللَّهَ دِينَكَ وَأَمَانَتَكَ وَخَوَاتِيمَ عَمَلِكَ، زَوَّدَكَ ٱللَّهُ ٱلتَّقْوَىٰ، وَغَفَرَ ذَنْبَكَ، وَيَسَّرَ لَكَ ٱلْخَيْرَ حَيْثُمَا كُنْتَ</div>
                     <div class="transliteration">Astawdi‘ullāha dīnaka wa amānataka wa khawātīma ‘amalik. Zawwadakallāhut-taqwā, wa ghafara dhanbak, wa yassara lakal-khayra ḥaythumā kunt.</div>
                     <div class="translation">Aku titipkan kepada Allah agamamu, amanahmu, dan penutup amalmu. Semoga Allah membekalimu dengan takwa, mengampuni dosamu, dan memudahkan kebaikan bagimu di mana pun engkau berada.</div>
-                    <div class="reference">Abu Dawud 2600; at-Tirmidzi 3443 (hasan sahih), 3444 · Buku Doa hlm. 3 · Arrahman Umrah</div>
+                    <div class="reference">Abu Dawud 2600; at-Tirmidzi 3443 (hasan sahih), 3444 · Buku Doa hlm. 3</div>
                     <div class="audio-player"><audio controls preload="none" src="https://www.hisnmuslim.com/audio/ar/212.mp3" data-playlist="https://www.hisnmuslim.com/audio/ar/212.mp3|https://www.hisnmuslim.com/audio/ar/213.mp3" type="audio/mpeg"></audio></div>
                 </div>
                 <div class="dhikr-card" id="c4-id">
@@ -1481,7 +1490,7 @@
                     <div class="arabic">بِسْمِ ٱللَّهِ، تَوَكَّلْتُ عَلَى ٱللَّهِ، وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِٱللَّهِ</div>
                     <div class="transliteration">Bismillāh, tawakkaltu ‘alallāh, wa lā ḥawla wa lā quwwata illā billāh.</div>
                     <div class="translation">Dengan nama Allah, aku bertawakal kepada Allah, dan tiada daya dan kekuatan kecuali dengan pertolongan Allah.</div>
-                    <div class="reference">Abu Dawud 5095; at-Tirmidzi 3426 · Buku Doa hlm. 3 · Arrahman Umrah</div>
+                    <div class="reference">Abu Dawud 5095; at-Tirmidzi 3426 · Buku Doa hlm. 3</div>
                     <div class="audio-player"><audio controls preload="none" src="https://www.hisnmuslim.com/audio/ar/16.mp3" type="audio/mpeg"></audio></div>
                 </div>
                 <div class="dhikr-card" id="c5-id">
@@ -1495,16 +1504,22 @@
                     <div class="audio-note">Rekaman berisi kedua ayat secara lengkap.</div>
                 </div>
                 <div class="dhikr-card" id="c6-id">
-                    <div class="dua-number">Doa safar (lengkap)</div>
-                    <div class="repetition-note" style="margin-bottom:10px;">Setelah salat 2 rakaat sebelum berangkat, bacalah ketika mulai berangkat dengan kendaraan, atau kapan saja dalam perjalanan menuju tujuan.</div>
+                    <div class="dua-number">Doa safar (perjalanan)</div>
+                    <div class="repetition-note" style="margin-bottom:10px;">Dibaca sebelum berangkat dengan kendaraan, setelah salat 2 rakaat, atau kapan saja dalam perjalanan menuju tujuan.</div>
+                    <div class="version-label">Versi singkat</div>
                     <div class="arabic">ٱللَّهُ أَكْبَرُ، ٱللَّهُ أَكْبَرُ، ٱللَّهُ أَكْبَرُ</div>
-                    <div class="arabic-quran">سُبْحَٰنَ ٱلَّذِى سَخَّرَ لَنَا هَٰذَا وَمَا كُنَّا لَهُۥ مُقْرِنِينَ <span class="ayah-end" aria-label="end of verse">۝١٣</span> وَإِنَّآ إِلَىٰ رَبِّنَا لَمُنقَلِبُونَ <span class="ayah-end" aria-label="end of verse">۝١٤</span></div>
-                    <div class="arabic">ٱللَّهُمَّ إِنَّا نَسْأَلُكَ فِي سَفَرِنَا هَٰذَا ٱلْبِرَّ وَٱلتَّقْوَىٰ، وَمِنَ ٱلْعَمَلِ مَا تَرْضَىٰ، ٱللَّهُمَّ هَوِّنْ عَلَيْنَا سَفَرَنَا هَٰذَا، وَٱطْوِ عَنَّا بُعْدَهُ، ٱللَّهُمَّ أَنْتَ ٱلصَّاحِبُ فِي ٱلسَّفَرِ، وَٱلْخَلِيفَةُ فِي ٱلْأَهْلِ، ٱللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ وَعْثَاءِ ٱلسَّفَرِ، وَكَآبَةِ ٱلْمَنْظَرِ، وَسُوءِ ٱلْمُنْقَلَبِ فِي ٱلْمَالِ وَٱلْأَهْلِ</div>
-                    <div class="transliteration">Allāhu akbar, Allāhu akbar, Allāhu akbar. Subḥānal-ladhī sakhkhara lanā hādhā wa mā kunnā lahū muqrinīn, wa innā ilā Rabbinā lamunqalibūn. Allāhumma innā nas’aluka fī safarinā hādhal-birra wat-taqwā, wa minal-‘amali mā tarḍā. Allāhumma hawwin ‘alaynā safaranā hādhā, waṭwi ‘annā bu‘dah. Allāhumma antaṣ-ṣāḥibu fis-safar, wal-khalīfatu fil-ahl. Allāhumma innī a‘ūdhu bika min wa‘thā’is-safar, wa ka’ābatil-manẓar, wa sū’il-munqalabi fil-māli wal-ahl.</div>
-                    <div class="translation">Allah Mahabesar (3x). Mahasuci (Allah) yang telah menundukkan (kendaraan) ini untuk kami, padahal kami sebelumnya tidak mampu menguasainya, dan sesungguhnya kepada Tuhan kamilah kami akan kembali. Ya Allah, kami memohon kepada-Mu dalam perjalanan kami ini kebaikan dan takwa, serta amal yang Engkau ridai. Ya Allah, mudahkanlah perjalanan kami ini dan dekatkanlah jaraknya bagi kami. Ya Allah, Engkaulah Sahabat dalam perjalanan dan Pengganti (penjaga) bagi keluarga yang ditinggalkan. Ya Allah, aku berlindung kepada-Mu dari kesulitan perjalanan, pemandangan yang menyedihkan, dan kepulangan yang buruk pada harta dan keluarga.</div>
-                    <div class="reference">Az-Zukhruf 43:13–14; Muslim 1342 · Buku Doa hlm. 2 · Arrahman Umrah</div>
+                    <div class="arabic-quran">سُبْحَـٰنَ ٱلَّذِى سَخَّرَ لَنَا هَـٰذَا وَمَا كُنَّا لَهُۥ مُقْرِنِينَ <span class="ayah-end" aria-label="end of verse">۝١٣</span> وَإِنَّآ إِلَىٰ رَبِّنَا لَمُنقَلِبُونَ <span class="ayah-end" aria-label="end of verse">۝١٤</span></div>
+                    <div class="transliteration">Allāhu akbar, Allāhu akbar, Allāhu akbar. Subḥānalladhī sakhkhara lanā hādhā wa mā kunnā lahū muqrinīn, wa innā ilā Rabbinā lamunqalibūn.</div>
+                    <div class="translation">Allah Mahabesar (3x). Mahasuci (Allah) yang telah menundukkan semua ini bagi kami, padahal kami sebelumnya tidak mampu menguasainya, dan sesungguhnya kami akan kembali kepada Tuhan kami.</div>
+                    <div class="reference">QS. Az-Zukhruf [43]: 13–14; HR. Muslim 1342</div>
+                    <div class="version-label">Versi lengkap <span class="version-tag">🎧 inilah yang dibacakan dalam rekaman</span></div>
+                    <div class="arabic">ٱللَّهُ أَكْبَرُ، ٱللَّهُ أَكْبَرُ، ٱللَّهُ أَكْبَرُ</div>
+                    <div class="arabic-quran">سُبْحَـٰنَ ٱلَّذِى سَخَّرَ لَنَا هَـٰذَا وَمَا كُنَّا لَهُۥ مُقْرِنِينَ <span class="ayah-end" aria-label="end of verse">۝١٣</span> وَإِنَّآ إِلَىٰ رَبِّنَا لَمُنقَلِبُونَ <span class="ayah-end" aria-label="end of verse">۝١٤</span></div>
+                    <div class="arabic">ٱللَّهُمَّ إِنَّا نَسْأَلُكَ فِى سَفَرِنَا هَـٰذَا ٱلْبِرَّ وَٱلتَّقْوَىٰ، وَمِنَ ٱلْعَمَلِ مَا تَرْضَىٰ، ٱللَّهُمَّ هَوِّنْ عَلَيْنَا سَفَرَنَا هَـٰذَا وَٱطْوِ عَنَّا بُعْدَهُ، ٱللَّهُمَّ أَنْتَ ٱلصَّاحِبُ فِى ٱلسَّفَرِ، وَٱلْخَلِيفَةُ فِى ٱلْأَهْلِ، ٱللَّهُمَّ إِنِّىٓ أَعُوذُ بِكَ مِنْ وَعْثَآءِ ٱلسَّفَرِ، وَكَآبَةِ ٱلْمَنْظَرِ، وَسُوٓءِ ٱلْمُنْقَلَبِ فِى ٱلْمَالِ وَٱلْأَهْلِ</div>
+                    <div class="transliteration">Allāhu akbar, Allāhu akbar, Allāhu akbar. Subḥānalladhī sakhkhara lanā hādhā wa mā kunnā lahū muqrinīn, wa innā ilā Rabbinā lamunqalibūn. Allāhumma innā nas’aluka fī safarinā hādhal-birra wat-taqwā, wa minal-‘amali mā tarḍā. Allāhumma hawwin ‘alaynā safaranā hādhā waṭwi ‘annā bu‘dah. Allāhumma Antaṣ-ṣāḥibu fis-safar, wal-khalīfatu fil-ahl. Allāhumma innī a‘ūdhu bika min wa‘thā’is-safar, wa ka’ābatil-manẓar, wa sū’il-munqalabi fil-māli wal-ahl.</div>
+                    <div class="translation">Allah Mahabesar (3x). Mahasuci (Allah) yang telah menundukkan semua ini bagi kami, padahal kami sebelumnya tidak mampu menguasainya, dan sesungguhnya kami akan kembali kepada Tuhan kami. Ya Allah, kami memohon kepada-Mu dalam perjalanan kami ini kebaikan dan takwa, serta amal yang Engkau ridai. Ya Allah, mudahkanlah perjalanan kami ini dan dekatkanlah jaraknya bagi kami. Ya Allah, Engkaulah pendamping dalam perjalanan dan pengganti yang menjaga keluarga. Ya Allah, aku berlindung kepada-Mu dari kesulitan perjalanan, dari pemandangan yang menyedihkan, dan dari keadaan buruk saat kembali pada harta dan keluarga.</div>
+                    <div class="reference">HR. Muslim 1342; Hisnul Muslim 207 · Buku Doa hlm. 2</div>
                     <div class="audio-player"><audio controls preload="none" src="https://www.hisnmuslim.com/audio/ar/207.mp3" type="audio/mpeg"></audio></div>
-                    <div class="audio-note">Rekaman berisi versi lengkap ini (Hisnul Muslim 207).</div>
                 </div>
             </div>
             <div id="arrival-section-id" class="section scroll-target">
@@ -1534,7 +1549,7 @@
                     <div class="arabic">مَا بَيْنَ بَيْتِي وَمِنْبَرِي رَوْضَةٌ مِنْ رِيَاضِ ٱلْجَنَّةِ</div>
                     <div class="transliteration">Mā bayna baytī wa minbarī rawḍatun min riyāḍil-jannah.</div>
                     <div class="translation">Rasulullah ﷺ bersabda: “Apa yang ada di antara rumahku dan mimbarku adalah sebuah taman dari taman-taman surga.”</div>
-                    <div class="reference">Al-Bukhari 1196; Muslim 1391 · Arrahman Umrah</div>
+                    <div class="reference">Al-Bukhari 1196; Muslim 1391</div>
                 </div>
             </div>
             <div id="ihram-section-id" class="section scroll-target">
@@ -1839,7 +1854,7 @@
                     <div class="transliteration">Āyibūna, tā’ibūna, ‘ābidūna, li-Rabbinā ḥāmidūn.</div>
                     <div class="translation">Kami kembali, bertobat, beribadah, dan memuji Tuhan kami.</div>
                     <div class="repetition-note">Lafaz ini terdapat dalam Muslim 1342. Saat pulang dari haji atau umrah, Nabi ﷺ juga bertakbir tiga kali di setiap tanjakan dan membaca bentuk yang lebih lengkap (al-Bukhari 1797): <em>lā ilāha illallāhu waḥdahū lā sharīka lah, lahul-mulku wa lahul-ḥamdu wa huwa ‘alā kulli shay’in qadīr, āyibūna tā’ibūna ‘ābidūna sājidūna li-Rabbinā ḥāmidūn, ṣadaqallāhu wa‘dah, wa naṣara ‘abdah, wa hazamal-aḥzāba waḥdah</em>.</div>
-                    <div class="reference">Muslim 1342; al-Bukhari 1797 · Buku Doa hlm. 16 · Arrahman Umrah</div>
+                    <div class="reference">Muslim 1342; al-Bukhari 1797 · Buku Doa hlm. 16</div>
                     <div class="audio-player"><audio controls preload="none" src="https://www.hisnmuslim.com/audio/ar/207.mp3" type="audio/mpeg"></audio></div>
                     <div class="audio-note">Rekaman berisi doa safar lengkap (Hisnul Muslim 207); ucapkan tambahan ini setelahnya.</div>
                     <a href="#" class="jump-link" data-jump="c6"><i class="fas fa-arrow-up"></i> Ke doa safar</a>
@@ -1847,17 +1862,16 @@
             </div>
             <div class="end-links">
                 <div class="end-links-title">Panduan (PDF)</div>
-                <a data-pdf-viewer data-viewer-title="Book of Du‘a – Arrahman Umrah (PDF)" href="Book_of_Dua.pdf" class="top-home-link"><i class="fas fa-book-open"></i> Book of Du‘a – Arrahman Umrah</a>
+                <a data-pdf-viewer data-viewer-title="Book of Du‘a (PDF)" href="Book_of_Dua.pdf" class="top-home-link"><i class="fas fa-book-open"></i> Book of Du‘a</a>
                 <a data-pdf-viewer data-viewer-title="Do’a Tawaf (PDF)" href="Doa_Tawaf.pdf" class="top-home-link"><i class="fas fa-book-open"></i> Do’a Tawaf</a>
                 <a data-pdf-viewer data-viewer-title="Sa’i guide (PDF)" href="Sai.pdf" class="top-home-link"><i class="fas fa-book-open"></i> Sa’i guide</a>
-                <a href="Arrahman_Umrah.html" class="top-home-link"><i class="fas fa-kaaba"></i> Arrahman Umrah</a>
             </div>
             <div class="surah-pagination"><a href="index.html" class="pagination-next"><i class="fas fa-home"></i> Kembali ke Menu Utama</a></div>
             <div class="closing-dua">Dengan rendah hati kami memohon kepada Allah agar menerima usaha ini dari kami, mengampuni segala kekurangan dan kesalahan manusiawi di halaman-halaman ini, serta menjadikannya sumber kemudahan bagi setiap jemaah (ḥājj, <span class="ar-word" lang="ar" dir="rtl">حَاجّ</span>, untuk haji; mu‘tamir, <span class="ar-word" lang="ar" dir="rtl">مُعْتَمِر</span>, untuk umrah). Masukan dan nasihat selalu kami sambut dengan senang hati seiring upaya kami untuk terus memperbaiki diri.</div>
         </div>
         <!-- END INDONESIAN -->
 
-        <footer>Sources: <em>Book of Du‘a</em>, <em>Do’a Tawaf</em>, the <em>Sa’i</em> guide, and <em>Arrahman Umrah</em> — Audio: Ḥiṣn al-Muslim (hisnmuslim.com) &amp; Mishary Alafasy (quranicaudio.com, everyayah.com)</footer>
+        <footer>Sources: <em>Book of Du‘a</em>, <em>Do’a Tawaf</em>, and the <em>Sa’i</em> guide — Audio: Ḥiṣn al-Muslim (hisnmuslim.com) &amp; Mishary Alafasy (quranicaudio.com, everyayah.com)</footer>
     </div>
 
     <!-- Font Awesome -->
