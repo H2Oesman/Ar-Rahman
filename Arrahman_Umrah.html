@@ -908,7 +908,7 @@
         @media (max-width: 480px) { .know-wrap > .know-hint { font-size: 11px; } }
         .know-hint-arrow { display: inline-block; font-size: 18px; transform: rotate(-90deg); animation: know-nudge 1.1s ease-in-out infinite; }
         @keyframes know-nudge { 0%,100% { transform: rotate(-90deg) translateX(0); } 50% { transform: rotate(-90deg) translateX(5px); } }
-        .know-seen .know-hint { display: none !important; }
+        .know-menu[open] + .know-hint { visibility: hidden; }
         @media (max-width: 480px) { .top-btn-row .pill-purple { font-size: 13px; padding: 5px 13px; } }
         @media print { .know-hint { display: none; } }
         @media (prefers-reduced-motion: reduce) { .know-hint-arrow { animation: none; } }
@@ -2072,11 +2072,8 @@
             document.querySelectorAll('.know-menu').forEach(d => {
                 d.querySelectorAll('.know-list a').forEach(a => a.addEventListener('click', () => { d.open = false; }));
             });
-            // Hide the "Click Here First" pointer once the Knowledge menu has been opened (remembered)
-            try { if (localStorage.getItem('knowSeen') === '1') document.documentElement.classList.add('know-seen'); } catch (e) {}
-            document.querySelectorAll('.know-menu').forEach(d => d.addEventListener('toggle', () => {
-                if (d.open) { document.documentElement.classList.add('know-seen'); try { localStorage.setItem('knowSeen', '1'); } catch (e) {} }
-            }));
+            // "Click Here First" pointer stays visible (clear the old "seen" flag from earlier versions)
+            try { localStorage.removeItem('knowSeen'); } catch (e) {}
             document.addEventListener('click', e => { document.querySelectorAll('.know-menu[open]').forEach(d => { if (!d.contains(e.target)) d.open = false; }); });
             document.addEventListener('keydown', e => { if (e.key === 'Escape') document.querySelectorAll('.know-menu[open]').forEach(d => { d.open = false; }); });
 
