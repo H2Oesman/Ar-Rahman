@@ -950,6 +950,9 @@
         @media (prefers-reduced-motion: reduce) { .know-hint-arrow { animation: none; } }
         .top-links .pill-purple:hover { filter: brightness(1.08); }
         .top-links > .top-pill { margin: 0; }
+        /* ---- Hajj/Umrah Du‘ās pill: hidden unless the page is opened with ?Dua ---- */
+        .top-links > .pill-duas { display: none; }
+        html.show-dua .top-links > .pill-duas { display: inline-flex; }
         /* ---- index page: trip list ---- */
         .trip-list { list-style: none; padding: 0; margin: 10px 0 0; }
         /* "Click a trip" instruction (animated) */
@@ -992,6 +995,15 @@
         @media (max-width: 640px) { .container { padding-top: 60px !important; } .trip-list a { font-size: 1rem; padding: 14px 16px; } .trip-list a.trip-bg { min-height: 440px; } }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        /* ?Dua (any letter case, e.g. index.html?Dua or index.html?English&Dua) shows the Hajj/Umrah Du‘ās pill */
+        (function () {
+            try {
+                if ([...new URLSearchParams(location.search).keys()].some(k => k.trim().toLowerCase() === 'dua'))
+                    document.documentElement.classList.add('show-dua');
+            } catch (e) {}
+        })();
+    </script>
 </head>
 <body>
 
