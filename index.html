@@ -1376,5 +1376,27 @@
             document.getElementById('doubleDownScroll').addEventListener('click', () => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }));
         })();
     </script>
+
+    <script>
+        /* Line the left edge of the Knowledge pill up with the left scroll arrows */
+        (function () {
+            const arrow = document.getElementById('scrollUp');
+            if (!arrow) return;
+            function alignKnow() {
+                const a = arrow.getBoundingClientRect();
+                if (!a.width) return;
+                document.querySelectorAll('.know-wrap').forEach(w => {
+                    if (!w.offsetParent) return;
+                    const cur = parseFloat(w.style.marginLeft) || 0;
+                    const d = a.left - w.getBoundingClientRect().left;
+                    if (Math.abs(d) >= 0.5) w.style.marginLeft = (cur + d) + 'px';
+                });
+            }
+            alignKnow(); setTimeout(alignKnow, 300); setTimeout(alignKnow, 1500);
+            window.addEventListener('resize', alignKnow);
+            window.addEventListener('load', alignKnow);
+            document.getElementById('languageToggle')?.addEventListener('click', () => setTimeout(alignKnow, 0));
+        })();
+    </script>
 </body>
 </html>
