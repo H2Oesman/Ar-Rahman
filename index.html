@@ -953,6 +953,8 @@
         /* ---- Hajj/Umrah Du‘ās pill: hidden unless the page is opened with ?Dua ---- */
         .top-links > .pill-duas { display: none; }
         html.show-dua .top-links > .pill-duas { display: inline-flex; }
+        /* Phones: drop the Donate pill below the "Click Here First" pointer so it doesn't cover it */
+        @media (max-width: 640px) { html:not(.show-dua) .top-links > .pill-donate { margin-top: 40px; } html.show-dua .top-links > .pill-donate { margin-top: 12px; } }
         /* ---- index page: trip list ---- */
         .trip-list { list-style: none; padding: 0; margin: 10px 0 0; }
         /* "Click a trip" instruction (animated) */
