@@ -877,6 +877,7 @@
         /* ---- About Arrahman Tours pop-up (opens from the header) ---- */
         .about-open { cursor: pointer; }
         .about-open:hover, .about-open:focus-visible { filter: brightness(1.2); outline: none; }
+        h1.about-open .about-i { display: none; }  /* ⓘ hidden on the header; each trip card has its own */
         .about-i { font-size: 0.55em; vertical-align: middle; color: #c9a86a; -webkit-text-fill-color: #c9a86a; }
         .about-overlay { position: fixed; inset: 0; z-index: 3000; background: rgba(20,14,8,0.55); display: flex; align-items: center; justify-content: center; padding: 16px; opacity: 0; transition: opacity 0.25s ease; }
         .about-overlay.show { opacity: 1; }
