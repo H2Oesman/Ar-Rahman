@@ -1062,6 +1062,21 @@
             #english-content h1.surah-title, #indonesian-content h1.surah-title { font-size: 18px; }
             .scroll-arrow, .scroll-arrow-double { width: 34px; height: 34px; }
         }
+        /* ---- Trip card as a grid: 🕋 / 🕒 / 🌡️ share one column; labels and values line up ---- */
+        .trip-list li > a { display: grid; grid-template-columns: 1.7rem minmax(0, 1fr) auto; column-gap: 12px; row-gap: 3px; align-items: center; }
+        .trip-list li > a > .trip-icon { grid-column: 1; grid-row: 1; justify-self: center; }
+        .trip-list li > a > .trip-main { grid-column: 2; grid-row: 1; min-width: 0; }
+        .trip-list li > a > .fa-chevron-right { grid-column: 3; grid-row: 1; margin-left: 0; }
+        .trip-list .trip-info { grid-column: 1 / 3; display: grid; grid-template-columns: 1.7rem minmax(0, 1fr); column-gap: 12px; align-items: start; margin: 0; font-size: 0.72rem; line-height: 1.45; font-weight: 400; color: var(--translation-color); opacity: 1; }
+        .trip-list .trip-clock { grid-row: 2; margin-top: 3px; }
+        .trip-list .trip-wx { grid-row: 3; }
+        .trip-list .trip-info[hidden] { display: none; }
+        .trip-list .trip-info .ti-ic { justify-self: center; font-size: 0.95rem; line-height: 1.25; }
+        .trip-list .ti-grid { display: grid; grid-template-columns: 5.6em minmax(0, max-content); column-gap: 6px; }
+        .trip-list .ti-grid .ti-l { white-space: nowrap; opacity: 0.85; }
+        .trip-list .ti-grid .ti-v { white-space: nowrap; font-variant-numeric: tabular-nums; }
+        .trip-list .ti-grid b { font-weight: 700; color: var(--section-title-color); }
+        @media (max-width: 640px) { .trip-list li > a, .trip-list .trip-info { column-gap: 10px; } .trip-list .trip-info { font-size: 0.7rem; } }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -1137,8 +1152,8 @@
 
             <p class="trip-hint"><span class="hint-hand" aria-hidden="true">👇</span>Tap or click a trip below to open its guide</p>
             <ul class="trip-list">
-                <li><a href="Arrahman_Umrah.html?English" data-dates="trip_dates.js" data-fallback="2026-11-23,2026-12-03"><span class="trip-icon">🕋</span><span>Arrahman Umrah 23 November 2026<span class="trip-cd"><i class="fas fa-hourglass-half"></i> <span class="cd-value">…</span> <span class="cd-sub"></span></span><span class="trip-clock"></span><span class="trip-wx" hidden><span class="wx-text"></span></span></span><i class="fas fa-chevron-right"></i></a><button type="button" class="trip-about about-open" aria-label="About Arrahman Tours" title="About Arrahman Tours"><i class="fas fa-circle-info" aria-hidden="true"></i></button></li>
-                <li><a href="Arrahman_Umrah.html?English&amp;Dates=trip_2027.js" data-dates="trip_2027.js" data-fallback="2027-03-18,2027-03-28"><span class="trip-icon">🕋</span><span>Arrahman Umrah 18 March 2027<span class="trip-note">(Subject to Change)</span><span class="trip-cd"><i class="fas fa-hourglass-half"></i> <span class="cd-value">…</span> <span class="cd-sub"></span></span><span class="trip-clock"></span><span class="trip-wx" hidden><span class="wx-text"></span></span></span><i class="fas fa-chevron-right"></i></a><button type="button" class="trip-about about-open" aria-label="About Arrahman Tours" title="About Arrahman Tours"><i class="fas fa-circle-info" aria-hidden="true"></i></button></li>
+                <li><a href="Arrahman_Umrah.html?English" data-dates="trip_dates.js" data-fallback="2026-11-23,2026-12-03"><span class="trip-icon">🕋</span><span class="trip-main">Arrahman Umrah 23 November 2026<span class="trip-cd"><i class="fas fa-hourglass-half"></i> <span class="cd-value">…</span> <span class="cd-sub"></span></span></span><i class="fas fa-chevron-right"></i><span class="trip-info trip-clock"><span class="ti-ic" aria-hidden="true">🕒</span><span class="ti-grid"></span></span><span class="trip-info trip-wx" hidden><span class="ti-ic" aria-hidden="true">🌡️</span><span class="ti-grid"></span></span></a><button type="button" class="trip-about about-open" aria-label="About Arrahman Tours" title="About Arrahman Tours"><i class="fas fa-circle-info" aria-hidden="true"></i></button></li>
+                <li><a href="Arrahman_Umrah.html?English&amp;Dates=trip_2027.js" data-dates="trip_2027.js" data-fallback="2027-03-18,2027-03-28"><span class="trip-icon">🕋</span><span class="trip-main">Arrahman Umrah 18 March 2027<span class="trip-note">(Subject to Change)</span><span class="trip-cd"><i class="fas fa-hourglass-half"></i> <span class="cd-value">…</span> <span class="cd-sub"></span></span></span><i class="fas fa-chevron-right"></i><span class="trip-info trip-clock"><span class="ti-ic" aria-hidden="true">🕒</span><span class="ti-grid"></span></span><span class="trip-info trip-wx" hidden><span class="ti-ic" aria-hidden="true">🌡️</span><span class="ti-grid"></span></span></a><button type="button" class="trip-about about-open" aria-label="About Arrahman Tours" title="About Arrahman Tours"><i class="fas fa-circle-info" aria-hidden="true"></i></button></li>
             </ul>
 
             <div class="closing-dua">
@@ -1162,8 +1177,8 @@
 
             <p class="trip-hint"><span class="hint-hand" aria-hidden="true">👇</span>Ketuk atau klik salah satu perjalanan di bawah untuk membuka panduannya</p>
             <ul class="trip-list">
-                <li><a href="Arrahman_Umrah.html?Indonesian" data-dates="trip_dates.js" data-fallback="2026-11-23,2026-12-03"><span class="trip-icon">🕋</span><span>Arrahman Umrah 23 November 2026<span class="trip-cd"><i class="fas fa-hourglass-half"></i> <span class="cd-value">…</span> <span class="cd-sub"></span></span><span class="trip-clock"></span><span class="trip-wx" hidden><span class="wx-text"></span></span></span><i class="fas fa-chevron-right"></i></a><button type="button" class="trip-about about-open" aria-label="Tentang Arrahman Tours" title="Tentang Arrahman Tours"><i class="fas fa-circle-info" aria-hidden="true"></i></button></li>
-                <li><a href="Arrahman_Umrah.html?Indonesian&amp;Dates=trip_2027.js" data-dates="trip_2027.js" data-fallback="2027-03-18,2027-03-28"><span class="trip-icon">🕋</span><span>Arrahman Umrah 18 Maret 2027<span class="trip-note">(Dapat Berubah)</span><span class="trip-cd"><i class="fas fa-hourglass-half"></i> <span class="cd-value">…</span> <span class="cd-sub"></span></span><span class="trip-clock"></span><span class="trip-wx" hidden><span class="wx-text"></span></span></span><i class="fas fa-chevron-right"></i></a><button type="button" class="trip-about about-open" aria-label="Tentang Arrahman Tours" title="Tentang Arrahman Tours"><i class="fas fa-circle-info" aria-hidden="true"></i></button></li>
+                <li><a href="Arrahman_Umrah.html?Indonesian" data-dates="trip_dates.js" data-fallback="2026-11-23,2026-12-03"><span class="trip-icon">🕋</span><span class="trip-main">Arrahman Umrah 23 November 2026<span class="trip-cd"><i class="fas fa-hourglass-half"></i> <span class="cd-value">…</span> <span class="cd-sub"></span></span></span><i class="fas fa-chevron-right"></i><span class="trip-info trip-clock"><span class="ti-ic" aria-hidden="true">🕒</span><span class="ti-grid"></span></span><span class="trip-info trip-wx" hidden><span class="ti-ic" aria-hidden="true">🌡️</span><span class="ti-grid"></span></span></a><button type="button" class="trip-about about-open" aria-label="Tentang Arrahman Tours" title="Tentang Arrahman Tours"><i class="fas fa-circle-info" aria-hidden="true"></i></button></li>
+                <li><a href="Arrahman_Umrah.html?Indonesian&amp;Dates=trip_2027.js" data-dates="trip_2027.js" data-fallback="2027-03-18,2027-03-28"><span class="trip-icon">🕋</span><span class="trip-main">Arrahman Umrah 18 Maret 2027<span class="trip-note">(Dapat Berubah)</span><span class="trip-cd"><i class="fas fa-hourglass-half"></i> <span class="cd-value">…</span> <span class="cd-sub"></span></span></span><i class="fas fa-chevron-right"></i><span class="trip-info trip-clock"><span class="ti-ic" aria-hidden="true">🕒</span><span class="ti-grid"></span></span><span class="trip-info trip-wx" hidden><span class="ti-ic" aria-hidden="true">🌡️</span><span class="ti-grid"></span></span></a><button type="button" class="trip-about about-open" aria-label="Tentang Arrahman Tours" title="Tentang Arrahman Tours"><i class="fas fa-circle-info" aria-hidden="true"></i></button></li>
             </ul>
 
             <div class="closing-dua">
@@ -1500,17 +1515,13 @@
             function render() {
                 document.querySelectorAll('.trip-wx').forEach(el => {
                     const id = !!el.closest('#indonesian-content');
-                    const label = id ? 'Sekarang: ' : 'Now: ';
-                    const text = el.querySelector('.wx-text');
-                    if (temps) {
-                        text.innerHTML = CITIES.map((c, i) => {
-                            const C = temps[i], F = C * 9 / 5 + 32;
-                            return '<span class="wx-city">' + (i === 0 ? '🌡️ ' + label : '') + (id ? c.id : c.en) + ' <b>' + Math.round(F) + '°F / ' + Math.round(C) + '°C</b></span>';
-                        }).join('<span class="wx-sep">·</span>');
+                    const grid = el.querySelector('.ti-grid');
+                    if (temps || state === 'loading') {
+                        grid.innerHTML = CITIES.map((c, i) => {
+                            const v = temps ? '<b>' + Math.round(temps[i] * 9 / 5 + 32) + '°F / ' + Math.round(temps[i]) + '°C</b>' : '…';
+                            return '<span class="ti-l">' + (id ? c.id : c.en) + ':</span><span class="ti-v">' + v + '</span>';
+                        }).join('');
                         el.title = id ? 'Suhu saat ini, diperbarui setiap 30 menit' : 'Current temperature, updated every 30 minutes';
-                        el.hidden = false;
-                    } else if (state === 'loading') {
-                        text.textContent = '🌡️ ' + label + 'Madinah … · Makkah …';
                         el.hidden = false;
                     } else {
                         el.hidden = true;   // both sources failed: hide the line quietly
@@ -1557,8 +1568,9 @@
                 const now = new Date();
                 document.querySelectorAll('.trip-clock').forEach(el => {
                     const id = !!el.closest('#indonesian-content'), lang = id ? 'id' : 'en';
-                    el.innerHTML = '<span class="clk-part">🕒 ' + (id ? 'Lokal: ' : 'Local: ') + fmt(now, lang) + '</span>' +
-                                   '<span class="wx-sep">·</span><span class="clk-part">' + (id ? 'Tanah Suci: ' : 'Holy Land: ') + fmt(now, lang, 'Asia/Riyadh') + '</span>';
+                    el.querySelector('.ti-grid').innerHTML =
+                        '<span class="ti-l">' + (id ? 'Lokal:' : 'Local:') + '</span><span class="ti-v">' + fmt(now, lang) + '</span>' +
+                        '<span class="ti-l">' + (id ? 'Tanah Suci:' : 'Holy Land:') + '</span><span class="ti-v">' + fmt(now, lang, 'Asia/Riyadh') + '</span>';
                 });
             }
             let t = null;
