@@ -1036,6 +1036,32 @@
             .trip-list .trip-clock .clk-part { display: block; }
             .trip-list .trip-clock .wx-sep { display: none; }
         }
+        /* ---- index page: whole page one step smaller ---- */
+        html { font-size: 14px; }                      /* everything sized in rem/em shrinks ~12% */
+        body { font-size: 14px; }
+        .bismillah { font-size: min(40px, calc(100cqw / 11.8)); }
+        .language-toggle, .transliteration-toggle, .dark-mode-toggle { font-size: 10px; padding: 2px 9px; }
+        .dark-mode-toggle { top: 36px; }
+        .top-pill { font-size: 11.5px; padding: 4px 12px; }
+        .pill-donate .donate-logo { height: 19px; }
+        .top-links .pill-purple { font-size: 12.5px; padding: 5px 13px; }
+        .know-wrap > .know-hint { font-size: 11px; }
+        .know-hint-arrow { font-size: 15px; }
+        .know-list a, .know-list .know-item { font-size: 0.8rem; }
+        #english-content h1.surah-title, #indonesian-content h1.surah-title { font-size: 19px; }
+        .trip-about { width: 28px; height: 28px; font-size: 1.05rem; }
+        .scroll-arrow, .scroll-arrow-double { width: 38px; height: 38px; font-size: 0.9rem; }
+        .about-box { font-size: 0.95rem; }
+        @media (max-width: 640px) {
+            .bismillah { font-size: min(40px, calc((100vw - 150px) / 11.8)) !important; }
+            .language-toggle, .transliteration-toggle, .dark-mode-toggle { font-size: 10px; padding: 2px 8px; }
+            .top-pill { font-size: 11px; padding: 3px 10px; }
+            .pill-donate { font-size: 9.5px; }
+            .pill-donate .donate-logo { height: 15px; }
+            .top-links .pill-purple { font-size: 12px; padding: 4px 11px; }
+            #english-content h1.surah-title, #indonesian-content h1.surah-title { font-size: 18px; }
+            .scroll-arrow, .scroll-arrow-double { width: 34px; height: 34px; }
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
