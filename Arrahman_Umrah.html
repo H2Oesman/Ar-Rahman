@@ -1026,6 +1026,28 @@
         @keyframes lay-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
         @media (prefers-reduced-motion: reduce) { .leg-lay-blink { animation: none; } }
         @media print { .leg-lay-blink { animation: none; } }
+        /* ===== Flight schedule pop-up: compact ===== */
+        #legPlayer .leg-bar, #legPlayer .leg-title { font-size: 12px; line-height: 1.5; }
+        #legPlayer .leg-body { font-size: 12px; line-height: 1.45; padding: 8px 10px; gap: 6px; }
+        #legPlayer .itin-group { font-size: 10px; margin-top: 2px; }
+        #legPlayer .itin-leg { padding: 7px 10px; border-radius: 10px; gap: 1px; }
+        #legPlayer .itin-date { font-size: 12px; line-height: 1.45; }
+        #legPlayer .itin-date span { font-size: inherit; line-height: inherit; }
+        #legPlayer .itin-flight { font-size: 10.5px; padding: 0 8px; }
+        #legPlayer .itin-row { grid-template-columns: 3.6rem 4.2rem minmax(0, 1fr); gap: 6px; font-size: 11px; line-height: 1.4; }
+        #legPlayer .itin-label { font-size: 9.5px; }
+        #legPlayer .itin-time, #legPlayer .itin-place { font-size: 11px; }
+        #legPlayer .itin-nextday { font-size: 10px; }
+        #legPlayer .leg-lay { font-size: 10.5px; line-height: 1.45; padding: 1px 3px; }
+        #legPlayer .leg-note { font-size: 10px; line-height: 1.45; }
+        #legPlayer .alt-intro { font-size: 10.5px; line-height: 1.4; margin-top: 2px; }
+        #legPlayer .alt-opt { font-size: 10.5px; line-height: 1.4; padding: 5px 9px; border-radius: 9px; }
+        #legPlayer .alt-name, #legPlayer .alt-via, #legPlayer .alt-row, #legPlayer .alt-fn { font-size: inherit; line-height: inherit; }
+        #legPlayer .alt-row { grid-template-columns: 3.4rem minmax(0, 1fr); }
+        #legPlayer .alt-note { font-size: 9.5px; line-height: 1.4; }
+        #legPlayer .leg-nav { font-size: 12px; padding: 6px 10px; }
+        #legPlayer .leg-nav button { font-size: 12px; padding: 4px 12px; }
+        @media (max-width: 480px) { #legPlayer .itin-row { grid-template-columns: 3.4rem minmax(0, 1fr); } }
     </style>
 </head>
 <body>
