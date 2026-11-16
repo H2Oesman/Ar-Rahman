@@ -1005,6 +1005,14 @@
             .trip-list li > a { font-size: 0.92rem; padding: 10px 46px 10px 12px; gap: 10px; }
             .trip-about { right: 6px; }
         }
+        /* Live temperature in Madinah & Makkah (below each countdown) */
+        .trip-list .trip-wx { display: block; margin-top: 2px; font-size: 0.78rem; font-weight: 400; color: var(--translation-color); opacity: 0.9; }
+        .trip-list .trip-wx[hidden] { display: none; }
+        .trip-list .trip-wx b { font-weight: 700; color: var(--section-title-color); font-variant-numeric: tabular-nums; }
+        .trip-list .trip-wx .wx-sep { opacity: 0.5; margin: 0 4px; }
+        .trip-list .trip-wx .wx-city { white-space: nowrap; }
+        .trip-list li > a > span:not(.trip-icon) { min-width: 0; }
+        @media (max-width: 640px) { .trip-list .trip-wx .wx-city { display: block; } .trip-list .trip-wx .wx-sep { display: none; } }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -1080,8 +1088,8 @@
 
             <p class="trip-hint"><span class="hint-hand" aria-hidden="true">👇</span>Tap or click a trip below to open its guide</p>
             <ul class="trip-list">
-                <li><a href="Arrahman_Umrah.html?English" data-dates="trip_dates.js" data-fallback="2026-11-23,2026-12-03"><span class="trip-icon">🕋</span><span>Arrahman Umrah 23 November 2026<span class="trip-cd"><i class="fas fa-hourglass-half"></i> <span class="cd-value">…</span> <span class="cd-sub"></span></span></span><i class="fas fa-chevron-right"></i></a><button type="button" class="trip-about about-open" aria-label="About Arrahman Tours" title="About Arrahman Tours"><i class="fas fa-circle-info" aria-hidden="true"></i></button></li>
-                <li><a href="Arrahman_Umrah.html?English&amp;Dates=trip_2027.js" data-dates="trip_2027.js" data-fallback="2027-03-18,2027-03-28"><span class="trip-icon">🕋</span><span>Arrahman Umrah 18 March 2027<span class="trip-note">(Subject to Change)</span><span class="trip-cd"><i class="fas fa-hourglass-half"></i> <span class="cd-value">…</span> <span class="cd-sub"></span></span></span><i class="fas fa-chevron-right"></i></a><button type="button" class="trip-about about-open" aria-label="About Arrahman Tours" title="About Arrahman Tours"><i class="fas fa-circle-info" aria-hidden="true"></i></button></li>
+                <li><a href="Arrahman_Umrah.html?English" data-dates="trip_dates.js" data-fallback="2026-11-23,2026-12-03"><span class="trip-icon">🕋</span><span>Arrahman Umrah 23 November 2026<span class="trip-cd"><i class="fas fa-hourglass-half"></i> <span class="cd-value">…</span> <span class="cd-sub"></span></span><span class="trip-wx" hidden><span class="wx-ic" aria-hidden="true">🌡️</span> <span class="wx-text"></span></span></span><i class="fas fa-chevron-right"></i></a><button type="button" class="trip-about about-open" aria-label="About Arrahman Tours" title="About Arrahman Tours"><i class="fas fa-circle-info" aria-hidden="true"></i></button></li>
+                <li><a href="Arrahman_Umrah.html?English&amp;Dates=trip_2027.js" data-dates="trip_2027.js" data-fallback="2027-03-18,2027-03-28"><span class="trip-icon">🕋</span><span>Arrahman Umrah 18 March 2027<span class="trip-note">(Subject to Change)</span><span class="trip-cd"><i class="fas fa-hourglass-half"></i> <span class="cd-value">…</span> <span class="cd-sub"></span></span><span class="trip-wx" hidden><span class="wx-ic" aria-hidden="true">🌡️</span> <span class="wx-text"></span></span></span><i class="fas fa-chevron-right"></i></a><button type="button" class="trip-about about-open" aria-label="About Arrahman Tours" title="About Arrahman Tours"><i class="fas fa-circle-info" aria-hidden="true"></i></button></li>
             </ul>
 
             <div class="closing-dua">
@@ -1105,8 +1113,8 @@
 
             <p class="trip-hint"><span class="hint-hand" aria-hidden="true">👇</span>Ketuk atau klik salah satu perjalanan di bawah untuk membuka panduannya</p>
             <ul class="trip-list">
-                <li><a href="Arrahman_Umrah.html?Indonesian" data-dates="trip_dates.js" data-fallback="2026-11-23,2026-12-03"><span class="trip-icon">🕋</span><span>Arrahman Umrah 23 November 2026<span class="trip-cd"><i class="fas fa-hourglass-half"></i> <span class="cd-value">…</span> <span class="cd-sub"></span></span></span><i class="fas fa-chevron-right"></i></a><button type="button" class="trip-about about-open" aria-label="Tentang Arrahman Tours" title="Tentang Arrahman Tours"><i class="fas fa-circle-info" aria-hidden="true"></i></button></li>
-                <li><a href="Arrahman_Umrah.html?Indonesian&amp;Dates=trip_2027.js" data-dates="trip_2027.js" data-fallback="2027-03-18,2027-03-28"><span class="trip-icon">🕋</span><span>Arrahman Umrah 18 Maret 2027<span class="trip-note">(Dapat Berubah)</span><span class="trip-cd"><i class="fas fa-hourglass-half"></i> <span class="cd-value">…</span> <span class="cd-sub"></span></span></span><i class="fas fa-chevron-right"></i></a><button type="button" class="trip-about about-open" aria-label="Tentang Arrahman Tours" title="Tentang Arrahman Tours"><i class="fas fa-circle-info" aria-hidden="true"></i></button></li>
+                <li><a href="Arrahman_Umrah.html?Indonesian" data-dates="trip_dates.js" data-fallback="2026-11-23,2026-12-03"><span class="trip-icon">🕋</span><span>Arrahman Umrah 23 November 2026<span class="trip-cd"><i class="fas fa-hourglass-half"></i> <span class="cd-value">…</span> <span class="cd-sub"></span></span><span class="trip-wx" hidden><span class="wx-ic" aria-hidden="true">🌡️</span> <span class="wx-text"></span></span></span><i class="fas fa-chevron-right"></i></a><button type="button" class="trip-about about-open" aria-label="Tentang Arrahman Tours" title="Tentang Arrahman Tours"><i class="fas fa-circle-info" aria-hidden="true"></i></button></li>
+                <li><a href="Arrahman_Umrah.html?Indonesian&amp;Dates=trip_2027.js" data-dates="trip_2027.js" data-fallback="2027-03-18,2027-03-28"><span class="trip-icon">🕋</span><span>Arrahman Umrah 18 Maret 2027<span class="trip-note">(Dapat Berubah)</span><span class="trip-cd"><i class="fas fa-hourglass-half"></i> <span class="cd-value">…</span> <span class="cd-sub"></span></span><span class="trip-wx" hidden><span class="wx-ic" aria-hidden="true">🌡️</span> <span class="wx-text"></span></span></span><i class="fas fa-chevron-right"></i></a><button type="button" class="trip-about about-open" aria-label="Tentang Arrahman Tours" title="Tentang Arrahman Tours"><i class="fas fa-circle-info" aria-hidden="true"></i></button></li>
             </ul>
 
             <div class="closing-dua">
@@ -1406,6 +1414,50 @@
             window.addEventListener('resize', alignKnow);
             window.addEventListener('load', alignKnow);
             document.getElementById('languageToggle')?.addEventListener('click', () => setTimeout(alignKnow, 0));
+        })();
+    </script>
+
+    <script>
+        /* Live temperature in Madinah and Makkah (Open-Meteo, free, no key). Refreshes every 30 minutes. */
+        (function () {
+            const CITIES = [
+                { en: 'Madinah', id: 'Madinah', lat: 24.4672, lon: 39.6111 },
+                { en: 'Makkah',  id: 'Makkah',  lat: 21.4225, lon: 39.8262 }
+            ];
+            const URL = 'https://api.open-meteo.com/v1/forecast?latitude=' + CITIES.map(c => c.lat).join(',') +
+                        '&longitude=' + CITIES.map(c => c.lon).join(',') + '&current=temperature_2m&timezone=Asia%2FRiyadh';
+            let temps = null, timer = null;
+            function render() {
+                document.querySelectorAll('.trip-wx').forEach(el => {
+                    if (!temps) { el.hidden = true; return; }
+                    const id = !!el.closest('#indonesian-content');
+                    el.querySelector('.wx-text').innerHTML = (id ? 'Sekarang: ' : 'Now: ') + CITIES.map((c, i) => {
+                        const C = temps[i], F = C * 9 / 5 + 32;
+                        return '<span class="wx-city">' + (id ? c.id : c.en) + ' <b>' + Math.round(F) + '°F / ' + Math.round(C) + '°C</b></span>';
+                    }).join('<span class="wx-sep">·</span>');
+                    el.title = (id ? 'Suhu saat ini, diperbarui setiap 30 menit' : 'Current temperature, updated every 30 minutes');
+                    el.hidden = false;
+                });
+            }
+            async function load() {
+                try {
+                    const r = await fetch(URL, { cache: 'no-store' });
+                    if (!r.ok) throw new Error('HTTP ' + r.status);
+                    let j = await r.json();
+                    if (!Array.isArray(j)) j = [j];
+                    const t = j.map(x => x && x.current && typeof x.current.temperature_2m === 'number' ? x.current.temperature_2m : NaN);
+                    if (t.length === CITIES.length && t.every(v => !isNaN(v))) temps = t;
+                } catch (e) { console.warn('Temperature not available right now:', e); }
+                render();
+            }
+            function start() { clearInterval(timer); load(); timer = setInterval(load, 30 * 60 * 1000); }
+            start();
+            // Refresh when the page comes back into view after a while (phones pause hidden pages)
+            let hiddenAt = 0;
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) hiddenAt = Date.now();
+                else if (Date.now() - hiddenAt > 30 * 60 * 1000) start();
+            });
         })();
     </script>
 </body>
