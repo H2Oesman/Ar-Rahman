@@ -1418,46 +1418,77 @@
     </script>
 
     <script>
-        /* Live temperature in Madinah and Makkah (Open-Meteo, free, no key). Refreshes every 30 minutes. */
+        /* Live temperature in Madinah and Makkah. Refreshes every 30 minutes.
+           Source: Open-Meteo (free, no key); if that fails, wttr.in is tried instead.
+           While loading, the line shows "…" so you can tell this version of the page is in use. */
         (function () {
             const CITIES = [
                 { en: 'Madinah', id: 'Madinah', lat: 24.4672, lon: 39.6111 },
                 { en: 'Makkah',  id: 'Makkah',  lat: 21.4225, lon: 39.8262 }
             ];
-            const URL = 'https://api.open-meteo.com/v1/forecast?latitude=' + CITIES.map(c => c.lat).join(',') +
-                        '&longitude=' + CITIES.map(c => c.lon).join(',') + '&current=temperature_2m&timezone=Asia%2FRiyadh';
-            let temps = null, timer = null;
+            let temps = null, state = 'loading', timer = null;
+            const withTimeout = (url, ms) => {
+                const c = ('AbortController' in window) ? new AbortController() : null;
+                const t = c ? setTimeout(() => c.abort(), ms) : null;
+                return fetch(url, { cache: 'no-store', signal: c ? c.signal : undefined }).finally(() => t && clearTimeout(t));
+            };
+            async function fromOpenMeteo() {
+                const url = 'https://api.open-meteo.com/v1/forecast?latitude=' + CITIES.map(c => c.lat).join(',') +
+                            '&longitude=' + CITIES.map(c => c.lon).join(',') + '&current=temperature_2m&timezone=Asia%2FRiyadh';
+                const r = await withTimeout(url, 10000);
+                if (!r.ok) throw new Error('Open-Meteo HTTP ' + r.status);
+                let j = await r.json(); if (!Array.isArray(j)) j = [j];
+                return j.map(x => Number(x && x.current && x.current.temperature_2m));
+            }
+            async function fromWttr() {
+                return Promise.all(CITIES.map(async c => {
+                    const r = await withTimeout('https://wttr.in/' + c.lat + ',' + c.lon + '?format=j1', 10000);
+                    if (!r.ok) throw new Error('wttr.in HTTP ' + r.status);
+                    const j = await r.json();
+                    return Number(j.current_condition[0].temp_C);
+                }));
+            }
             function render() {
                 document.querySelectorAll('.trip-wx').forEach(el => {
-                    if (!temps) { el.hidden = true; return; }
                     const id = !!el.closest('#indonesian-content');
-                    el.querySelector('.wx-text').innerHTML = (id ? 'Sekarang: ' : 'Now: ') + CITIES.map((c, i) => {
-                        const C = temps[i], F = C * 9 / 5 + 32;
-                        return '<span class="wx-city">' + (id ? c.id : c.en) + ' <b>' + Math.round(F) + '°F / ' + Math.round(C) + '°C</b></span>';
-                    }).join('<span class="wx-sep">·</span>');
-                    el.title = (id ? 'Suhu saat ini, diperbarui setiap 30 menit' : 'Current temperature, updated every 30 minutes');
-                    el.hidden = false;
+                    const label = id ? 'Sekarang: ' : 'Now: ';
+                    const text = el.querySelector('.wx-text');
+                    if (temps) {
+                        text.innerHTML = label + CITIES.map((c, i) => {
+                            const C = temps[i], F = C * 9 / 5 + 32;
+                            return '<span class="wx-city">' + (id ? c.id : c.en) + ' <b>' + Math.round(F) + '°F / ' + Math.round(C) + '°C</b></span>';
+                        }).join('<span class="wx-sep">·</span>');
+                        el.title = id ? 'Suhu saat ini, diperbarui setiap 30 menit' : 'Current temperature, updated every 30 minutes';
+                        el.hidden = false;
+                    } else if (state === 'loading') {
+                        text.textContent = label + 'Madinah … · Makkah …';
+                        el.hidden = false;
+                    } else {
+                        el.hidden = true;   // both sources failed: hide the line quietly
+                    }
                 });
             }
             async function load() {
-                try {
-                    const r = await fetch(URL, { cache: 'no-store' });
-                    if (!r.ok) throw new Error('HTTP ' + r.status);
-                    let j = await r.json();
-                    if (!Array.isArray(j)) j = [j];
-                    const t = j.map(x => x && x.current && typeof x.current.temperature_2m === 'number' ? x.current.temperature_2m : NaN);
-                    if (t.length === CITIES.length && t.every(v => !isNaN(v))) temps = t;
-                } catch (e) { console.warn('Temperature not available right now:', e); }
+                if (!temps) { state = 'loading'; render(); }
+                let t = null;
+                for (const src of [fromOpenMeteo, fromWttr]) {
+                    try {
+                        const v = await src();
+                        if (v.length === CITIES.length && v.every(x => isFinite(x))) { t = v; break; }
+                    } catch (e) { console.warn('Temperature source failed:', e && e.message || e); }
+                }
+                if (t) temps = t;
+                state = temps ? 'ok' : 'failed';
                 render();
             }
             function start() { clearInterval(timer); load(); timer = setInterval(load, 30 * 60 * 1000); }
             start();
-            // Refresh when the page comes back into view after a while (phones pause hidden pages)
             let hiddenAt = 0;
             document.addEventListener('visibilitychange', () => {
                 if (document.hidden) hiddenAt = Date.now();
                 else if (Date.now() - hiddenAt > 30 * 60 * 1000) start();
             });
+            document.getElementById('languageToggle')?.addEventListener('click', () => setTimeout(render, 0));
         })();
     </script>
 </body>
