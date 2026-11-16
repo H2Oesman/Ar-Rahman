@@ -1013,6 +1013,29 @@
         .trip-list .trip-wx .wx-city { white-space: nowrap; }
         .trip-list li > a > span:not(.trip-icon) { min-width: 0; }
         @media (max-width: 640px) { .trip-list .trip-wx .wx-city { display: block; } .trip-list .trip-wx .wx-sep { display: none; } }
+        /* ---- index page: smaller still from the header down; date/time and temperature lines ---- */
+        #english-content h1.surah-title, #indonesian-content h1.surah-title { font-size: 22px; margin: 0 0 4px; }
+        .trip-hint { font-size: 0.8rem; margin-bottom: 8px; }
+        .trip-hint .hint-hand { font-size: 1rem; }
+        .trip-list li { margin-bottom: 10px; }
+        .trip-list li > a { font-size: 0.9rem; line-height: 1.35; padding: 9px 52px 9px 14px; }
+        .trip-list .trip-icon { font-size: 1.2rem; }
+        .trip-list .trip-note { font-size: 0.7rem; }
+        .trip-list .trip-cd { font-size: 0.76rem; margin-top: 2px; }
+        .trip-list .trip-cd .cd-value { font-size: 0.92rem; }
+        .trip-list .trip-cd .cd-sub { font-size: 0.74rem; }
+        .trip-list .trip-clock, .trip-list .trip-wx { display: block; margin-top: 2px; font-size: 0.68rem; line-height: 1.4; font-weight: 400; color: var(--translation-color); opacity: 0.9; }
+        .trip-list .trip-wx[hidden] { display: none; }
+        .trip-list .trip-clock b { font-weight: 700; color: var(--section-title-color); font-variant-numeric: tabular-nums; }
+        .trip-list .trip-clock .clk-part { white-space: nowrap; }
+        .trip-list .trip-clock .wx-sep { opacity: 0.5; margin: 0 4px; }
+        .closing-dua { font-size: 0.8rem; margin-top: 14px; padding: 10px 14px; }
+        @media (max-width: 640px) {
+            #english-content h1.surah-title, #indonesian-content h1.surah-title { font-size: 20px; }
+            .trip-list li > a { font-size: 0.86rem; padding: 9px 44px 9px 12px; }
+            .trip-list .trip-clock .clk-part { display: block; }
+            .trip-list .trip-clock .wx-sep { display: none; }
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -1088,8 +1111,8 @@
 
             <p class="trip-hint"><span class="hint-hand" aria-hidden="true">👇</span>Tap or click a trip below to open its guide</p>
             <ul class="trip-list">
-                <li><a href="Arrahman_Umrah.html?English" data-dates="trip_dates.js" data-fallback="2026-11-23,2026-12-03"><span class="trip-icon">🕋</span><span>Arrahman Umrah 23 November 2026<span class="trip-cd"><i class="fas fa-hourglass-half"></i> <span class="cd-value">…</span> <span class="cd-sub"></span></span><span class="trip-wx" hidden><span class="wx-ic" aria-hidden="true">🌡️</span> <span class="wx-text"></span></span></span><i class="fas fa-chevron-right"></i></a><button type="button" class="trip-about about-open" aria-label="About Arrahman Tours" title="About Arrahman Tours"><i class="fas fa-circle-info" aria-hidden="true"></i></button></li>
-                <li><a href="Arrahman_Umrah.html?English&amp;Dates=trip_2027.js" data-dates="trip_2027.js" data-fallback="2027-03-18,2027-03-28"><span class="trip-icon">🕋</span><span>Arrahman Umrah 18 March 2027<span class="trip-note">(Subject to Change)</span><span class="trip-cd"><i class="fas fa-hourglass-half"></i> <span class="cd-value">…</span> <span class="cd-sub"></span></span><span class="trip-wx" hidden><span class="wx-ic" aria-hidden="true">🌡️</span> <span class="wx-text"></span></span></span><i class="fas fa-chevron-right"></i></a><button type="button" class="trip-about about-open" aria-label="About Arrahman Tours" title="About Arrahman Tours"><i class="fas fa-circle-info" aria-hidden="true"></i></button></li>
+                <li><a href="Arrahman_Umrah.html?English" data-dates="trip_dates.js" data-fallback="2026-11-23,2026-12-03"><span class="trip-icon">🕋</span><span>Arrahman Umrah 23 November 2026<span class="trip-cd"><i class="fas fa-hourglass-half"></i> <span class="cd-value">…</span> <span class="cd-sub"></span></span><span class="trip-clock"></span><span class="trip-wx" hidden><span class="wx-text"></span></span></span><i class="fas fa-chevron-right"></i></a><button type="button" class="trip-about about-open" aria-label="About Arrahman Tours" title="About Arrahman Tours"><i class="fas fa-circle-info" aria-hidden="true"></i></button></li>
+                <li><a href="Arrahman_Umrah.html?English&amp;Dates=trip_2027.js" data-dates="trip_2027.js" data-fallback="2027-03-18,2027-03-28"><span class="trip-icon">🕋</span><span>Arrahman Umrah 18 March 2027<span class="trip-note">(Subject to Change)</span><span class="trip-cd"><i class="fas fa-hourglass-half"></i> <span class="cd-value">…</span> <span class="cd-sub"></span></span><span class="trip-clock"></span><span class="trip-wx" hidden><span class="wx-text"></span></span></span><i class="fas fa-chevron-right"></i></a><button type="button" class="trip-about about-open" aria-label="About Arrahman Tours" title="About Arrahman Tours"><i class="fas fa-circle-info" aria-hidden="true"></i></button></li>
             </ul>
 
             <div class="closing-dua">
@@ -1113,8 +1136,8 @@
 
             <p class="trip-hint"><span class="hint-hand" aria-hidden="true">👇</span>Ketuk atau klik salah satu perjalanan di bawah untuk membuka panduannya</p>
             <ul class="trip-list">
-                <li><a href="Arrahman_Umrah.html?Indonesian" data-dates="trip_dates.js" data-fallback="2026-11-23,2026-12-03"><span class="trip-icon">🕋</span><span>Arrahman Umrah 23 November 2026<span class="trip-cd"><i class="fas fa-hourglass-half"></i> <span class="cd-value">…</span> <span class="cd-sub"></span></span><span class="trip-wx" hidden><span class="wx-ic" aria-hidden="true">🌡️</span> <span class="wx-text"></span></span></span><i class="fas fa-chevron-right"></i></a><button type="button" class="trip-about about-open" aria-label="Tentang Arrahman Tours" title="Tentang Arrahman Tours"><i class="fas fa-circle-info" aria-hidden="true"></i></button></li>
-                <li><a href="Arrahman_Umrah.html?Indonesian&amp;Dates=trip_2027.js" data-dates="trip_2027.js" data-fallback="2027-03-18,2027-03-28"><span class="trip-icon">🕋</span><span>Arrahman Umrah 18 Maret 2027<span class="trip-note">(Dapat Berubah)</span><span class="trip-cd"><i class="fas fa-hourglass-half"></i> <span class="cd-value">…</span> <span class="cd-sub"></span></span><span class="trip-wx" hidden><span class="wx-ic" aria-hidden="true">🌡️</span> <span class="wx-text"></span></span></span><i class="fas fa-chevron-right"></i></a><button type="button" class="trip-about about-open" aria-label="Tentang Arrahman Tours" title="Tentang Arrahman Tours"><i class="fas fa-circle-info" aria-hidden="true"></i></button></li>
+                <li><a href="Arrahman_Umrah.html?Indonesian" data-dates="trip_dates.js" data-fallback="2026-11-23,2026-12-03"><span class="trip-icon">🕋</span><span>Arrahman Umrah 23 November 2026<span class="trip-cd"><i class="fas fa-hourglass-half"></i> <span class="cd-value">…</span> <span class="cd-sub"></span></span><span class="trip-clock"></span><span class="trip-wx" hidden><span class="wx-text"></span></span></span><i class="fas fa-chevron-right"></i></a><button type="button" class="trip-about about-open" aria-label="Tentang Arrahman Tours" title="Tentang Arrahman Tours"><i class="fas fa-circle-info" aria-hidden="true"></i></button></li>
+                <li><a href="Arrahman_Umrah.html?Indonesian&amp;Dates=trip_2027.js" data-dates="trip_2027.js" data-fallback="2027-03-18,2027-03-28"><span class="trip-icon">🕋</span><span>Arrahman Umrah 18 Maret 2027<span class="trip-note">(Dapat Berubah)</span><span class="trip-cd"><i class="fas fa-hourglass-half"></i> <span class="cd-value">…</span> <span class="cd-sub"></span></span><span class="trip-clock"></span><span class="trip-wx" hidden><span class="wx-text"></span></span></span><i class="fas fa-chevron-right"></i></a><button type="button" class="trip-about about-open" aria-label="Tentang Arrahman Tours" title="Tentang Arrahman Tours"><i class="fas fa-circle-info" aria-hidden="true"></i></button></li>
             </ul>
 
             <div class="closing-dua">
@@ -1454,14 +1477,14 @@
                     const label = id ? 'Sekarang: ' : 'Now: ';
                     const text = el.querySelector('.wx-text');
                     if (temps) {
-                        text.innerHTML = label + CITIES.map((c, i) => {
+                        text.innerHTML = CITIES.map((c, i) => {
                             const C = temps[i], F = C * 9 / 5 + 32;
-                            return '<span class="wx-city">' + (id ? c.id : c.en) + ' <b>' + Math.round(F) + '°F / ' + Math.round(C) + '°C</b></span>';
+                            return '<span class="wx-city">' + (i === 0 ? '🌡️ ' + label : '') + (id ? c.id : c.en) + ' <b>' + Math.round(F) + '°F / ' + Math.round(C) + '°C</b></span>';
                         }).join('<span class="wx-sep">·</span>');
                         el.title = id ? 'Suhu saat ini, diperbarui setiap 30 menit' : 'Current temperature, updated every 30 minutes';
                         el.hidden = false;
                     } else if (state === 'loading') {
-                        text.textContent = label + 'Madinah … · Makkah …';
+                        text.textContent = '🌡️ ' + label + 'Madinah … · Makkah …';
                         el.hidden = false;
                     } else {
                         el.hidden = true;   // both sources failed: hide the line quietly
@@ -1488,6 +1511,34 @@
                 if (document.hidden) hiddenAt = Date.now();
                 else if (Date.now() - hiddenAt > 30 * 60 * 1000) start();
             });
+            document.getElementById('languageToggle')?.addEventListener('click', () => setTimeout(render, 0));
+        })();
+    </script>
+
+    <script>
+        /* Local and Holy Land (Makkah/Madinah, Asia/Riyadh) date and time, 24-hour clock. Updates every minute. */
+        (function () {
+            function fmt(d, lang, tz) {
+                const o = { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' };
+                if (tz) o.timeZone = tz;
+                try {
+                    const parts = new Intl.DateTimeFormat(lang === 'id' ? 'id-ID' : 'en-GB', o).formatToParts(d);
+                    const g = t => (parts.find(p => p.type === t) || {}).value || '';
+                    return g('weekday') + ' ' + g('day') + ' ' + g('month') + ' ' + g('year') + ', <b>' + g('hour') + ':' + g('minute') + '</b>';
+                } catch (e) { return d.toString(); }
+            }
+            function render() {
+                const now = new Date();
+                document.querySelectorAll('.trip-clock').forEach(el => {
+                    const id = !!el.closest('#indonesian-content'), lang = id ? 'id' : 'en';
+                    el.innerHTML = '<span class="clk-part">🕒 ' + (id ? 'Lokal: ' : 'Local: ') + fmt(now, lang) + '</span>' +
+                                   '<span class="wx-sep">·</span><span class="clk-part">' + (id ? 'Tanah Suci: ' : 'Holy Land: ') + fmt(now, lang, 'Asia/Riyadh') + '</span>';
+                });
+            }
+            let t = null;
+            function tick() { render(); clearTimeout(t); t = setTimeout(tick, 60000 - (Date.now() % 60000) + 50); }
+            tick();
+            document.addEventListener('visibilitychange', () => { if (!document.hidden) tick(); });
             document.getElementById('languageToggle')?.addEventListener('click', () => setTimeout(render, 0));
         })();
     </script>
