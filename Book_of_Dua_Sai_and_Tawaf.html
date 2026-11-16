@@ -851,7 +851,33 @@
         .pdf-bar a.pdf-open { color: #fff; background: rgba(255,255,255,0.12); border-radius: 30px; padding: 0 10px; height: 30px; display: inline-flex; align-items: center; font-size: 12px; font-weight: bold; text-decoration: none; flex-shrink: 0; white-space: nowrap; }
         .pdf-bar a.pdf-open:hover { background: rgba(255,255,255,0.25); }
         .ayah-end { font-family: 'AmiriQuran', 'Scheherazade New', serif; color: var(--section-title-color); white-space: nowrap; font-feature-settings: normal; padding: 0 2px; }
-        </style>
+    
+        /* smaller reading text throughout (~12%) */
+        html { font-size: 90%; }
+        .arabic { font-size: 25px; }
+        .arabic-quran { font-size: 26px; }
+        .arabic-basmala { font-size: 23px; }
+        .transliteration { font-size: 13.5px; }
+        .translation { font-size: 14.5px; }
+        .surah-title { font-size: 28px; }
+        .section-title { font-size: 21px; }
+        footer { font-size: 12px; }
+        @media (max-width: 640px) {
+            .arabic { font-size: 21px; }
+            .arabic-quran { font-size: 23px; }
+            .translation { font-size: 14px; }
+            .transliteration { font-size: 13px; }
+        }
+        /* blinking close (x) on the guide viewer, so it is easy to find the way out */
+        @keyframes pdfCloseBlink {
+            0%, 100% { background: rgba(255,255,255,0.12); box-shadow: 0 0 0 0 rgba(231,76,60,0); }
+            50% { background: #e74c3c; box-shadow: 0 0 0 4px rgba(231,76,60,0.45); }
+        }
+        .pdf-player:not(.hidden) #pdfClose { animation: pdfCloseBlink 1.2s ease-in-out infinite; }
+        @media (prefers-reduced-motion: reduce) {
+            .pdf-player:not(.hidden) #pdfClose { animation: none; background: #e74c3c; }
+        }
+    </style>
 </head>
 <body>
     <!-- Toggle Buttons -->
