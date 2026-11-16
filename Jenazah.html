@@ -39,7 +39,8 @@
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.8;
+            line-height: 1.75;
+            font-size: 14px;
             margin: 0;
             padding: 20px;
             color: var(--text-color);
@@ -56,7 +57,7 @@
             transition: all 0.3s ease;
         }
         .arabic {
-            font-size: 36px;
+            font-size: 30px;
             text-align: right;
             direction: rtl;
             margin: 15px 0 10px 0;
@@ -67,14 +68,14 @@
         .transliteration {
             font-style: italic;
             color: #7f8c8d;
-            font-size: 18px;
+            font-size: 15px;
             text-align: left;
             margin: -5px 0 15px;
             display: none;
         }
         .dark-mode .transliteration { color: #cbd5e1; }
         .name-title {
-            font-size: 32px;
+            font-size: 25px;
             color: var(--text-color);
             border-bottom: 3px solid #3498db;
             padding-bottom: 10px;
@@ -83,7 +84,7 @@
         }
         .section { margin: 35px 0; padding: 0 10px; }
         .section-title {
-            font-size: 26px;
+            font-size: 20px;
             color: var(--section-title-color);
             margin-bottom: 20px;
             border-left: 5px solid #3498db;
@@ -98,7 +99,7 @@
         }
         .dua-title {
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.05rem;
             color: #16a085;
             margin-bottom: 10px;
         }
@@ -147,7 +148,7 @@
         .scroll-arrow-double.up-double { right: 20px; top: 92px; }
         .scroll-arrow-double.down-double { right: 20px; bottom: 90px; }
         @media (max-width: 768px) {
-            .arabic { font-size: 28px; }
+            .arabic { font-size: 24px; }
             .container { padding: 20px; }
             .scroll-arrow, .scroll-arrow-double { width: 38px; height: 38px; font-size: 18px; }
         }
@@ -159,7 +160,7 @@
             border-left: 4px solid #3498db;
         }
         .hidden { display: none; }
-        footer { text-align: center; margin-top: 40px; padding: 20px; color: #7f8c8d; font-size: 14px; }
+        footer { text-align: center; margin-top: 40px; padding: 20px; color: #7f8c8d; font-size: 12px; }
 
         .menu-links {
             margin-bottom: 20px;
@@ -193,16 +194,16 @@
             padding: 8px 16px;
             border-radius: 40px;
             border: 1px solid var(--dua-border);
-            font-size: 15px;
+            font-size: 13px;
         }
         .jump-nav a:hover { color: var(--link-hover); }
         .step-badge {
             display: inline-block;
             background: #3498db;
             color: #fff;
-            font-size: 13px;
+            font-size: 11px;
             font-weight: bold;
-            padding: 2px 12px;
+            padding: 1px 10px;
             border-radius: 20px;
             margin-bottom: 8px;
         }
@@ -214,7 +215,7 @@
         .video-caption { text-align: center; }
         .video-caption a { color: var(--link-color); font-weight: bold; text-decoration: none; }
         .video-btns { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 10px 0 15px; }
-        .video-btn { border: none; cursor: pointer; font: inherit; font-weight: bold; font-size: 15px; padding: 9px 18px; border-radius: 40px; background: #c4302b; color: #fff; box-shadow: 0 3px 10px rgba(0,0,0,0.15); }
+        .video-btn { border: none; cursor: pointer; font: inherit; font-weight: bold; font-size: 13px; padding: 7px 15px; border-radius: 40px; background: #c4302b; color: #fff; box-shadow: 0 3px 10px rgba(0,0,0,0.15); }
         .video-btn.alt { background: transparent; color: var(--link-color); border: 1.5px solid var(--link-color); box-shadow: none; }
         .video-btn:hover { filter: brightness(1.08); }
         .mini-player { position: fixed; right: 76px; bottom: 20px; width: 340px; max-width: calc(100vw - 24px); background: var(--container-bg); border: 1px solid var(--dua-border); border-radius: 12px; box-shadow: 0 8px 28px rgba(0,0,0,0.3); z-index: 1200; overflow: hidden; }
@@ -223,6 +224,10 @@
         .mini-bar .mini-title { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .mini-bar button { border: none; background: rgba(255,255,255,0.12); color: #fff; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; }
         .mini-bar button:hover { background: rgba(255,255,255,0.25); }
+        #miniClose { background: #c4302b; animation: mini-x-blink 1.2s ease-in-out infinite; }
+        #miniClose:hover { animation: none; background: #e0443e; }
+        @keyframes mini-x-blink { 0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(255,80,80,0.7); } 50% { opacity: 0.35; box-shadow: 0 0 0 4px rgba(255,80,80,0); } }
+        @media (prefers-reduced-motion: reduce) { #miniClose { animation: none; } }
         .mini-body { position: relative; aspect-ratio: 16 / 9; background: #000; }
         .mini-body iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
         .mini-player.minimized { width: 230px; }
@@ -236,7 +241,7 @@
 <style id="ux-enhance-v1">
 .audio-player { margin-bottom: 15px; }
 .audio-player audio { width: 100%; max-width: 400px; border-radius: 30px; }
-.audio-label { font-size: 15px; }
+.audio-label { font-size: 13px; }
 /* ---- Single round play / pause button ---- */
 .ux-play-wrap { display: flex; justify-content: center; margin: 12px 0 6px; }
 .ux-play-btn { position: relative; width: 60px; height: 60px; border-radius: 50%; border: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; background: var(--link-color, #1e5f8e); color: #fff; box-shadow: 0 4px 14px rgba(30, 95, 142, 0.28); transition: transform 0.2s ease, box-shadow 0.2s ease; padding: 0; margin: 0; }
@@ -496,7 +501,7 @@ audio.ux-hidden-audio, .audio-player .audio-controls, .audio-controls:has(.speed
             <div class="dua">
                 <div class="dua-title">🎥 Peragaan Shalat Jenazah</div>
                 <p>Video di YouTube berikut memperagakan tata cara shalat jenazah dari awal hingga salam (dalam bahasa Inggris).</p>
-                <p class="video-caption" style="font-size:1.1rem;"><em>"How to Pray the Janazah Prayer in Islam"</em> — Ibn Abid · <a href="https://www.youtube.com/watch?v=Q-U513RY2vI" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> Buka di YouTube</a></p>
+                <p class="video-caption"><em>"How to Pray the Janazah Prayer in Islam"</em> — Ibn Abid · <a href="https://www.youtube.com/watch?v=Q-U513RY2vI" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> Buka di YouTube</a></p>
                 <div class="video-btns">
                     <button type="button" class="video-btn js-mini-open"><i class="fas fa-play"></i> Putar di mini-player</button>
                     <button type="button" class="video-btn alt js-popup-open"><i class="far fa-window-restore"></i> Buka di jendela kecil</button>
@@ -710,7 +715,7 @@ audio.ux-hidden-audio, .audio-player .audio-controls, .audio-controls:has(.speed
             <div class="dua">
                 <div class="dua-title">🎥 Janazah Prayer Demonstration</div>
                 <p>The YouTube video below demonstrates the funeral prayer from the opening takbir to the taslim.</p>
-                <p class="video-caption" style="font-size:1.1rem;"><em>"How to Pray the Janazah Prayer in Islam"</em> — Ibn Abid · <a href="https://www.youtube.com/watch?v=Q-U513RY2vI" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> Open on YouTube</a></p>
+                <p class="video-caption"><em>"How to Pray the Janazah Prayer in Islam"</em> — Ibn Abid · <a href="https://www.youtube.com/watch?v=Q-U513RY2vI" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> Open on YouTube</a></p>
                 <div class="video-btns">
                     <button type="button" class="video-btn js-mini-open"><i class="fas fa-play"></i> Play in mini-player</button>
                     <button type="button" class="video-btn alt js-popup-open"><i class="far fa-window-restore"></i> Open in small window</button>
