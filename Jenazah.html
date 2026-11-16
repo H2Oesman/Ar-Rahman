@@ -40,7 +40,7 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.75;
-            font-size: 14px;
+            font-size: 13px;
             margin: 0;
             padding: 20px;
             color: var(--text-color);
@@ -57,7 +57,7 @@
             transition: all 0.3s ease;
         }
         .arabic {
-            font-size: 30px;
+            font-size: 26px;
             text-align: right;
             direction: rtl;
             margin: 15px 0 10px 0;
@@ -68,14 +68,14 @@
         .transliteration {
             font-style: italic;
             color: #7f8c8d;
-            font-size: 15px;
+            font-size: 13.5px;
             text-align: left;
             margin: -5px 0 15px;
             display: none;
         }
         .dark-mode .transliteration { color: #cbd5e1; }
         .name-title {
-            font-size: 25px;
+            font-size: 21px;
             color: var(--text-color);
             border-bottom: 3px solid #3498db;
             padding-bottom: 10px;
@@ -84,7 +84,7 @@
         }
         .section { margin: 35px 0; padding: 0 10px; }
         .section-title {
-            font-size: 20px;
+            font-size: 17px;
             color: var(--section-title-color);
             margin-bottom: 20px;
             border-left: 5px solid #3498db;
@@ -99,7 +99,7 @@
         }
         .dua-title {
             font-weight: bold;
-            font-size: 1.05rem;
+            font-size: 14.5px;
             color: #16a085;
             margin-bottom: 10px;
         }
@@ -148,7 +148,7 @@
         .scroll-arrow-double.up-double { right: 20px; top: 92px; }
         .scroll-arrow-double.down-double { right: 20px; bottom: 90px; }
         @media (max-width: 768px) {
-            .arabic { font-size: 24px; }
+            .arabic { font-size: 22px; }
             .container { padding: 20px; }
             .scroll-arrow, .scroll-arrow-double { width: 38px; height: 38px; font-size: 18px; }
         }
@@ -160,7 +160,7 @@
             border-left: 4px solid #3498db;
         }
         .hidden { display: none; }
-        footer { text-align: center; margin-top: 40px; padding: 20px; color: #7f8c8d; font-size: 12px; }
+        footer { text-align: center; margin-top: 40px; padding: 20px; color: #7f8c8d; font-size: 11px; }
 
         .menu-links {
             margin-bottom: 20px;
@@ -194,7 +194,7 @@
             padding: 8px 16px;
             border-radius: 40px;
             border: 1px solid var(--dua-border);
-            font-size: 13px;
+            font-size: 12px;
         }
         .jump-nav a:hover { color: var(--link-hover); }
         .step-badge {
@@ -215,7 +215,7 @@
         .video-caption { text-align: center; }
         .video-caption a { color: var(--link-color); font-weight: bold; text-decoration: none; }
         .video-btns { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 10px 0 15px; }
-        .video-btn { border: none; cursor: pointer; font: inherit; font-weight: bold; font-size: 13px; padding: 7px 15px; border-radius: 40px; background: #c4302b; color: #fff; box-shadow: 0 3px 10px rgba(0,0,0,0.15); }
+        .video-btn { border: none; cursor: pointer; font: inherit; font-weight: bold; font-size: 12px; padding: 6px 13px; border-radius: 40px; background: #c4302b; color: #fff; box-shadow: 0 3px 10px rgba(0,0,0,0.15); }
         .video-btn.alt { background: transparent; color: var(--link-color); border: 1.5px solid var(--link-color); box-shadow: none; }
         .video-btn:hover { filter: brightness(1.08); }
         .mini-player { position: fixed; right: 76px; bottom: 20px; width: 340px; max-width: calc(100vw - 24px); background: var(--container-bg); border: 1px solid var(--dua-border); border-radius: 12px; box-shadow: 0 8px 28px rgba(0,0,0,0.3); z-index: 1200; overflow: hidden; }
@@ -224,9 +224,9 @@
         .mini-bar .mini-title { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .mini-bar button { border: none; background: rgba(255,255,255,0.12); color: #fff; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; }
         .mini-bar button:hover { background: rgba(255,255,255,0.25); }
-        #miniClose { background: #c4302b; animation: mini-x-blink 1.2s ease-in-out infinite; }
+        #miniClose { background: #c4302b; animation: mini-x-blink 0.9s steps(1, end) infinite; }
         #miniClose:hover { animation: none; background: #e0443e; }
-        @keyframes mini-x-blink { 0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(255,80,80,0.7); } 50% { opacity: 0.35; box-shadow: 0 0 0 4px rgba(255,80,80,0); } }
+        @keyframes mini-x-blink { 0%, 45% { opacity: 1; background: #e0443e; box-shadow: 0 0 0 3px rgba(255,90,90,0.75); } 55%, 100% { opacity: 0.15; background: #c4302b; box-shadow: 0 0 0 0 rgba(255,90,90,0); } }
         @media (prefers-reduced-motion: reduce) { #miniClose { animation: none; } }
         .mini-body { position: relative; aspect-ratio: 16 / 9; background: #000; }
         .mini-body iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
@@ -241,7 +241,7 @@
 <style id="ux-enhance-v1">
 .audio-player { margin-bottom: 15px; }
 .audio-player audio { width: 100%; max-width: 400px; border-radius: 30px; }
-.audio-label { font-size: 13px; }
+.audio-label { font-size: 12px; }
 /* ---- Single round play / pause button ---- */
 .ux-play-wrap { display: flex; justify-content: center; margin: 12px 0 6px; }
 .ux-play-btn { position: relative; width: 60px; height: 60px; border-radius: 50%; border: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; background: var(--link-color, #1e5f8e); color: #fff; box-shadow: 0 4px 14px rgba(30, 95, 142, 0.28); transition: transform 0.2s ease, box-shadow 0.2s ease; padding: 0; margin: 0; }
