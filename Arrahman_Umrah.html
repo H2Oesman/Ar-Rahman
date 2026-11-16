@@ -1088,6 +1088,45 @@
         @media (max-width: 480px) { .top-btn-row .top-pill { font-size: 9px; } .top-btn-row .pill-purple { font-size: 11px; padding: 4px 10px; } .top-btn-row .pill-red { font-size: 8.5px; } }
         @media (max-width: 360px) { .top-btn-row .pill-red { font-size: 8px; } }
         .ayah-end { font-family: 'AmiriQuran', 'Scheherazade New', serif; color: var(--section-title-color); white-space: nowrap; font-feature-settings: normal; padding: 0 2px; }
+        /* ===== Smaller throughout (round 4) ===== */
+        .surah-title { font-size: 17.5px; }
+        .toc-title { font-size: 11.5px; }
+        .toc-link, .toc-label-text { font-size: 10.5px; }
+        .toc-group-label { font-size: 10px; }
+        .info-box, .section, .theme-card, .dhikr-card, .itinerary-card { font-size: 10.5px; line-height: 1.5; }
+        .section-title { font-size: 13px; }
+        .theme-title, .itin-head, .itin-head strong { font-size: 11.5px; }
+        .dua-number { font-size: 11px; }
+        .arabic { font-size: 16px; }
+        .arabic-quran { font-size: 17px; }
+        .transliteration { font-size: 10px; }
+        .translation { font-size: 10.5px; }
+        .reference, .repetition-note, .audio-note, .version-label { font-size: 9.5px; }
+        .itin-row, .itin-hotels, .sched-row { font-size: 10px; }
+        .city-label, .city-select, .city-view { font-size: 10.5px; }
+        .cd-label { font-size: 9px; }
+        .cd-value { font-size: 11px; }
+        .cd-sub { font-size: 9.5px; }
+        .closing-dua { font-size: 10.5px; }
+        footer, .msg-from { font-size: 9.5px; }
+        .pagination-next { font-size: 10.5px; }
+        .know-list a, .know-list .know-item { font-size: 10.5px; }
+        .top-btn-row .top-pill { font-size: 9px; }
+        .top-btn-row .pill-purple { font-size: 10.5px; padding: 4px 10px; }
+        .language-toggle, .transliteration-toggle, .dark-mode-toggle { font-size: 9px; }
+        #legPlayer .leg-bar, #legPlayer .leg-title, #legPlayer .leg-body, #legPlayer .itin-date, #legPlayer .leg-nav, #legPlayer .leg-nav button { font-size: 10px; }
+        #legPlayer .itin-flight, #legPlayer .itin-row, #legPlayer .itin-time, #legPlayer .itin-place { font-size: 9.5px; }
+        #legPlayer .itin-label, #legPlayer .itin-group, #legPlayer .itin-nextday, #legPlayer .leg-lay, #legPlayer .alt-intro, #legPlayer .alt-opt { font-size: 9px; }
+        #legPlayer .leg-note, #legPlayer .alt-note { font-size: 8.5px; }
+        .pdf-title { font-size: 11px; }
+        @media (min-width: 768px) { .arabic { font-size: 18px; } .arabic-quran { font-size: 19.5px; } }
+        @media (max-width: 480px) { .top-btn-row .top-pill { font-size: 8.5px; } .top-btn-row .pill-purple { font-size: 10px; padding: 3px 9px; } .top-btn-row .pill-red { font-size: 8px; } }
+        @media (max-width: 360px) { .top-btn-row .pill-red { font-size: 7.5px; } }
+
+        /* ===== Pop-up close (X) buttons blink ===== */
+        #pdfClose, #legClose, #donClose { animation: x-blink 1s ease-in-out infinite; }
+        @keyframes x-blink { 0%, 100% { background-color: rgba(255,255,255,0.18); color: #fff; box-shadow: 0 0 0 0 rgba(232,53,39,0); } 50% { background-color: #e83527; color: #fff; box-shadow: 0 0 0 4px rgba(232,53,39,0.35); } }
+        @media (prefers-reduced-motion: reduce) { #pdfClose, #legClose, #donClose { animation: none; } }
     </style>
 </head>
 <body>
