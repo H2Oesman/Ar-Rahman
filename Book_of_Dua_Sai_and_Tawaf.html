@@ -878,6 +878,17 @@
             .pdf-player:not(.hidden) #pdfClose { animation: none; background: #e74c3c; }
         }
     </style>
+<style>
+/* Smaller scroll arrows */
+.scroll-arrow, .scroll-arrow-double { width: 32px !important; height: 32px !important; font-size: 14px !important; }
+.scroll-arrow i, .scroll-arrow-double i { font-size: 14px !important; }
+.scroll-arrow svg, .scroll-arrow-double svg { width: 16px !important; height: 16px !important; }
+@media (max-width: 640px) {
+  .scroll-arrow, .scroll-arrow-double { width: 28px !important; height: 28px !important; font-size: 12px !important; }
+  .scroll-arrow i, .scroll-arrow-double i { font-size: 12px !important; }
+  .scroll-arrow svg, .scroll-arrow-double svg { width: 14px !important; height: 14px !important; }
+}
+</style>
 </head>
 <body>
     <!-- Toggle Buttons -->
