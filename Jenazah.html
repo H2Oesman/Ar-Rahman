@@ -290,15 +290,30 @@ audio.ux-hidden-audio, .audio-player .audio-controls, .audio-controls:has(.speed
 }
 </style>
 <style>
-/* Smaller scroll arrows */
-.scroll-arrow, .scroll-arrow-double { width: 32px !important; height: 32px !important; font-size: 14px !important; }
-.scroll-arrow i, .scroll-arrow-double i { font-size: 14px !important; }
-.scroll-arrow svg, .scroll-arrow-double svg { width: 16px !important; height: 16px !important; }
+/* Smaller scroll arrows (up/down, top/bottom) */
+.scroll-arrow, .scroll-arrow-double { width: 28px !important; height: 28px !important; font-size: 12px !important; }
+.scroll-arrow i, .scroll-arrow-double i { font-size: 12px !important; }
+.scroll-arrow svg, .scroll-arrow-double svg { width: 14px !important; height: 14px !important; }
 @media (max-width: 640px) {
-  .scroll-arrow, .scroll-arrow-double { width: 28px !important; height: 28px !important; font-size: 12px !important; }
-  .scroll-arrow i, .scroll-arrow-double i { font-size: 12px !important; }
-  .scroll-arrow svg, .scroll-arrow-double svg { width: 14px !important; height: 14px !important; }
+  .scroll-arrow, .scroll-arrow-double { width: 26px !important; height: 26px !important; font-size: 11px !important; }
+  .scroll-arrow i, .scroll-arrow-double i { font-size: 11px !important; }
+  .scroll-arrow svg, .scroll-arrow-double svg { width: 13px !important; height: 13px !important; }
 }
+/* Pop-up close (X): bright yellow, blinking, X sized to fill the button */
+@keyframes x-yellow-blink { 0%, 100% { opacity: 1; box-shadow: 0 0 0 3px rgba(255,230,0,0.6); } 50% { opacity: 0.35; box-shadow: 0 0 0 0 rgba(255,230,0,0); } }
+#pdfClose, #legClose, #donClose, #aboutClose, #miniClose { background: #FFE600 !important; color: #111 !important; border: none !important; animation: x-yellow-blink 1s ease-in-out infinite !important; display: inline-flex; align-items: center; justify-content: center; padding: 0; }
+#pdfClose svg, #legClose svg, #donClose svg, #aboutClose svg, #miniClose svg { width: 70% !important; height: 70% !important; }
+#pdfClose path, #legClose path, #donClose path, #aboutClose path, #miniClose path { stroke-width: 3; }
+#pdfClose:hover, #legClose:hover, #donClose:hover, #aboutClose:hover, #miniClose:hover,
+#pdfClose:focus-visible, #legClose:focus-visible, #donClose:focus-visible, #aboutClose:focus-visible, #miniClose:focus-visible { animation: none !important; opacity: 1; background: #FFF176 !important; }
+@media (prefers-reduced-motion: reduce) { #pdfClose, #legClose, #donClose, #aboutClose, #miniClose { animation: none !important; } }
+</style>
+<style>
+/* Close buttons show "JZK" (JazakAllahu khayran) instead of an X */
+#pdfClose, #legClose, #donClose, #aboutClose, #miniClose { width: auto !important; min-width: 34px; padding: 0 8px !important; border-radius: 30px !important; font: 800 11px/1 system-ui, -apple-system, "Segoe UI", Arial, sans-serif !important; letter-spacing: 0.5px; white-space: nowrap; }
+#pdfClose svg, #legClose svg, #donClose svg, #aboutClose svg, #miniClose svg { display: none !important; }
+#pdfClose::after, #legClose::after, #donClose::after, #aboutClose::after, #miniClose::after { content: "JZK"; }
+@media (max-width: 640px) { #pdfClose, #legClose, #donClose, #aboutClose, #miniClose { font-size: 10.5px !important; padding: 0 7px !important; } }
 </style>
 </head>
 <body>
