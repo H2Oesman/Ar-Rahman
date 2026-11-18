@@ -1640,18 +1640,46 @@
                 const last = tz.split('/').pop();
                 return alias[last] || last.replace(/_/g, ' ');
             }
+            /* Approximate city from the visitor's internet connection. Three free services with no account;
+               if one doesn't answer, the next is tried. Until then (or if all fail) the time-zone city is shown. */
+            let ipCity = '';
+            try { ipCity = sessionStorage.getItem('visitorCity') || ''; } catch (e) {}
+            function getJSON(url, ms) {
+                const c = ('AbortController' in window) ? new AbortController() : null;
+                const t = setTimeout(() => c && c.abort(), ms);
+                return fetch(url, { signal: c ? c.signal : undefined, cache: 'no-store' })
+                    .then(r => { clearTimeout(t); if (!r.ok) throw new Error(r.status); return r.json(); })
+                    .catch(e => { clearTimeout(t); throw e; });
+            }
+            const CITY_SERVICES = [
+                ['https://ipapi.co/json/', d => d && !d.error && d.city],
+                ['https://ipwho.is/', d => d && d.success !== false && d.city],
+                ['https://get.geojs.io/v1/ip/geo.json', d => d && d.city]
+            ];
+            function lookupCity(i) {
+                if (ipCity || i >= CITY_SERVICES.length) return;
+                const [url, pick] = CITY_SERVICES[i];
+                getJSON(url, 4000).then(d => {
+                    const c = (pick(d) || '').toString().trim();
+                    if (!c) throw new Error('no city');
+                    ipCity = c;
+                    try { sessionStorage.setItem('visitorCity', c); } catch (e) {}
+                    render();
+                }).catch(() => lookupCity(i + 1));
+            }
             function render() {
                 const now = new Date();
                 document.querySelectorAll('.trip-clock').forEach(el => {
                     const id = !!el.closest('#indonesian-content'), lang = id ? 'id' : 'en';
                     el.querySelector('.ti-grid').innerHTML =
-                        '<span class="ti-l">' + currentCity(id) + ':' + '</span><span class="ti-v">' + fmt(now, lang) + '</span>' +
+                        '<span class="ti-l">' + (ipCity || currentCity(id)) + ':' + '</span><span class="ti-v">' + fmt(now, lang) + '</span>' +
                         '<span class="ti-l">' + (id ? 'Tanah Suci:' : 'Holy Land:') + '</span><span class="ti-v">' + fmt(now, lang, 'Asia/Riyadh') + '</span>';
                 });
             }
             let t = null;
             function tick() { render(); clearTimeout(t); t = setTimeout(tick, 60000 - (Date.now() % 60000) + 50); }
             tick();
+            lookupCity(0);
             document.addEventListener('visibilitychange', () => { if (!document.hidden) tick(); });
             document.getElementById('languageToggle')?.addEventListener('click', () => setTimeout(render, 0));
         })();
