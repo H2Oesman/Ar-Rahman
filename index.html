@@ -1076,6 +1076,8 @@
         .trip-list .ti-grid .ti-l { white-space: nowrap; opacity: 0.85; }
         .trip-list .ti-grid .ti-v { white-space: nowrap; font-variant-numeric: tabular-nums; }
         .trip-list .ti-grid b { font-weight: 700; color: var(--section-title-color); }
+        /* clock: city column sized to the longest label (like a tab stop), so both dates start at the same place */
+        .trip-list .trip-clock .ti-grid { grid-template-columns: max-content minmax(0, max-content); column-gap: 8px; }
         @media (max-width: 640px) { .trip-list li > a, .trip-list .trip-info { column-gap: 10px; } .trip-list .trip-info { font-size: 0.7rem; } }
         /* ---- index page: everything one more step smaller ---- */
         html, body { font-size: 13px; }
@@ -1641,7 +1643,7 @@
                 return alias[last] || last.replace(/_/g, ' ');
             }
             /* Approximate city from the visitor's internet connection. Three free services with no account;
-               if one doesn't answer, the next is tried. Until then (or if all fail) the time-zone city is shown. */
+               if one doesn't answer, the next is tried. Until then, or if all fail (e.g. a blocker stops it), the label stays "Local:" / "Lokal:". */
             let ipCity = '';
             try { ipCity = sessionStorage.getItem('visitorCity') || ''; } catch (e) {}
             function getJSON(url, ms) {
@@ -1672,7 +1674,7 @@
                 document.querySelectorAll('.trip-clock').forEach(el => {
                     const id = !!el.closest('#indonesian-content'), lang = id ? 'id' : 'en';
                     el.querySelector('.ti-grid').innerHTML =
-                        '<span class="ti-l">' + (ipCity || currentCity(id)) + ':' + '</span><span class="ti-v">' + fmt(now, lang) + '</span>' +
+                        '<span class="ti-l">' + (ipCity || (id ? 'Lokal' : 'Local')) + ':' + '</span><span class="ti-v">' + fmt(now, lang) + '</span>' +
                         '<span class="ti-l">' + (id ? 'Tanah Suci:' : 'Holy Land:') + '</span><span class="ti-v">' + fmt(now, lang, 'Asia/Riyadh') + '</span>';
                 });
             }
