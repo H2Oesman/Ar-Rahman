@@ -832,6 +832,17 @@
         .scroll-arrow:hover i, .scroll-arrow-double:hover i, .scroll-arrow:focus-visible i, .scroll-arrow-double:focus-visible i { animation-play-state: paused; }
         @media (prefers-reduced-motion: reduce) { .scroll-arrow i, .scroll-arrow-double i { animation: none; } }
     </style>
+<style>
+/* PDF viewer: open-original button and "not showing?" strip */
+.pdf-bar a.pdf-open { color: #fff; background: rgba(255,255,255,0.12); border-radius: 30px; padding: 0 10px; height: 30px; display: inline-flex; align-items: center; font-size: 12px; font-weight: bold; text-decoration: none; flex-shrink: 0; white-space: nowrap; }
+.pdf-bar a.pdf-open:hover { background: rgba(255,255,255,0.25); }
+.pdf-player { display: flex; flex-direction: column; }
+.pdf-player.hidden { display: none; }
+.pdf-help { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px; padding: 5px 10px; font-size: 12px; background: var(--container-bg); color: inherit; border-top: 1px solid var(--verse-border); }
+.pdf-help button, .pdf-help a { font: inherit; font-weight: bold; color: var(--link-color); background: transparent; border: 1px solid var(--link-color); border-radius: 30px; padding: 2px 10px; cursor: pointer; text-decoration: none; }
+.pdf-help button:hover, .pdf-help a:hover { background: var(--link-color); color: #fff; }
+.pdf-player.minimized .pdf-help { display: none; }
+</style>
 </head>
 <body>
     <!-- Toggle Buttons -->
@@ -846,11 +857,13 @@
     <div class="pdf-player hidden" id="pdfPlayer" role="dialog" aria-label="PDF">
         <div class="pdf-bar">
             <span class="pdf-title" id="pdfTitle">Perfecting the Journey</span>
+            <a class="pdf-open" id="pdfOpen" href="#" target="_blank" rel="noopener">PDF ↗</a>
             <button type="button" id="pdfSize" title="Enlarge" aria-label="Enlarge"></button>
             <button type="button" id="pdfMin" title="Minimize" aria-label="Minimize"></button>
             <button type="button" id="pdfClose" title="Close" aria-label="Close"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg></button>
         </div>
         <div class="pdf-body" id="pdfBody"></div>
+        <div class="pdf-help" id="pdfHelp"><span id="pdfHelpText">Guide not showing?</span> <button type="button" id="pdfRetry">Reload</button> <a id="pdfHelpOpen" href="#" target="_blank" rel="noopener">Open the PDF ↗</a></div>
     </div>
 
 
@@ -1865,22 +1878,56 @@
                     minBtn.innerHTML = min ? ICON.restore : ICON.min; minBtn.title = t2; minBtn.setAttribute('aria-label', t2);
                     const t3 = en ? 'Close' : 'Tutup'; closeBtn.title = t3; closeBtn.setAttribute('aria-label', t3);
                 }
+                const openBtn = document.getElementById('pdfOpen');
+                const helpOpen = document.getElementById('pdfHelpOpen');
+                const helpText = document.getElementById('pdfHelpText');
+                const retryBtn = document.getElementById('pdfRetry');
+                let currentSrc = '', tries = 0, timer = null;
+                function helpLabels() {
+                    const en = isEnglish();
+                    helpText.textContent = en ? 'Guide not showing?' : 'Panduan tidak muncul?';
+                    retryBtn.textContent = en ? 'Reload' : 'Muat ulang';
+                    helpOpen.textContent = en ? 'Open the PDF ↗' : 'Buka PDF ↗';
+                    openBtn.title = en ? 'Open the original PDF' : 'Buka PDF asli';
+                }
+                // Google's document viewer sometimes answers with an empty page; the frame then stays
+                // blank (and readable by this page), so load it again a few times until the PDF appears.
+                function loadFrame(src) {
+                    clearTimeout(timer);
+                    const sep = src.includes('?') ? '&' : '?';
+                    const url = /docs\.google\.com\/viewer/.test(src) && tries > 0 ? src + sep + 'r=' + Date.now() : src;
+                    body.innerHTML = '';
+                    const frame = document.createElement('iframe');
+                    frame.title = ttl.textContent; frame.setAttribute('allowfullscreen', '');
+                    frame.dataset.src = src;
+                    frame.addEventListener('load', () => {
+                        if (frame.dataset.src !== currentSrc) return;
+                        let blank = false;
+                        try { const d = frame.contentDocument; blank = !!d && (!d.body || d.body.innerHTML.trim() === ''); } catch (e) { blank = false; }
+                        if (blank && tries < 5) { tries++; timer = setTimeout(() => loadFrame(src), 1200); }
+                    });
+                    frame.src = url;
+                    body.appendChild(frame);
+                    // no answer at all after 12 s: try once more
+                    timer = setTimeout(() => { if (tries < 5 && frame.dataset.src === currentSrc) { tries++; loadFrame(src); } }, 12000);
+                }
                 function open(link) {
                     const src = previewUrl(link.href);
-                    const frame = body.querySelector('iframe');
-                    if (!frame || frame.dataset.src !== src) {
-                        body.innerHTML = `<iframe src="${src}" data-src="${src}" title="${link.textContent.trim()}" allow="autoplay" allowfullscreen></iframe>`;
-                    }
                     ttl.textContent = link.dataset.viewerTitle || (link.textContent.trim() + ' (PDF)');
+                    openBtn.href = link.href; helpOpen.href = link.href;
+                    const frame = body.querySelector('iframe');
+                    if (!frame || frame.dataset.src !== src) { currentSrc = src; tries = 0; loadFrame(src); }
                     box.classList.remove('hidden', 'minimized');
-                    labels();
+                    labels(); helpLabels();
                 }
+                retryBtn.addEventListener('click', () => { if (currentSrc) { tries = 1; loadFrame(currentSrc); } });
+                langToggle.addEventListener('click', () => setTimeout(helpLabels, 0));
                 document.querySelectorAll('a[data-pdf-viewer]').forEach(link => {
                     link.addEventListener('click', e => { e.preventDefault(); open(link); });
                 });
                 sizeBtn.addEventListener('click', () => { box.classList.remove('minimized'); box.classList.toggle('large'); labels(); });
                 minBtn.addEventListener('click', () => { box.classList.remove('large'); box.classList.toggle('minimized'); labels(); });
-                closeBtn.addEventListener('click', () => { body.innerHTML = ''; box.classList.add('hidden'); box.classList.remove('minimized', 'large'); });
+                closeBtn.addEventListener('click', () => { clearTimeout(timer); currentSrc = ''; body.innerHTML = ''; box.classList.add('hidden'); box.classList.remove('minimized', 'large'); });
                 document.addEventListener('keydown', e => { if (e.key === 'Escape' && !box.classList.contains('hidden')) closeBtn.click(); });
                 langToggle.addEventListener('click', () => setTimeout(labels, 0));
                 labels();
@@ -1928,3 +1975,4 @@
     </script>
 </body>
 </html>
+
