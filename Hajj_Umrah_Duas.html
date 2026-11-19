@@ -876,6 +876,14 @@
 .version-tag { text-transform: none; letter-spacing: 0; font-weight: normal; font-size: 0.8rem; background: var(--badge-bg); color: var(--badge-text); border-radius: 30px; padding: 1px 8px; margin-left: 6px; white-space: nowrap; }
 @media (max-width: 420px) { .version-tag { white-space: normal; display: inline-block; margin-left: 0; margin-top: 2px; } }
 </style>
+<style>
+/* "same du'a as above" line that replaces a repeated du'a */
+.dup-ref { margin: 10px 0; padding: 10px 14px; border-left: 4px solid var(--link-color); background: var(--container-bg); border-radius: 8px; font-size: 0.95rem; line-height: 1.5; }
+.dup-ref .dup-link { color: var(--link-color); font-weight: bold; text-decoration: none; white-space: nowrap; }
+.dup-ref .dup-link:hover { text-decoration: underline; }
+.dhikr-card.dup-flash { animation: dupFlash 1.6s ease-out 1; }
+@keyframes dupFlash { 0% { box-shadow: 0 0 0 4px var(--link-color); } 100% { box-shadow: 0 0 0 0 transparent; } }
+</style>
 </head>
 <body>
     <!-- Toggle Buttons -->
@@ -1100,10 +1108,7 @@
                 </div>
                 <div class="dhikr-card" id="c14">
                     <div class="dua-number">Two rak‘āt after ṭawāf</div>
-                    <div class="three-columns">
-                        <div class="column-card"><strong>First rak‘ah</strong><div class="arabic">سُورَةُ ٱلْكَافِرُونَ</div><div class="transliteration">Sūrat al-Kāfirūn</div><div class="audio-player"><audio controls preload="none" src="https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/109.mp3" type="audio/mpeg"></audio></div></div>
-                        <div class="column-card"><strong>Second rak‘ah</strong><div class="arabic">سُورَةُ ٱلْإِخْلَاصِ</div><div class="transliteration">Sūrat al-Ikhlāṣ</div><div class="audio-player"><audio controls preload="none" src="https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/112.mp3" type="audio/mpeg"></audio></div></div>
-                    </div>
+                    <div class="dup-ref">Recite the same sūrahs as in <a class="dup-link" href="#c3">“Two rak‘āt before iḥrām” ↑</a>: al-Kāfirūn in the first rak‘ah and al-Ikhlāṣ in the second (with audio).</div>
                     <div class="translation">Wājib after every ṭawāf. Pray far behind Maqām Ibrāhīm, or anywhere in the masjid if it is crowded, without obstructing those making ṭawāf. Delay it if it falls in a prohibited or disliked time.</div>
                     <div class="reference">Al-Baqarah 2:125 · Guide p. 47–48</div>
                 </div>
@@ -1215,9 +1220,7 @@
                 <div class="dhikr-card" id="c27">
                     <div class="dua-number">Pelting the Jamarāt</div>
                     <div class="repetition-note" style="margin-bottom:10px;">Recite the talbiyah abundantly on the walk; it ends with the first pebble on the 10th. Throw seven pebbles one at a time with the thumb and index finger of the right hand, saying with each:</div>
-                    <div class="arabic">بِسْمِ ٱللَّهِ، ٱللَّهُ أَكْبَرُ</div>
-                    <div class="transliteration">Bismillāhi, Allāhu akbar.</div>
-                    <div class="translation">With the name of Allah; Allah is the Greatest.</div>
+                    <div class="dup-ref">“Bismillāhi, Allāhu akbar”, the same words as at <a class="dup-link" href="#c11">“Istilām” ↑</a>.</div>
                     <div class="repetition-note">10th: only the third (largest) wall, with no du‘ā’ after it. 11th and 12th: all three walls. After the first and second, move aside, face the Qiblah, glorify Allah, send ṣalawāt, and make du‘ā’ for a few minutes. No du‘ā’ after the third.</div>
                     <div class="reference">Guide p. 92, 99–100</div>
                 </div>
@@ -1232,17 +1235,8 @@
                 <div class="dhikr-card" id="c29">
                     <div class="dua-number">Entering al-Masjid an-Nabawī</div>
                     <div class="repetition-note" style="margin-bottom:10px;">Send abundant ṣalawāt on the way to Madinah. Shower and wear clean clothes, walk to the masjid reciting ṣalawāt, enter with the right foot, then greet the masjid with two rak‘āt.</div>
-                    <div class="version-label">Short version</div>
-                    <div class="arabic">ٱللَّهُمَّ ٱفْتَحْ لِي أَبْوَابَ رَحْمَتِكَ</div>
-                    <div class="transliteration">Allāhummaf-taḥ lī abwāba raḥmatik.</div>
-                    <div class="translation">O Allah, open the doors of Your mercy for me.</div>
-                    <div class="reference">Muslim 713 · Guide p. 110–111</div>
-                    <div class="version-label">Complete version <span class="version-tag">🎧 this is what the audio recites</span></div>
-                    <div class="arabic">أَعُوذُ بِٱللَّهِ ٱلْعَظِيمِ، وَبِوَجْهِهِ ٱلْكَرِيمِ، وَسُلْطَانِهِ ٱلْقَدِيمِ، مِنَ ٱلشَّيْطَانِ ٱلرَّجِيمِ. بِسْمِ ٱللَّهِ، وَٱلصَّلَاةُ وَٱلسَّلَامُ عَلَىٰ رَسُولِ ٱللَّهِ. ٱللَّهُمَّ ٱفْتَحْ لِي أَبْوَابَ رَحْمَتِكَ</div>
-                    <div class="transliteration">A‘ūdhu billāhil-‘Aẓīm, wa bi-wajhihil-Karīm, wa sulṭānihil-qadīm, minash-shayṭānir-rajīm. Bismillāh, waṣ-ṣalātu was-salāmu ‘alā Rasūlillāh. Allāhummaf-taḥ lī abwāba raḥmatik.</div>
-                    <div class="translation">I seek refuge in Allah the Almighty, in His Noble Face and in His eternal authority, from the accursed Shayṭān. In the name of Allah, and blessings and peace be upon the Messenger of Allah. O Allah, open the doors of Your mercy for me.</div>
-                    <div class="reference">Ḥiṣn al-Muslim 20 (Abū Dāwūd 466; Muslim 713)</div>
-                    <div class="audio-player"><audio controls preload="none" src="https://www.hisnmuslim.com/audio/ar/20.mp3" type="audio/mpeg"></audio></div>
+                    <div class="dup-ref">The du‘ā’ is the same as in <a class="dup-link" href="#c8">“Entering the masjid” ↑</a>: Allāhummaf-taḥ lī abwāba raḥmatik, or its complete version with audio.</div>
+                    <div class="reference">Guide p. 110–111</div>
                 </div>
                 <div class="dhikr-card" id="c30">
                     <div class="dua-number">Giving salām to the Prophet ﷺ</div>
@@ -1496,10 +1490,7 @@
                 </div>
                 <div class="dhikr-card" id="c14-id">
                     <div class="dua-number">Salat dua rakaat setelah tawaf</div>
-                    <div class="three-columns">
-                        <div class="column-card"><strong>Rakaat pertama</strong><div class="arabic">سُورَةُ ٱلْكَافِرُونَ</div><div class="transliteration">Surah al-Kafirun</div><div class="audio-player"><audio controls preload="none" src="https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/109.mp3" type="audio/mpeg"></audio></div></div>
-                        <div class="column-card"><strong>Rakaat kedua</strong><div class="arabic">سُورَةُ ٱلْإِخْلَاصِ</div><div class="transliteration">Surah al-Ikhlas</div><div class="audio-player"><audio controls preload="none" src="https://download.quranicaudio.com/quran/mishaari_raashid_al_3afaasee/112.mp3" type="audio/mpeg"></audio></div></div>
-                    </div>
+                    <div class="dup-ref">Bacalah surah yang sama seperti pada <a class="dup-link" href="#c3-id">“Salat dua rakaat sebelum ihram” ↑</a>: Al-Kāfirūn pada rakaat pertama dan Al-Ikhlāṣ pada rakaat kedua (beserta audio).</div>
                     <div class="translation">Wajib setelah setiap tawaf. Salatlah jauh di belakang Maqam Ibrahim, atau di mana saja di masjid jika padat, tanpa menghalangi orang yang bertawaf. Tunda jika jatuh pada waktu terlarang atau makruh.</div>
                     <div class="reference">Al-Baqarah 2:125 · Panduan hlm. 47–48</div>
                 </div>
@@ -1611,9 +1602,7 @@
                 <div class="dhikr-card" id="c27-id">
                     <div class="dua-number">Melontar jamrah</div>
                     <div class="repetition-note" style="margin-bottom:10px;">Perbanyak talbiyah saat berjalan; talbiyah berhenti pada lemparan pertama tanggal 10. Lemparkan tujuh kerikil satu per satu dengan ibu jari dan telunjuk tangan kanan, sambil mengucapkan pada setiap lemparan:</div>
-                    <div class="arabic">بِسْمِ ٱللَّهِ، ٱللَّهُ أَكْبَرُ</div>
-                    <div class="transliteration">Bismillāhi, Allāhu akbar.</div>
-                    <div class="translation">Dengan nama Allah; Allah Mahabesar.</div>
+                    <div class="dup-ref">“Bismillāhi, Allāhu akbar”, sama dengan bacaan saat <a class="dup-link" href="#c11-id">“Istilam” ↑</a>.</div>
                     <div class="repetition-note">Tanggal 10: hanya jamrah ketiga (Aqabah), tanpa doa sesudahnya. Tanggal 11 dan 12: ketiga jamrah. Setelah jamrah pertama dan kedua, menepilah, menghadap kiblat, bertasbih, berselawat, dan berdoa beberapa menit. Tidak ada doa setelah jamrah ketiga.</div>
                     <div class="reference">Panduan hlm. 92, 99–100</div>
                 </div>
@@ -1628,17 +1617,8 @@
                 <div class="dhikr-card" id="c29-id">
                     <div class="dua-number">Masuk Masjid Nabawi</div>
                     <div class="repetition-note" style="margin-bottom:10px;">Perbanyak selawat dalam perjalanan ke Madinah. Mandilah dan kenakan pakaian bersih, berjalanlah ke masjid sambil berselawat, masuk dengan kaki kanan, lalu salat tahiyatul masjid dua rakaat.</div>
-                    <div class="version-label">Versi singkat</div>
-                    <div class="arabic">ٱللَّهُمَّ ٱفْتَحْ لِي أَبْوَابَ رَحْمَتِكَ</div>
-                    <div class="transliteration">Allāhummaf-taḥ lī abwāba raḥmatik.</div>
-                    <div class="translation">Ya Allah, bukakanlah untukku pintu-pintu rahmat-Mu.</div>
-                    <div class="reference">Muslim 713 · Panduan hlm. 110–111</div>
-                    <div class="version-label">Versi lengkap <span class="version-tag">🎧 inilah yang dibacakan dalam rekaman</span></div>
-                    <div class="arabic">أَعُوذُ بِٱللَّهِ ٱلْعَظِيمِ، وَبِوَجْهِهِ ٱلْكَرِيمِ، وَسُلْطَانِهِ ٱلْقَدِيمِ، مِنَ ٱلشَّيْطَانِ ٱلرَّجِيمِ. بِسْمِ ٱللَّهِ، وَٱلصَّلَاةُ وَٱلسَّلَامُ عَلَىٰ رَسُولِ ٱللَّهِ. ٱللَّهُمَّ ٱفْتَحْ لِي أَبْوَابَ رَحْمَتِكَ</div>
-                    <div class="transliteration">A‘ūdhu billāhil-‘Aẓīm, wa bi-wajhihil-Karīm, wa sulṭānihil-qadīm, minash-shayṭānir-rajīm. Bismillāh, waṣ-ṣalātu was-salāmu ‘alā Rasūlillāh. Allāhummaf-taḥ lī abwāba raḥmatik.</div>
-                    <div class="translation">Aku berlindung kepada Allah Yang Mahaagung, dengan wajah-Nya Yang Mulia dan kekuasaan-Nya yang abadi, dari setan yang terkutuk. Dengan nama Allah, semoga salawat dan salam tercurah kepada Rasulullah. Ya Allah, bukakanlah untukku pintu-pintu rahmat-Mu.</div>
-                    <div class="reference">Hisnul Muslim 20 (HR. Abu Dawud 466; Muslim 713)</div>
-                    <div class="audio-player"><audio controls preload="none" src="https://www.hisnmuslim.com/audio/ar/20.mp3" type="audio/mpeg"></audio></div>
+                    <div class="dup-ref">Doanya sama dengan <a class="dup-link" href="#c8-id">“Masuk masjid” ↑</a>: Allāhummaf-taḥ lī abwāba raḥmatik, atau versi lengkapnya beserta audio.</div>
+                    <div class="reference">Panduan hlm. 110–111</div>
                 </div>
                 <div class="dhikr-card" id="c30-id">
                     <div class="dua-number">Mengucapkan salam kepada Nabi ﷺ</div>
@@ -2110,6 +2090,18 @@
 })();
 </script>
 <style>.audio-player[hidden] { display: none !important; }</style>
+<script>
+/* links from a repeated du'a to where it first appears */
+document.querySelectorAll('.dup-link').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    var t = document.getElementById(a.getAttribute('href').slice(1));
+    if (!t) return;
+    e.preventDefault();
+    t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    t.classList.remove('dup-flash'); void t.offsetWidth; t.classList.add('dup-flash');
+  });
+});
+</script>
 </body>
 </html>
 
