@@ -1085,24 +1085,46 @@ audio.ux-hidden-audio, .audio-player .audio-controls, .audio-controls:has(.speed
 })();
 </script>
 <script>
-/* Hide any player whose recording can't be found (e.g. the niat and salam files, until they are uploaded).
-   Once the .mp3 files are on the site, the players show again by themselves. */
+/* Hide every audio player whose recording isn't available (missing file or broken link).
+   Checked when the page opens, so it also works on iPhone, where audio isn't loaded until Play is pressed.
+   Once a missing .mp3 is uploaded, its player shows again by itself. */
 (function () {
+  function sources(a) {
+    var list = [];
+    if (a.dataset.playlist) list = list.concat(a.dataset.playlist.split('|'));
+    if (a.getAttribute('src')) list.push(a.getAttribute('src'));
+    a.querySelectorAll('source').forEach(function (s) { if (s.getAttribute('src')) list.push(s.getAttribute('src')); });
+    return list.filter(function (v, i) { return v && list.indexOf(v) === i; });
+  }
   function hidePlayer(a) {
     var box = a.closest('.audio-player') || a.parentElement;
     if (box) box.hidden = true;
-    var w = box && box.nextElementSibling;
-    if (w && w.classList && w.classList.contains('ux-play-wrap')) w.hidden = true;
   }
   document.querySelectorAll('audio').forEach(function (a) {
-    var srcs = a.querySelectorAll('source');
-    var last = srcs[srcs.length - 1];
+    var last = a.querySelector('source:last-of-type');
     if (last) last.addEventListener('error', function () { hidePlayer(a); });
-    a.addEventListener('error', function () { hidePlayer(a); });
-    if (a.networkState === 3) hidePlayer(a);   // already failed before this ran
+    a.addEventListener('error', function () { if (a.error && a.error.code !== 1) hidePlayer(a); });
+    if (!/^https?:$/.test(location.protocol)) return;          // opened as a local file: rely on the error events
+    sources(a).forEach(function (src) {
+      var url;
+      try { url = new URL(src, location.href); } catch (e) { hidePlayer(a); return; }
+      if (url.origin === location.origin) {
+        // the site's own files: ask the server whether the file is there
+        fetch(url.href, { method: 'HEAD', cache: 'no-store' })
+          .then(function (r) { if (!r.ok) hidePlayer(a); })
+          .catch(function () {});
+      } else {
+        // recordings on other sites: try loading just the file's header
+        var probe = new Audio();
+        probe.preload = 'metadata'; probe.muted = true;
+        probe.addEventListener('error', function () { hidePlayer(a); });
+        probe.addEventListener('loadedmetadata', function () { probe.removeAttribute('src'); probe.load(); });
+        probe.src = url.href;
+      }
+    });
   });
 })();
 </script>
-<style>.audio-player[hidden], .ux-play-wrap[hidden] { display: none !important; }</style>
+<style>.audio-player[hidden] { display: none !important; }</style>
 </body>
 </html>
