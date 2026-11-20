@@ -40,7 +40,7 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.75;
-            font-size: 13px;
+            font-size: 15px;
             margin: 0;
             padding: 20px;
             color: var(--text-color);
@@ -57,7 +57,7 @@
             transition: all 0.3s ease;
         }
         .arabic {
-            font-size: 32.5px;
+            font-size: 37.5px;
             text-align: right;
             direction: rtl;
             margin: 15px 0 10px 0;
@@ -68,14 +68,14 @@
         .transliteration {
             font-style: italic;
             color: #7f8c8d;
-            font-size: 13.5px;
+            font-size: 15.5px;
             text-align: left;
             margin: -5px 0 15px;
             display: none;
         }
         .dark-mode .transliteration { color: #cbd5e1; }
         .name-title {
-            font-size: 21px;
+            font-size: 24px;
             color: var(--text-color);
             border-bottom: 3px solid #3498db;
             padding-bottom: 10px;
@@ -84,7 +84,7 @@
         }
         .section { margin: 35px 0; padding: 0 10px; }
         .section-title {
-            font-size: 17px;
+            font-size: 19.5px;
             color: var(--section-title-color);
             margin-bottom: 20px;
             border-left: 5px solid #3498db;
@@ -99,7 +99,7 @@
         }
         .dua-title {
             font-weight: bold;
-            font-size: 14.5px;
+            font-size: 16.5px;
             color: #16a085;
             margin-bottom: 10px;
         }
@@ -121,7 +121,7 @@
             cursor: pointer;
             z-index: 1100;
             font-weight: bold;
-            font-size: 11px;
+            font-size: 12.5px;
             line-height: 1.5;
             border: none;
             font-family: inherit;
@@ -148,7 +148,7 @@
         .scroll-arrow-double.up-double { right: 20px; top: 92px; }
         .scroll-arrow-double.down-double { right: 20px; bottom: 90px; }
         @media (max-width: 768px) {
-            .arabic { font-size: 27.5px; }
+            .arabic { font-size: 31.5px; }
             .container { padding: 20px; }
             .scroll-arrow, .scroll-arrow-double { width: 38px; height: 38px; font-size: 18px; }
         }
@@ -160,7 +160,7 @@
             border-left: 4px solid #3498db;
         }
         .hidden { display: none; }
-        footer { text-align: center; margin-top: 40px; padding: 20px; color: #7f8c8d; font-size: 11px; }
+        footer { text-align: center; margin-top: 40px; padding: 20px; color: #7f8c8d; font-size: 12.5px; }
 
         .menu-links {
             margin-bottom: 20px;
@@ -194,14 +194,14 @@
             padding: 8px 16px;
             border-radius: 40px;
             border: 1px solid var(--dua-border);
-            font-size: 12px;
+            font-size: 14px;
         }
         .jump-nav a:hover { color: var(--link-hover); }
         .step-badge {
             display: inline-block;
             background: #3498db;
             color: #fff;
-            font-size: 11px;
+            font-size: 12.5px;
             font-weight: bold;
             padding: 1px 10px;
             border-radius: 20px;
@@ -215,14 +215,14 @@
         .video-caption { text-align: center; }
         .video-caption a { color: var(--link-color); font-weight: bold; text-decoration: none; }
         .video-btns { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 10px 0 15px; }
-        .video-btn { border: none; cursor: pointer; font: inherit; font-weight: bold; font-size: 12px; padding: 6px 13px; border-radius: 40px; background: #c4302b; color: #fff; box-shadow: 0 3px 10px rgba(0,0,0,0.15); }
+        .video-btn { border: none; cursor: pointer; font: inherit; font-weight: bold; font-size: 14px; padding: 6px 13px; border-radius: 40px; background: #c4302b; color: #fff; box-shadow: 0 3px 10px rgba(0,0,0,0.15); }
         .video-btn.alt { background: transparent; color: var(--link-color); border: 1.5px solid var(--link-color); box-shadow: none; }
         .video-btn:hover { filter: brightness(1.08); }
         .mini-player { position: fixed; right: 76px; bottom: 20px; width: 340px; max-width: calc(100vw - 24px); background: var(--container-bg); border: 1px solid var(--dua-border); border-radius: 12px; box-shadow: 0 8px 28px rgba(0,0,0,0.3); z-index: 1200; overflow: hidden; }
         .mini-player.hidden { display: none; }
-        .mini-bar { display: flex; align-items: center; gap: 6px; padding: 6px 8px 6px 12px; background: #2c3e50; color: #fff; font-size: 13px; font-weight: bold; cursor: default; }
+        .mini-bar { display: flex; align-items: center; gap: 6px; padding: 6px 8px 6px 12px; background: #2c3e50; color: #fff; font-size: 15px; font-weight: bold; cursor: default; }
         .mini-bar .mini-title { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .mini-bar button { border: none; background: rgba(255,255,255,0.12); color: #fff; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; font-size: 13px; }
+        .mini-bar button { border: none; background: rgba(255,255,255,0.12); color: #fff; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; font-size: 15px; }
         .mini-bar button:hover { background: rgba(255,255,255,0.25); }
         #miniClose { background: #c4302b; animation: mini-x-blink 0.9s steps(1, end) infinite; }
         #miniClose:hover { animation: none; background: #e0443e; }
@@ -241,7 +241,7 @@
 <style id="ux-enhance-v1">
 .audio-player { margin-bottom: 15px; }
 .audio-player audio { width: 100%; max-width: 400px; border-radius: 30px; }
-.audio-label { font-size: 12px; }
+.audio-label { font-size: 14px; }
 /* ---- Single round play / pause button ---- */
 .ux-play-wrap { display: flex; justify-content: center; margin: 12px 0 6px; }
 .ux-play-btn { position: relative; width: 60px; height: 60px; border-radius: 50%; border: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; background: var(--link-color, #1e5f8e); color: #fff; box-shadow: 0 4px 14px rgba(30, 95, 142, 0.28); transition: transform 0.2s ease, box-shadow 0.2s ease; padding: 0; margin: 0; }
@@ -929,14 +929,14 @@ audio.ux-hidden-audio, .audio-player .audio-controls, .audio-controls:has(.speed
 </script>
 
 <style id="ux-audio-seek-v1">
-.ux-seek { display: flex; align-items: center; justify-content: center; gap: 8px; max-width: 460px; margin: 4px auto 12px; padding: 0 6px; font-size: 12.5px; color: var(--text-color, #334155); }
+.ux-seek { display: flex; align-items: center; justify-content: center; gap: 8px; max-width: 460px; margin: 4px auto 12px; padding: 0 6px; font-size: 14.5px; color: var(--text-color, #334155); }
 .ux-seek .ux-time { min-width: 38px; text-align: center; white-space: nowrap; font-variant-numeric: tabular-nums; opacity: 0.85; }
 .ux-seek input[type=range] { flex: 1 1 auto; min-width: 80px; height: 22px; margin: 0; cursor: pointer; accent-color: var(--link-color, #1e5f8e); background: transparent; }
 .ux-seek .ux-skip { flex: 0 0 auto; width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid var(--link-color, #1e5f8e); background: transparent; color: var(--link-color, #1e5f8e); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; padding: 0; transition: background 0.2s ease, transform 0.2s ease; }
 .ux-seek .ux-skip:hover { background: rgba(30, 95, 142, 0.10); transform: scale(1.06); }
 .ux-seek .ux-skip:focus-visible, .ux-seek input[type=range]:focus-visible { outline: 2px solid var(--link-color, #1e5f8e); outline-offset: 2px; }
 .ux-seek .ux-skip svg { display: block; }
-@media (max-width: 480px) { .ux-seek { gap: 6px; font-size: 11.5px; } .ux-seek .ux-time { min-width: 32px; } .ux-seek .ux-skip { width: 30px; height: 30px; } }
+@media (max-width: 480px) { .ux-seek { gap: 6px; font-size: 13px; } .ux-seek .ux-time { min-width: 32px; } .ux-seek .ux-skip { width: 30px; height: 30px; } }
 @media print { .ux-seek { display: none !important; } }
 </style>
 <script id="ux-audio-seek-v1-js">
