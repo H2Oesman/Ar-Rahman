@@ -2315,6 +2315,9 @@ footer, footer p, footer a, footer span:not(.ar-word) { font-size: 11px !importa
                     }
                     ttl.textContent = link.dataset.viewerTitle || (link.textContent.trim() + ' (PDF)');
                     box.classList.remove('hidden', 'minimized');
+                    // documents open enlarged on computers, so the page (and its text) is shown much larger;
+                    // on phones the window is already as wide as the screen
+                    if (!/youtube/.test(src) && window.innerWidth > 700) box.classList.add('large');
                     labels();
                 }
                 document.querySelectorAll('a[data-pdf-viewer]').forEach(link => {
