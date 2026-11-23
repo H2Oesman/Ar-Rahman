@@ -2505,8 +2505,8 @@ footer, footer p, footer a, footer span:not(.ar-word) { font-size: 11px !importa
             document.getElementById('doubleUpScroll')?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
             document.getElementById('doubleDownScroll')?.addEventListener('click', () => {
                 /* stop at the end of the visible content (the footer), never below it */
-                const c = document.querySelector('.container');
-                const end = c ? c.getBoundingClientRect().bottom + window.scrollY + 20 : document.documentElement.scrollHeight;
+                const f = document.querySelector('footer') || document.querySelector('.container');
+                const end = f ? f.getBoundingClientRect().bottom + window.scrollY + 40 : document.documentElement.scrollHeight;
                 window.scrollTo({ top: Math.max(0, end - window.innerHeight), behavior: 'smooth' });
             });
 
