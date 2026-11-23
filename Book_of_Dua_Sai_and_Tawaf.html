@@ -2503,7 +2503,12 @@ footer, footer p, footer a, footer span:not(.ar-word) { font-size: 11px !importa
             document.getElementById('scrollUp')?.addEventListener('click', () => window.scrollBy({ top: -window.innerHeight, behavior: 'smooth' }));
             document.getElementById('scrollDown')?.addEventListener('click', () => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' }));
             document.getElementById('doubleUpScroll')?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-            document.getElementById('doubleDownScroll')?.addEventListener('click', () => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }));
+            document.getElementById('doubleDownScroll')?.addEventListener('click', () => {
+                /* stop at the end of the visible content (the footer), never below it */
+                const c = document.querySelector('.container');
+                const end = c ? c.getBoundingClientRect().bottom + window.scrollY + 20 : document.documentElement.scrollHeight;
+                window.scrollTo({ top: Math.max(0, end - window.innerHeight), behavior: 'smooth' });
+            });
 
             document.querySelectorAll('.to-top').forEach(a => a.addEventListener('click', e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }));
             document.querySelectorAll('[data-jump]').forEach(a => a.addEventListener('click', ev => { ev.preventDefault(); goToTocTarget(a.getAttribute('data-jump')); }));
