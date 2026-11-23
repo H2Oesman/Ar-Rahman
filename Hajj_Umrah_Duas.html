@@ -2070,7 +2070,12 @@ footer, footer p, footer a, footer span:not(.ar-word) { font-size: 11px !importa
             document.getElementById('scrollUp')?.addEventListener('click', () => window.scrollBy({ top: -window.innerHeight, behavior: 'smooth' }));
             document.getElementById('scrollDown')?.addEventListener('click', () => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' }));
             document.getElementById('doubleUpScroll')?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-            document.getElementById('doubleDownScroll')?.addEventListener('click', () => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }));
+            document.getElementById('doubleDownScroll')?.addEventListener('click', () => {
+                /* scroll to the footer (end of the visible content), never below it */
+                const f = document.querySelector('footer') || document.querySelector('.container');
+                const end = f ? f.getBoundingClientRect().bottom + window.scrollY + 40 : document.documentElement.scrollHeight;
+                window.scrollTo({ top: Math.max(0, end - window.innerHeight), behavior: 'smooth' });
+            });
 
             document.querySelectorAll('.to-top').forEach(a => a.addEventListener('click', e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }));
             enhanceAudioPlayers();
