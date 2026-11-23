@@ -1193,7 +1193,9 @@ footer, footer p, footer a, footer span:not(.ar-word) { font-size: 11px !importa
 </style>
 <style>
 .know-list a:not(.know-child) { font-size: 1.05rem; }
-.know-list a:not(.know-child) { text-decoration: underline; text-underline-offset: 3px; }
+.know-list a:not(.know-child) { text-decoration: underline; text-underline-offset: 3px; font-style: italic; color: #1a73e8; }
+.dark-mode .know-list a:not(.know-child) { color: #8ab4f8; }
+.know-list a:not(.know-child) .know-sub { font-style: normal; color: var(--text-color, #555); }
 .know-list a:not(.know-child) .know-sub { display: inline-block; width: 100%; text-decoration: none; }
 .know-list a.know-child { padding: 2px 12px 2px 30px; font-size: 0.66rem; }
 </style>
